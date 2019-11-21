@@ -1,0 +1,240 @@
+
+html, body, a {
+    margin:0px !important;
+}
+
+
+.all-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.content {
+    margin:20px;
+    padding:20px;
+    flex: 1 0 auto;
+}
+
+.menu {
+    margin:0;
+    padding:0;
+}
+
+footer {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    display: block;
+    color: white;
+    padding-left: 20px;
+    cursor:default;
+}
+
+p a{
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding-left: 14px;
+    text-decoration: none;
+}
+
+.air {
+	margin:10px !important;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+@media screen (max-width: 2900px) {
+    ul.sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    ul.sidenav li a {
+        float: left;
+        padding: 15px;
+    }
+    div.content {margin-left: 0;}
+}
+
+li:last-child {
+    border-right: none;
+}
+
+hr{
+    width:80%;
+    border-top: 1px solid lightgray;
+}
+
+.fdown {
+    width: 20%;
+    float: middle;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+.red{
+    background:red !important;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.inputsubmit5{
+    width:5% !important;
+}
+
+a {
+    ppadding:20px; !important;
+}
+.inputsubmit40{
+    width:30% !important;
+}
+
+.inputsubmit40r{
+    width:30% !important;
+    background-color: red !important;
+}
+
+.inputsubmitr{
+    background-color: red !important;
+}
+
+.inputsubmitg{
+    background-color: grey !important;
+}
+
+.inputbutton {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.spaceline {
+   padding-top:25px;
+}
+
+.spaceline50 {
+   padding-top:50px;
+}
+
+.spaceline100 {
+   padding-top:100px;
+}
+
+.text {
+    width: 30%;
+    padding: 10px 00px;
+    margin-left:10%;
+    display: inline-block;
+}
+
+input[type=text], select {
+    width: 50%;
+    float:center;
+    padding: 5px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 40%;
+    padding: 5px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.fileselect input[type=file]{
+    width:0%;
+    visibility:hidden;
+    opacity: 0; !inportant;
+}
+
+.fileselect {
+    overflow: hidden;
+    position: relative;
+    border-radius: .5em;
+    margin:auto;
+    text-align:center;
+    ffont-size:.9em;
+    width:100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+

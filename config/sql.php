@@ -1,0 +1,13 @@
+<?php
+
+$SQL_SERVER=$MYSQL_SERVER;
+$SQL_PORT=$MYSQL_PORT;
+$SQL_DB=$MYSQL_DATABASE;
+$SQL_USER=$MYSQL_USER;
+$SQL_PASSWORD=$MYSQL_PASSWORD;
+
+$SQL_COMMAND=array(
+	"select database test;"
+	);
+
+?>
