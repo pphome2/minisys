@@ -1,93 +1,52 @@
 <?php
 
  #
- # MiniApp - empty app
+ # MiniApps - framework
  #
  # info: main folder copyright file
  #
  #
 
 
+# load config
 if (file_exists("config/config.php")){
 	include("config/config.php");
 }
-if (file_exists("config/$MA_LANGFILE")){
-	include("config/$MA_LANGFILE");
+if (file_exists("$MA_LIB")){
+	include("$MA_LIB");
+}
+if (file_exists("$MA_CONFIG_DIR/$MA_LANGFILE")){
+	include("$MA_CONFIG_DIR/$MA_LANGFILE");
 }
 
 
-function vinput($d) {
-    $d=trim($d);
-    $d=stripslashes($d);
-    $d=strip_tags($d);
-    $d=htmlspecialchars($d);
-    return $d;
-}
-
-
-function vinputtags($d) {
-    $d=trim($d);
-    $d=stripslashes($d);
-    $d=htmlspecialchars($d);
-    return $d;
-}
-
-
-$utime=time();
-$loggedin=FALSE;
-$passw="";
-
-if (isset($_POST["password"])){
-	$passw=md5($_POST["password"]);
-	$passw=vinput($passw);
-	if ($passw==$MA_PASS){
-		$loggedin=TRUE;
-	}
-}
-
-if (isset($_POST["passwordh"])){
-	$passw=$_POST["passwordh"];
-	$passw=vinput($passw);
-	if ($passw==$MA_PASS){
-		if (isset($_POST["utime"])){
-			$outime=$_POST["utime"];
-			$outime=vinput($outime);
-			$utime2=$utime-$outime;
-			if ($utime2<$LOGIN_TIMEOUT){
-				$loggedin=TRUE;
-			}
-		}else{
-			$loggedin=TRUE;
-		}
-	}
-}
-
-
-
-echo("<!DOCTYPE HTML>");
-echo("<html><head>");
-echo("<title>$MA_SITENAME</title>");
-echo("<meta charset=\"utf-8\" />");
-echo("<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">");
-echo("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />");
-echo("<link rel=\"icon\" href=\"favicon.png\">");
-echo("<link rel=\"shortcut icon\" type=\"image/png\" href=\"favicon.png\" />");
-echo("</head>");
-echo("<style>");
-include("$MA_CSS2");
+# build page
+echo("<html>");
+echo("<head>");
+echo("<title>$MA_SITENAME</title><style>");
+include("$MA_CSSPRINT");
 echo("</style>");
-echo("<body>");
-
-echo("<a onclick=\"window.history.back();\">");
-
+echo("<head>");
+echo("<body onclick=\"window.close();\">");
 
 
-if ($loggedin){
-	echo($L_BUTTON_PRINT);
-}else{
-	echo("---");
+# load local app file
+
+$MA_NOPAGE=true;
+
+if (file_exists("$MA_APPFILE")){
+	include("$MA_APPFILE");
 }
 
-echo("</a></body></html>");
+if (function_exists("printpage")){
+	printpage();
+}
+
+# end
+
+echo("<script>window.print();</script>");
+
+echo("</body>");
+echo("</html>");
 
 ?>

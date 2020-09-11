@@ -7,26 +7,25 @@
  #
  #
 
-
-# system zone / rendszerhez szükséges
+# system zone
 $L_SITENAME="Demo";
-$L_SITEHOME="Nyitólap";
+$L_SITEHOME="Home";
 $L_MTHOME="Demo";
-$L_ADMINISTRATION="Adminisztráció";
-$L_PRIVACY_MENU="Adatvédelem";
-$L_THEME="Témaváltás";
-$L_BUTTON_NEXT="Tovább";
-$L_PASS="Hozzáférési kód";
-$L_LOGOUT="Kijelentkezés";
-$L_PRINT="Nyomtatás";
-$L_BACKPAGE="Visszalépés";
-$L_SEARCH="Keresés";
+$L_ADMINISTRATION="Administration";
+$L_THEME="Next theme";
+$L_PRIVACY_MENU="Privacy";
+$L_PASS="Access code";
+$L_BUTTON_NEXT="Next";
+$L_LOGOUT="Logout";
+$L_PRINT="Print";
+$L_BACKPAGE="Go back";
+$L_SEARCH="Search";
 
 
-# local app zone / a pragram saját mezői
+# local app zone
 
 
-$L_PRIVACY_HEADER="Adatvédelmi nyilatkozat";
+$L_PRIVACY_HEADER="Privacy page address";
 $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in justo sodales, mattis purus quis, ultricies sem.
 					Donec porttitor volutpat blandit. Ut metus velit, feugiat id finibus vitae, vestibulum non metus. Nulla quis
 					orci urna. In ligula ex, fringilla at eleifend ac, aliquam a lectus. Duis cursus lorem a ex aliquam dapibus.

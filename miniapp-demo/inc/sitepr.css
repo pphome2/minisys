@@ -1,18 +1,4 @@
-a {text-decoration:none;color:black;}
-
-.content {
-    margin:auto;
-    width:90%;
-}
-
-.content2 {
-    margin:auto;
-    width:90%;
-    padding:20px;
-    border: 1px solid;
-    border-color:lightgray;
-}
-
+a {text-decoration:none;}
 
 #st {
 	padding:40px 20px 40px 20px;
