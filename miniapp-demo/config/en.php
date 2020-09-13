@@ -24,6 +24,7 @@ $L_SEARCH="Search";
 
 # local app zone
 
+$L_MENU1="List";
 
 $L_PRIVACY_HEADER="Privacy page address";
 $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in justo sodales, mattis purus quis, ultricies sem.

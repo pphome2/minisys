@@ -23,8 +23,8 @@ $L_BACKPAGE="Visszalépés";
 $L_SEARCH="Keresés";
 
 
-# local app zone / a pragram saját mezői
-
+# system, but need change
+$L_COOKIE_TEXT="Az oldal cokkie-kat (sütiket) használ. Olvassa el az Adatvédelmi nyilatkozatot.";
 
 $L_PRIVACY_HEADER="Adatvédelmi nyilatkozat";
 $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in justo sodales, mattis purus quis, ultricies sem.
@@ -39,5 +39,10 @@ $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
 					augue consectetur, in scelerisque lacus scelerisque. Donec semper leo a enim lacinia molestie. Nullam fermentum
 					dolor ac tellus vulputate, id vulputate tortor ullamcorper. Duis vitae sapien nec enim dapibus accumsan. Etiam nec
 					vestibulum nibh, eu sodales risus. Aenean erat ante, suscipit at malesuada nec, iaculis nec felis. ";
+
+
+# local app zone / a pragram saját mezői
+
+$L_MENU1="Lista";
 
 ?>
