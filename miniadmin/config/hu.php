@@ -24,6 +24,7 @@ $L_SEARCH="Keresés";
 
 
 # system, but need change
+
 $L_COOKIE_TEXT="Az oldal cokkie-kat (sütiket) használ. Olvassa el az Adatvédelmi nyilatkozatot.";
 
 $L_PRIVACY_HEADER="Adatvédelmi nyilatkozat";

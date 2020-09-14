@@ -21,10 +21,9 @@ $L_PRINT="Print";
 $L_BACKPAGE="Go back";
 $L_SEARCH="Search";
 
+# system but need change
 
-# local app zone
-
-$L_MENU1="List";
+$L_COOKIE_TEXT="The site use cokies. Please read the Privacy page.";
 
 $L_PRIVACY_HEADER="Privacy page address";
 $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in justo sodales, mattis purus quis, ultricies sem.
@@ -39,5 +38,11 @@ $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
 					augue consectetur, in scelerisque lacus scelerisque. Donec semper leo a enim lacinia molestie. Nullam fermentum
 					dolor ac tellus vulputate, id vulputate tortor ullamcorper. Duis vitae sapien nec enim dapibus accumsan. Etiam nec
 					vestibulum nibh, eu sodales risus. Aenean erat ante, suscipit at malesuada nec, iaculis nec felis. ";
+
+
+# local app zone
+
+$L_MENU1="List";
+
 
 ?>
