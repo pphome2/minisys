@@ -116,22 +116,32 @@ function page_footer(){
 	}
 }
 
+
 # functions
 function vinput($d) {
-    $d=trim($d);
-    $d=stripslashes($d);
-    $d=strip_tags($d);
-    $d=htmlspecialchars($d);
-    return $d;
+	$d=trim($d);
+	$d=stripslashes($d);
+	$d=strip_tags($d);
+	$d=htmlspecialchars($d);
+	return $d;
 }
+
+
+function vinputtags($d) {
+	$d=trim($d);
+	$d=stripslashes($d);
+	$d=htmlspecialchars($d);
+	return $d;
+}
+
 
 
 function dirlist($dir) {
 	global $MA_CONFIG_DIR;
 
-    $result=array();
-    $cdir=scandir($dir);
-    foreach ($cdir as $key => $value){
+	$result=array();
+	$cdir=scandir($dir);
+	foreach ($cdir as $key => $value){
 		if (!in_array($value,array(".","..",$MA_CONFIG_DIR))){
 			$result[]=$value;
 		}
