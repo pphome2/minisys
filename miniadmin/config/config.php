@@ -27,6 +27,7 @@ $MA_INCLUDE_DIR="inc";
 $MA_CONTENT_DIR="content";
 
 $MA_COOKIE_STYLE="st";
+$MA_COOKIE_USER="user";
 $MA_COOKIE_PASSWORD="passw";
 $MA_COOKIE_TIME="ltime";
 
@@ -61,6 +62,7 @@ $MA_SEARCH_ICON_JS="";
 # other variables
 $MA_NOPAGE=false;
 $MA_PASSWORD="";
+$MA_USER="";
 $MA_LOGIN_TIME="";
 $MA_LOGGEDIN=false;
 $MA_STYLEINDEX=0;
@@ -72,6 +74,16 @@ $MA_LOGIN_TIMEOUT=600;
 $MA_ENABLE_COOKIES=true;
 $MA_ADMIN_USER=false;
 $MA_USERPAGE=false;
+
+# multiuser
+$MA_ENABLE_MULTIUSER=true;
+$MA_USERS_ADMINUSER=array(
+				"admin"
+			);
+$MA_USERS_CRED=array(
+					array("admin","e3274be5c857fb42ab72d786e281b4b8"),
+					array("user","5f4dcc3b5aa765d61d8327deb882cf99"),
+				);
 
 # menu
 $MA_MENU_FIELD="m";
