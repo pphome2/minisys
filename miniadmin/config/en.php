@@ -14,8 +14,6 @@ $L_MTHOME="Demo";
 $L_ADMINISTRATION="Administration";
 $L_THEME="Next theme";
 $L_PRIVACY_MENU="Privacy";
-$L_USERNAME="Username";
-$L_PASSWORD="Password";
 $L_PASS="Access code";
 $L_BUTTON_NEXT="Next";
 $L_LOGOUT="Logout";
@@ -45,6 +43,9 @@ $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
 # local app zone
 
 $L_MENU1="List";
+
+$L_MENU2="AdminList";
+
 
 
 ?>

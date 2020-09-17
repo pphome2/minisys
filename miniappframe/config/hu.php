@@ -46,4 +46,6 @@ $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
 
 $L_MENU1="Lista";
 
+$L_MENU2="AdminLista";
+
 ?>

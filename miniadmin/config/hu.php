@@ -16,8 +16,6 @@ $L_ADMINISTRATION="Adminisztráció";
 $L_PRIVACY_MENU="Adatvédelem";
 $L_THEME="Témaváltás";
 $L_BUTTON_NEXT="Tovább";
-$L_USERNAME="Felhasználónév";
-$L_PASSWORD="Jelszó";
 $L_PASS="Hozzáférési kód";
 $L_LOGOUT="Kijelentkezés";
 $L_PRINT="Nyomtatás";
@@ -47,5 +45,7 @@ $L_PRIVACY_TEXT=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
 # local app zone / a pragram saját mezői
 
 $L_MENU1="Lista";
+
+$L_MENU2="AdminLista";
 
 ?>
