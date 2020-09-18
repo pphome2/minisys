@@ -23,7 +23,7 @@ $L_BACKPAGE="Visszalépés";
 $L_SEARCH="Keresés";
 
 
-# system, but need change
+# system - need change / rendszer, módosítás szükséges
 
 $L_COOKIE_TEXT="Az oldal cokkie-kat (sütiket) használ. Olvassa el az Adatvédelmi nyilatkozatot.";
 
