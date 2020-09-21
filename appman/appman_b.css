@@ -71,7 +71,7 @@ li {
 	float: left;
 }
 
-li a, .dropbtn{
+li a, .dropbtn. .title{
 	display: inline-block;
 	color: white;
 	text-align: center;
@@ -204,20 +204,24 @@ li:last-child {
 	font-size:1.2em;
 	padding:0px;
 }
+
 .card-footer {
 	padding:10px;
 	background-color:#2196F3;
 	color:white;
 }
+
 .card-footer2 {
 	padding:10px;
 	text-align:right;
 	background-color:#2196F3;
 	color:white;
 }
+
 .card-body {
 	padding:20px;
 }
+
 .cardbody {
 	border: 1px solid;
 	border-color: #2196F3;
@@ -231,6 +235,16 @@ li:last-child {
 	padding:20px;
 }
 
+.card-button {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
 
 .search_icon{
 	cursor: pointer;

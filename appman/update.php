@@ -1,17 +1,17 @@
 <?php
 
  #
- # AppMan - install app
+ # AppMan - install/update/config app
  #
  # info: main folder copyright file
  #
  #
 
 
-$APP_FILE=array("appman.tar.gz","http://localhost/~peter/www/minisys/appman/appman.tar.gz");
-$APP_DIR="appman";
+$SOURCE_PACKAGE="http://localhost/~peter/www/minisys/appman/files/mininote.tar.gz";
 
-$INSTALLER=false;
+$APP_FILE=array("appman.tar.gz","http://localhost/~peter/www/minisys/appman/files/appman.tar.gz");
+$APP_DIR="appman";
 
 $dir=getcwd();
 $dir=substr($dir,strlen($dir)-strlen($APP_DIR),strlen($APP_DIR));

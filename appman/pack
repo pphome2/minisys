@@ -1,0 +1,2 @@
+#!/bin/sh
+tar cvfz files/appman.tar.gz *.php *.css *.png
