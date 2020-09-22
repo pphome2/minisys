@@ -21,11 +21,16 @@ $L_INSTALL_OK="A telepítés megtörtént.";
 
 $L_UPDATE_OK="A frissítés megtörtént";
 $L_UPDATE_NO="Nincs új frissítés.";
-$L_UPDATE_OLD="Régi verzió";
-$L_UPDATE_NEW="Új verzió";
+$L_UPDATE_OLD="Helyi verzió";
+$L_UPDATE_NEW="Kiadott verzió";
 
 $L_BUTTON_CONFIG="Beállítások ellenőrzése";
 
 $L_BUTTON_END="Kilépés";
+
+$L_SAVE_BUTTON="Adatok mentése";
+$L_DATA_SAVED="Az adatok mentése sikerült.";
+$L_DATA_OLD="Korábbi beállítások:";
+$L_DATA_ERROR="Hiba a mentés közben. Az adatok nem lettek elmentve.";
 
 ?>

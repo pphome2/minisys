@@ -49,15 +49,6 @@ p a{
 	text-decoration: none;
 }
 
-.padleft {
-	padding-left: 20px;
-}
-
-.cookietext {
-	padding-left: 20px;
-	font-size: 0.8em;
-	text-align: center;
-}
 
 ul {
 	list-style-type: none;
@@ -147,21 +138,6 @@ li:last-child {
 	border-radius:10px;
 }
 
-
-.topright, .toprightclose {
-	text-decoration:none;
-	position:absolute;
-	right:5px;
-	top:15px;
-	padding:10px;
-	font-size:1em;
-	color:white;
-}
-
-.toprightclose:after {
-	content:"\274C";
-}
-
 .topleftmenu1:before {
 	content:"\2630";
 	padding-right:10px;
@@ -190,6 +166,7 @@ li:last-child {
 	margin-bottom:20px;
 	box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
+
 .card-header {
 	padding:10px 10px 10px 10px;
 	background-color:#2196F3;
@@ -197,25 +174,6 @@ li:last-child {
 	font-size:1.3em;
 	cursor: default;
 	border-radius: 5px;
-}
-.card-header-tab {
-	background-color:#2196F3;
-	color:white;
-	font-size:1.2em;
-	padding:0px;
-}
-
-.card-footer {
-	padding:10px;
-	background-color:#2196F3;
-	color:white;
-}
-
-.card-footer2 {
-	padding:10px;
-	text-align:right;
-	background-color:#2196F3;
-	color:white;
 }
 
 .card-body {
@@ -245,70 +203,6 @@ li:last-child {
 	border-radius: 4px;
 	cursor: pointer;
 }
-
-.search_icon{
-	cursor: pointer;
-	transform:rotate(90deg);
-}
-
-.esearch_icon:after{
-	content:"\260C";
-}
-
-.search_icon:hover{
-	background-color:red;
-}
-
-
-.mt-table,.mt-table-all {
-	border-spacing:0;
-	width:100%;
-	display:table;
-}
-.mt-table-all {
-	border:1px solid #ccc;
-	border-radius: 5px;
-}
-.mt-bordered tr,.mt-table-all tr {
-	border-bottom:1px solid #ddd;
-}
-
-.mt-striped tbody tr:nth-child(even) {
-	background-color:lightgrey;
-}
-
-.mt-table-all tr:nth-child(odd) {
-	background-color:grey;color:black;
-}
-
-.mt-table-all tr:nth-child(even) {
-	background-color:dimgrey;color:black;
-}
-
-.mt-hoverable tbody tr:hover,.mt-ul.mt-hoverable li:hover {
-	background-color:#ccc;
-}
-
-.mt-centered tr th,.mt-centered tr td {
-	text-align:center;
-}
-
-.mt-table td,.mt-table th,.mt-table-all td,.mt-table-all th {
-	padding:8px 8px;
-	display:table-cell;
-	text-align:left;
-	vertical-align:middle;
-}
-
-.mt-table th:first-child,.mt-table td:first-child,.mt-table-all th:first-child,.mt-table-all td:first-child {
-	padding-left:16px;
-}
-
-.mt-red,.mt-hover-red:hover {
-	color:#fff!important;
-	background-color:#f44336!important;
-}
-
 
 input[type=text], select {
 	width: 100%;
@@ -377,20 +271,4 @@ input[type=submit]:hover {
 .spaceline100 {
 	padding-top:100px;
 }
-
-.privacybutton {
-	color: white;
-	border-radius: 4px;
-	border: none;
-	text-decoration: none;
-	background-color: #4CAF50;
-	padding: 5px 25px 5px 25px;
-	font-size:0.9em;
-	cursor: pointer;
-}
-
-
-
-
-/* local app css */
 

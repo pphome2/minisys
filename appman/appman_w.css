@@ -147,22 +147,6 @@ li:last-child {
 	border-radius:10px;
 }
 
-
-
-.topright, .toprightclose {
-	text-decoration:none;
-	position:absolute;
-	right:5px;
-	top:5px;
-	padding:10px;
-	font-size:1em;
-	color:white;
-}
-
-.toprightclose:after {
-	content:"\274C";
-}
-
 .topleftmenu1:before {
 	content:"\2630";
 	padding-right:10px;
@@ -170,7 +154,6 @@ li:last-child {
 	text-decoration:bold;
 	font-size:1.2em;
 }
-
 
 .center {
 	text-align:center !important;
@@ -182,6 +165,7 @@ li:last-child {
 	cursor:default;
 	clear:both;
 }
+
 .card, .containerbox {
 	position:relative;
 	display:block;
@@ -199,26 +183,6 @@ li:last-child {
 	font-size:1.3em;
 	cursor: default;
 	border-radius: 5px 5px 0px 0px;
-}
-
-.card-header-tab {
-	background-color:#2196F3;
-	color:white;
-	font-size:1.2em;
-	padding:0px;
-}
-
-.card-footer {
-	padding:10px;
-	background-color:#2196F3;
-	color:white;
-}
-
-.card-footer2 {
-	padding:10px;
-	text-align:right;
-	background-color:#2196F3;
-	color:white;
 }
 
 .card-body {
@@ -245,69 +209,6 @@ li:last-child {
 	cursor: pointer;
 }
 
-.search_icon{
-	cursor: pointer;
-	transform:rotate(90deg);
-}
-
-.search_icon:hover{
-	background-color:red;
-}
-
-
-.mt-table,.mt-table-all {
-	border-spacing:0;
-	width:100%;
-	display:table
-}
-
-.mt-table-all {
-	border:1px solid #ccc;
-	border-radius: 5px;
-}
-
-.mt-bordered tr,.mt-table-all tr {
-	border-bottom:1px solid #ddd;
-}
-
-.mt-striped tbody tr:nth-child(even) {
-	color:black;
-	background-color:#f1f1f1;
-}
-
-.mt-table-all tr:nth-child(odd) {
-	color:black;
-	background-color:lightgrey;
-}
-
-.mt-table-all tr:nth-child(even) {
-	color:black;
-	background-color:lightyellow;
-}
-
-.mt-hoverable tbody tr:hover,.mt-ul.mt-hoverable li:hover {
-	background-color:#ccc;
-}
-
-.mt-centered tr th,.mt-centered tr td {
-	text-align:center;
-}
-
-.mt-table td,.mt-table th,.mt-table-all td,.mt-table-all th {
-	padding:8px 8px;
-	display:table-cell;
-	text-align:left;
-	vertical-align:middle;
-}
-
-.mt-table th:first-child,.mt-table td:first-child,.mt-table-all th:first-child,.mt-table-all td:first-child {
-	padding-left:16px;
-}
-
-.mt-red,.mt-hover-red:hover {
-	color:#fff!important;
-	background-color:#f44336!important;
-}
 
 input[type=text], select {
 	width: 100%;
@@ -349,20 +250,6 @@ input[type=submit]:hover {
 	border: 1px solid;
 }
 
-
-img {
-	cursor: pointer;
-	width:100%;
-}
-
-.imgblock {
-	display:block;
-}
-
-.imgnone {
-	display:none;
-}
-
 .spaceline {
 	padding-top:25px;
 }
@@ -375,18 +262,4 @@ img {
 	padding-top:100px;
 }
 
-.privacybutton {
-	color: white;
-	border-radius: 4px;
-	border: none;
-	text-decoration: none;
-	background-color: #4CAF50;
-	padding: 5px 25px 5px 25px;
-	font-size:0.9em;
-	cursor: pointer;
-}
-
-
-
-/* local app css */
 

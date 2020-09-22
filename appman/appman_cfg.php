@@ -28,6 +28,7 @@ $AM_VERSION_DIR="config";
 $AM_VERSION_FILE="version";
 
 # system config file
+$AM_APPMAN_CONFIG="config.php";
 $AM_SYSCONFIG_DIR="config";
 $AM_SYSCONFIG_FILE="config_sys.php";
 
