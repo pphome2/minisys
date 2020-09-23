@@ -32,5 +32,6 @@ $L_SAVE_BUTTON="Adatok mentése";
 $L_DATA_SAVED="Az adatok mentése sikerült.";
 $L_DATA_OLD="Korábbi beállítások:";
 $L_DATA_ERROR="Hiba a mentés közben. Az adatok nem lettek elmentve.";
+$L_CONFIG_NOFILE="Nincs adatfájl.";
 
 ?>

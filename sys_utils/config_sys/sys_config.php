@@ -168,6 +168,7 @@ if (!file_exists($MS_FILE)){
 			echo("	<input class='inputsubmit' type='submit' id='submitconf' name='submitconf' value='$L_BUTTON_SAVE'>");
 		}
 		echo("</form>");
+		echo("<a href='$MS_SITE_HOME'><input class='inputsubmit red' type='submit' id='submitc' name='submitc' value='$L_BUTTON_END'></a>");
 	}
 }
 

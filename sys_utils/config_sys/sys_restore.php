@@ -55,7 +55,6 @@ if ((!file_exists($MS_FILE))or(!file_exists($MS_FILE2))){
 					if ((isset($SQL_SERVER))and(isset($SQL_DB))and(isset($SQL_USER))and(isset($SQL_PASSWORD))){
 						set_time_limit(300);
 						$mysqli=new mysqli($SQL_SERVER,$SQL_USER,$SQL_PASSWORD);
-
 					echo("$filename");
 						$mysqli->query("CREATE DATABASE IF NOT EXISTS $SQL_DB");
 						$mysqli->select_db($SQL_DB);
@@ -73,9 +72,17 @@ if ((!file_exists($MS_FILE))or(!file_exists($MS_FILE2))){
 						echo("<div class=spaceline></div>");
 					}
 				}else{
-					$phar=new PharData($filename, RecursiveDirectoryIterator::SKIP_DOTS);
-					#$phar=$phar->extractTo($MS_SYSTEM_ROOT,null,true);
-					$phar=$phar->extractTo('.',null,true);
+					$filename2=str_replace('.gz','',$filename);
+					if (file_exists($filename2)){
+						unlink($filename2);
+					}
+					$phar=new PharData($filename);
+					$phar=$phar->decompress();
+					$phar2=new PharData($filename2, RecursiveDirectoryIterator::SKIP_DOTS);
+					$phar2=$phar2->extractTo($MS_SYSTEM_ROOT,null,true);
+					if (file_exists($filename2)){
+						unlink($filename2);
+					}
 					$allok=true;
 				}
 			}
@@ -83,7 +90,7 @@ if ((!file_exists($MS_FILE))or(!file_exists($MS_FILE2))){
 				# restore screen
 				echo("<div class=spaceline></div>");
 				echo("<div class=spaceline></div>");
-				echo("$L_ENDSCREEN_MESSAGE");
+				echo("$L_ENDSCREEN_RESTMESSAGE");
 				echo("<div class=spaceline></div>");
 				echo("<div class=spaceline></div>");
 			}
@@ -96,7 +103,7 @@ if ((!file_exists($MS_FILE))or(!file_exists($MS_FILE2))){
 		}
 
 		echo("<div style=\"width:100%;text-align:center;\">");
-		echo("<a href='javascript:history.back()'><input class='inputsubmit red air inputsubmit40' type='submit' id='submitstart3' name='submitstart3' value='$L_BUTTON_BACK'></a>");
+		echo("<a href='javascript:history.back()'><input class='inputsubmit red air inputsubmit40' type='submit' id='submitstart3' name='submitstart3' value='$L_BUTTON_RESTBACK'></a>");
 		echo("<a href='$MS_SITE_HOME'><input class='inputsubmit air inputsubmit40' type='submit' id='submitc' name='submitc' value='$L_BUTTON_END'></a>");
 		echo("</div>");
 
@@ -108,7 +115,7 @@ if ((!file_exists($MS_FILE))or(!file_exists($MS_FILE2))){
 	if (isset($_POST["submitupload"])){
 		$startpage=true;
 		$ok=true;
-		$target_file=$MS_CONFIG_DIR.DS.basename($_FILES["fileup"]["name"]);
+		$target_file=basename($_FILES["fileup"]["name"]);
 		// Check if file already exists
 		if (file_exists($target_file)) {
 			unlink($target_file);

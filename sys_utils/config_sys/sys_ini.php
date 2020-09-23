@@ -52,11 +52,11 @@ $L_BUTTON_RESTORE="Visszaállítás";
 $L_BUTTON_CLEAN="Régi mentések törlése";
 $L_BUTTON_UPLOAD="Mentésfájlok feltöltése";
 $L_BUTTON_UPLOAD_SELECT_FILE="Fájl választás a feltöltéshez";
-$L_BUTTON_BACK="Vissza";
+$L_BUTTON_RESTBACK="Vissza, folytatás";
 
 $L_FILE_ERROR="Adatfájl nem található.";
 $L_STARTSCREEN_MESSAGE="Visszaállítás korábbi mentésből.";
-$L_ENDSCREEN_MESSAGE="Visszaállítás történt a rendszerről.";
+$L_ENDSCREEN_RESTMESSAGE="Visszaállítás történt a rendszerről.";
 $L_SQLCONFIG_ERROR="SQL beállítások  nem találhatók.";
 $L_FILE_UPLOAD_OK="A fájl feltöltve.";
 $L_FILE_UPLOAD_ERROR="A fájl feltöltése nem sikerült";

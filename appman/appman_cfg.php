@@ -27,6 +27,9 @@ $AM_LANGFILE="appman_hu.php";
 $AM_VERSION_DIR="config";
 $AM_VERSION_FILE="version";
 
+# saved file extension
+$AM_SAVED_FILEEXT=".old";
+
 # system config file
 $AM_APPMAN_CONFIG="config.php";
 $AM_SYSCONFIG_DIR="config";

@@ -23,7 +23,7 @@ $MS_VERSION_FILE="version";
 $MS_ALWAYS_INSTALL=true;
 
 # install app home
-$MS_SOURCE_URL="http://localhost/~peter/minisys/update";
+$MS_SOURCE_URL="http://localhost/~peter/www/minisys/sys_utils/update";
 
 # language
 $L_SITENAME="Teszt frissítő";
@@ -107,7 +107,10 @@ if ((!isset($_POST["submitstart1"]))and(!$MS_AUTOSTART)){
 		echo("<div class=spaceline></div>");
 		echo("<div class=spaceline></div>");
 	}
-	echo("<a href='javascript:history.back()'><input class='inputsubmit red' type='submit' id='submitstart3' name='submitstart3' value='$L_BUTTON_STOP'></a>");
+	#echo("<a href='javascript:history.back()'><input class='inputsubmit red' type='submit' id='submitstart3' name='submitstart3' value='$L_BUTTON_STOP'></a>");
+	echo("<a onclick='document.location.href=\"/\";return false;' >");
+	echo("<input class='inputsubmit red' type='submit' id='submitstart3' name='submitstart3' value='$L_BUTTON_STOP'>");
+	echo("</a>");
 }
 
 if ((isset($_POST["submitstart1"]))or($MS_AUTOSTART)){
@@ -142,8 +145,7 @@ if ((isset($_POST["submitstart1"]))or($MS_AUTOSTART)){
 		if (file_exists($fdest2)){
 			unlink($fdest2);
 		}
-		$data=file_get_contents($file2);
-		file_put_contents($fdest2, $data);
+		copy($file2,$fdest2);
 		if (substr($fdest2,strlen($fdest2)-strlen($MS_PHP_FILE_EXTENSION),strlen($MS_PHP_FILE_EXTENSION))==$MS_PHP_FILE_EXTENSION){
 			$of=str_replace($MS_PHP_FILE_EXTENSION,'',$fdest2);
 			rename($fdest2,$of);
@@ -156,12 +158,19 @@ if ((isset($_POST["submitstart1"]))or($MS_AUTOSTART)){
 			$phar=new PharData($fdest2);
 			$phar=$phar->decompress();
 			$phar2=new PharData($out_file_name);
-			$phar2=$phar2->extractTo($fdest,null,true);
+			#$phar2=$phar2->extractTo($fdest,null,true);
+			$phar2=$phar2->extractTo(".",null,true);
 		}
 		if (substr($fdest2,strlen($fdest2)-4,4)==".tar"){
 			// unarchive from the tar
 			$phar2=new PharData($fdest2);
-			$phar2=$phar2->extractTo($fdest,null,true);
+			$phar2=$phar2->extractTo(".",null,true);
+		}
+		if (file_exists($out_file_name)){
+			unlink($out_file_name);
+		}
+		if (file_exists($fdest2)){
+			unlink($fdest2);
 		}
 	}
 	echo("<div class=spaceline></div>");
@@ -169,7 +178,10 @@ if ((isset($_POST["submitstart1"]))or($MS_AUTOSTART)){
 	echo("	$L_STEP2_MESSAGE");
 	echo("<div class=spaceline></div>");
 	echo("<div class=spaceline></div>");
-	echo("<a href='$MS_SITE_HOME'><input class='inputsubmit' type='submit' id='submitstart3' name='submitstart3' value='$L_BUTTON_END'></a>");
+	#echo("<a href='$MS_SITE_HOME'><input class='inputsubmit' type='submit' id='submitstart3' name='submitstart3' value='$L_BUTTON_END'></a>");
+	echo("<a onclick='document.location.href=\"/\";return false;' >");
+	echo("<input class='inputsubmit' type='submit' id='submitstart3' name='submitstart3' value='$L_BUTTON_END'>");
+	echo("</a>");
 }
 
 echo("<script>");
@@ -322,6 +334,7 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-decoration:none;
 }
 
 input[type=submit]:hover {

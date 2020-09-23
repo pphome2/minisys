@@ -22,19 +22,29 @@ echo("<div class;='content' id='content'>");
 
 echo("<div class=spaceline></div>");
 echo("<div class=spaceline></div>");
-echo("<a href='$MS_BACKUP_SYS'><input class='inputsubmit' type='submit' id='submitmbackup' name='submitmbackup' value='$L_BUTTON_BACKUP'></a>");
+echo("<a href='$MS_BACKUP_SYS'>");
+echo("<input class='inputsubmit' type='submit' id='submitbackup' name='submitbackup' value='$L_BUTTON_BACKUP'>");
+echo("</a>");
 
 echo("<div class=spaceline></div>");
 echo("<div class=spaceline></div>");
-echo("<a href='$MS_RESTORE_SYS'><input class='inputsubmit' type='submit' id='submitmrestore' name='submitmrestore' value='$L_BUTTON_RESTORE'></a>");
+echo("<a href='$MS_RESTORE_SYS'>");
+echo("<input class='inputsubmit' type='submit' id='submitrestore' name='submitrestore' value='$L_BUTTON_RESTORE'>");
+echo("</a>");
+
 
 echo("<div class=spaceline></div>");
 echo("<div class=spaceline></div>");
-echo("<a href='$MS_CONFIG_SYS'><input class='inputsubmit' type='submit' id='submitmconfig' name='submitmconfig' value='$L_BUTTON_CONFIG'></a>");
+echo("<a href='$MS_CONFIG_SYS'>");
+echo("<input class='inputsubmit' type='submit' id='submitconfig' name='submitconfig' value='$L_BUTTON_CONFIG'>");
+echo("</a>");
 
-echo("<div class=spaceline></div>");
-echo("<div class=spaceline></div>");
-echo("<a href='$MS_SITE_ROOT_HOME'><input class='inputsubmit' type='submit' id='submitmexit' name='submitmexit' value='$L_BUTTON_END'></a>");
+
+echo("<div class=spaceline100></div>");
+echo("<a onclick='document.location.href=\"/\";return false;' >");
+echo("<input class='inputsubmit red' type='submit' id='submitexit' name='submitexit' value='$L_BUTTON_END'>");
+echo("</a>");
+
 
 
 echo("<div class=spaceline></div>");
