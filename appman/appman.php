@@ -42,9 +42,6 @@ if (file_exists($APP_URL.$AM_LANGFILE)){
 </header>
 	<div class="content">
 		<div class="card">
-			<div class="card-header topleftmenu1"></div>
-			<div class="cardbody" id="cardbodyf">
-				<div class="insidecontent">
 
 
 <?php
@@ -79,10 +76,14 @@ function cpdecomp($src,$dest){
 
 # config local app
 function sysconfig(){
-	global $sysconfig,$AM_SAVED_FILEEXT,
+	global $sysconfig,$AM_SAVED_FILEEXT,$AM_COPY_OLDCONFIG,
 		$L_DATA_SAVED,$L_DATA_OLD,$L_DATA_ERROR,
-		$L_START_BUTTON,$L_SAVE_BUTTON,$L_CONFIG_NOFILE;
+		$L_START_BUTTON,$L_SAVE_BUTTON,$L_CONFIG_NOFILE,
+		$L_CONFIG,$L_NEWCONFIG;
 
+	echo("<div class=\"card-header topleftmenu1\">$L_CONFIG</div>");
+	echo("<div class=\"cardbody\" id=\"cardbodyf\"><div class=\"insidecontent\">");
+	$olddata=array();
 	if (file_exists($sysconfig)){
 		$aktconf=explode(PHP_EOL,file_get_contents($sysconfig));
 		$db=count($aktconf);
@@ -126,7 +127,19 @@ function sysconfig(){
 			echo("<div class=spaceline></div>");
 			echo("$L_DATA_OLD ($d)");
 			echo("<div class=spaceline></div>");
-			echo("<div class=insidecontent>");
+			echo("<div class=row>");
+			echo("<div class=col2><div class=textright>");
+			$i=0;
+			foreach($oldconf as $l){
+				if ($l<>""){
+					$label=explode("#",$l);
+					$label[1]=vinput($label[1]);
+					echo("$label[1]<br />");
+				}
+			}
+			echo("</div></div>");
+			echo("<div class=col2><div class=textleft>");
+			$i=0;
 			foreach($oldconf as $l){
 				if ($l<>""){
 					$label=explode("#",$l);
@@ -138,14 +151,23 @@ function sysconfig(){
 					}else{
 						$data[1]=substr($data[1],0,strlen($data[1])-1);
 					}
-					echo("$label[1] = $data[1]<br />");
+					$olddata[$i]=$data[1];
+					$i++;
+					echo("$data[1]<br />");
 				}
 			}
+			echo("</div></div>");
 			echo("</div>");
+			echo("<div class=spaceline></div>");
 		}
 		echo("<div class=spaceline></div>");
+		echo("$L_NEWCONFIG");
+		echo("<div class=spaceline></div>");
+		echo("<div class=row>");
+		echo("<div class=colx>");
 		echo("<form method=POST>");
 		$i=0;
+		$k=0;
 		foreach($aktconf as $l){
 			if ($l<>""){
 				$label=explode("#",$l);
@@ -159,6 +181,10 @@ function sysconfig(){
 				}
 				echo("$label[1]");
 				echo("<input id=\"$i-1\" name=\"$i-1\" type=hidden value=\"$data[0]\">");
+				if ($AM_COPY_OLDCONFIG){
+					$data[1]=$olddata[$k];
+					$k++;
+				}
 				echo("<input id=\"$i-2\" name=\"$i-2\" type=text value=\"$data[1]\">");
 				echo("<input id=\"$i-3\" name=\"$i-3\" type=hidden value=\"$label[1]\">");
 				$i++;
@@ -166,6 +192,7 @@ function sysconfig(){
 		}
 		echo("<input type=submit id=submitconf name=submitconf value=\"$L_SAVE_BUTTON\">");
 		echo("</form>");
+		echo("</div></div>");
 	}else{
 		echo("<div class=spaceline></div>$L_CONFIG_NOFILE");
 		echo("<div class=spaceline></div>");
@@ -185,6 +212,7 @@ function sysconfig(){
 		echo("$L_START_BUTTON");
 		echo("</button></a>");
 	}
+	echo("</div></div>");
 }
 
 
@@ -192,8 +220,10 @@ function sysconfig(){
 function sysinstall(){
 	global $SOURCE_PACKAGE,$verfile,$versiondata,$AM_SAVED_FILEEXT,
 		$L_ERROR_COPY,$L_ERROR_INDEX,$L_START_APP,$L_START_BUTTON,
-		$L_BUTTON_END,$L_INSTALL_OK;
+		$L_BUTTON_END,$L_INSTALL_OK,$L_INSTALL;
 
+	echo("<div class=\"card-header topleftmenu1\">$L_INSTALL</div>");
+	echo("<div class=\"cardbody\" id=\"cardbodyf\"><div class=\"insidecontent\">");
 	$lf=basename($SOURCE_PACKAGE);
 	if (cpdecomp($SOURCE_PACKAGE,$lf)){
 		$f=basename($_SERVER['PHP_SELF']);
@@ -229,6 +259,7 @@ function sysinstall(){
 	echo("<a onclick='document.location.href=\"/\";return false;' >");
 	echo("<button class=card-button>$L_BUTTON_END</button>");
 	echo("</a>");
+	echo("</div></div>");
 }
 
 
@@ -256,9 +287,11 @@ function sysupdate(){
 		$L_ERROR_COPY,$L_ERROR_INDEX,$L_UPDATE_NO,$L_UPDATE_OK,
 		$L_BUTTON_END,$L_START_APP,$L_START_BUTTON,
 		$L_UPDATE_OLD,$L_UPDATE_NEW,$AM_SAVED_FILEEXT,
-		$L_UPDTAE_OLD,$L_UPDATE_NEW,
+		$L_UPDTAE_OLD,$L_UPDATE_NEW,$L_UPDATE,
 		$L_BUTTON_CONFIG,$AM_APPMAN_CONFIG;
 
+	echo("<div class=\"card-header topleftmenu1\">$L_UPDATE</div>");
+	echo("<div class=\"cardbody\" id=\"cardbodyf\"><div class=\"insidecontent\">");
 	$newver=file_time($SOURCE_PACKAGE);
 	$newver=date("Ymd",$newver);
 	echo("$L_UPDATE_OLD: $versiondata[1] - $L_UPDATE_NEW: $newver");
@@ -307,6 +340,7 @@ function sysupdate(){
 		echo("<button class=card-button>$L_BUTTON_END</button>");
 		echo("</a>");
 	}
+	echo("</div></div>");
 }
 
 
@@ -335,8 +369,6 @@ if (isset($CONFIGFILE)){
 
 ?>
 
-				</div>
-			</div>
 		</div>
 	</div>
 <footer>

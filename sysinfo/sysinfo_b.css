@@ -2,6 +2,8 @@
 body {
 	margin:0px;
 	font-size:16px;
+	color: lightgrey;
+	background-color: black;
 }
 
 a {
@@ -34,10 +36,8 @@ a {
 header, footer {
 	margin: 0;
 	padding: 0;
-	background-color: #333;
 	display: block;
 	color: white;
-	padding-left: 20px;
 	cursor:default;
 }
 
@@ -49,15 +49,6 @@ p a{
 	text-decoration: none;
 }
 
-.padleft {
-	padding-left: 20px;
-}
-
-.cookietext {
-	padding-left: 20px;
-	font-size: 0.8em;
-	text-align: center;
-}
 
 ul {
 	list-style-type: none;
@@ -71,7 +62,7 @@ li {
 	float: left;
 }
 
-li a, .dropbtn, .title{
+li a, .dropbtn. .title{
 	display: inline-block;
 	color: white;
 	text-align: center;
@@ -91,12 +82,12 @@ li a:hover, .dropdown:hover .dropbtn {
 
 @media screen (max-width: 2900px) {
 	ul.sidenav {
-		width: 100%;
+	width: 100%;
 		height: auto;
 		position: relative;
 	}
 	ul.sidenav li a {
-		float: left;
+	float: left;
 		padding: 15px;
 	}
 	div.content {
@@ -117,12 +108,12 @@ li:last-child {
 }
 
 .message {
-	position:relative;
-	display:block;
-	padding:10px;
-	background-color:red;
-	color:white;
-	cursor:default;
+	position: relative;
+	display: block;
+	padding: 20px;
+	background-color: red;
+	color: white;
+	cursor: default;
 }
 
 .message_error {
@@ -182,15 +173,19 @@ li:last-child {
 	color:white;
 	font-size:1.3em;
 	cursor: default;
-	border-radius: 5px 5px 0px 0px;
+	border-radius: 5px;
 }
 
 .card-body {
-	padding:10px;
-	border-radius: 0px 0px 5px 5px;
+	padding:20px;
 }
 
-.card p h2 {
+.cardbody {
+	border: 1px solid;
+	border-color: #2196F3;
+	border-radius: 5px;
+}
+.card p h2{
 	padding:10px;
 }
 
@@ -209,11 +204,12 @@ li:last-child {
 	cursor: pointer;
 }
 
-
 input[type=text], select {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
+	background-color:dimgrey;
+	color:white;
 	display: inline-block;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -224,6 +220,8 @@ input[type=password], select {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
+	background-color:dimgrey;
+	color:white;
 	display: inline-block;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -231,6 +229,17 @@ input[type=password], select {
 }
 
 input[type=submit] {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.inputbutton {
 	width: 100%;
 	background-color: #4CAF50;
 	color: white;
@@ -249,6 +258,7 @@ input[type=submit]:hover {
 	width: 20%;
 	border: 1px solid;
 }
+
 
 .spaceline {
 	padding-top:25px;
@@ -319,29 +329,3 @@ input[type=submit]:hover {
 .colcontent{
 	padding:5px;
 }
-
-.upload-btn-wrapper {
-	width:100%;
-	position: relative;
-	display: inline-block;
-}
-
-.upload-btn {
-	color: white;
-	border-radius: 4px;
-	border: none;
-	text-decoration: none;
-	width: 100%;
-	background-color: #4CAF50;
-	padding: 15px;
-	font-size:0.9em;
-	cursor: pointer;
-}
-
-.upload-btn-wrapper input[type=file] {
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0;
-}
-

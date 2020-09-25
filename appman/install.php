@@ -8,7 +8,7 @@
  #
 
 
-$SOURCE_PACKAGE="http://localhost/~peter/www/minisys/appman/files/mininote.tar.gz";
+$SOURCE_PACKAGE="http://localhost/~peter/www/minisys/appman/files/mini.tar.gz";
 
 $APP_FILE=array("appman.tar.gz","http://localhost/~peter/www/minisys/appman/files/appman.tar.gz");
 $APP_DIR="appman";
@@ -41,6 +41,10 @@ if (copy($APP_FILE[1],$APP_FILE[0])){
 	unlink($f2);
 }
 
-include("appman.php");
+if (file_exists("appman.php")){
+	include("appman.php");
+}else{
+	echo("Error!");
+}
 
 ?>
