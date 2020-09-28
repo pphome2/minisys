@@ -38,6 +38,7 @@ $AM_SAVED_FILEEXT=".old";
 $AM_APPMAN_CONFIG="config.php";
 $AM_SYSCONFIG_DIR="config";
 $AM_SYSCONFIG_FILE="config_sys.php";
+$AM_CONFIG_GET_PARAM="f";
 
 # copy old config data to updated
 $AM_COPY_OLDCONFIG=true;

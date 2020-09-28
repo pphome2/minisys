@@ -50,6 +50,17 @@ Frissítés az AppMan alkönyvtárban lévő `update.php` indításával lehets�
 A frissítés végeztével javíthatjuk a beállításokat. A korábbi beállításokat
 a frissítő program elmenti és az új beállítások megadásánál megjeleníti.
 
+A a beállítások kezelése telepítés, frissítés után indítható. De a `config.php`
+önállóan is indítható és kezelhetőek a beállítások. Lehetőség van a rendszernek
+eleve megadott beállításfájlon kívül egyedileg megadott fájl kezelésére is:
+`config.php?f=config/sajat.php`. Ekkor a megadott fájl kerül feldolgozásra.
+A fájl megadásánál a telepítés alapkönyvtárából kell kiindulni, nem kell az
+`appman` könyvtárhoz viszonyított elérési út.
+
+A beállításfájl tartalma: `$mezőnév="szöveg"; # Cím`, soronként. A cím jelenik
+meg a képrenyőn, a `szöveg` módosítható.
+
+
 ### Mentés, visszaállítás
 
 Mentés az AppMan jönyvtárában lévő `backup.php` program segítségével lehetséges.

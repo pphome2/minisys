@@ -354,6 +354,12 @@ $versiondata=array();
 chdir("..");
 
 if (isset($CONFIGFILE)){
+	if (isset($_GET[$AM_CONFIG_GET_PARAM])){
+		$sysconfig=$_GET[$AM_CONFIG_GET_PARAM];
+	}
+	if ($AM_COPY_OLDCONFIG){
+		$AM_COPY_OLDCONFIG=false;
+	}
 	sysconfig();
 }else{
 	if (!file_exists($verfile)){

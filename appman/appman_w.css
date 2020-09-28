@@ -128,7 +128,7 @@ li:last-child {
 .message_error {
 	position:relative;
 	display:block;
-	padding:0px;
+	padding:15px;
 	background-color:red;
 	color:white;
 	cursor:default;
@@ -139,7 +139,7 @@ li:last-child {
 .message_ok {
 	position:relative;
 	display:block;
-	padding:0px;
+	padding:15px;
 	background-color:lightgreen;
 	color:black;
 	cursor:default;
