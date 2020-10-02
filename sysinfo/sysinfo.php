@@ -153,7 +153,9 @@ function formatBytes($size, $precision=2){
 		$output=file_get_contents($SI_OTHER_SYSTEM_DATA_FILE);
 		$out=explode(PHP_EOL,$output);
 		foreach($out as $l){
-			echo($l."<br />");
+			if (!empty($l)){
+				echo($l."<br />");
+			}
 		}
 	}
 	echo("</td></tr>");
@@ -172,7 +174,7 @@ function formatBytes($size, $precision=2){
 	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
 
 <?php
-	$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' /var/log/messages | grep -i \'fatal\|error\|critical\' ');
+	$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' '.$SI_LOGFILE.' | grep -i \'fatal\|error\|critical\' ');
 	$out=explode(PHP_EOL,$output);
 	$out=array_reverse($out);
 	$d="";
@@ -183,7 +185,9 @@ function formatBytes($size, $precision=2){
 				echo("<b>$d</b><br />");
 			}
 			$l=substr($l,6,strlen($l));
-			echo($l."<br />");
+			if (!empty($l)){
+				echo($l."<br />");
+			}
 		}
 	}
 ?>
@@ -198,7 +202,7 @@ function formatBytes($size, $precision=2){
 	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
 
 <?php
-	$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' /var/log/messages | grep -i warning');
+	$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' '.$SI_LOGFILE.' | grep -i warning');
 	#echo($output);
 	$out=explode(PHP_EOL,$output);
 	$out=array_reverse($out);
@@ -210,7 +214,9 @@ function formatBytes($size, $precision=2){
 				echo("<b>$d</b><br />");
 			}
 			$l=substr($l,6,strlen($l));
-			echo($l."<br />");
+			if (!empty($l)){
+				echo($l."<br />");
+			}
 		}
 	}
 ?>
@@ -224,7 +230,7 @@ function formatBytes($size, $precision=2){
 	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
 
 <?php
-	$output=shell_exec('tail -'.$SI_LOG_SEARCH_NORMAL_LINES.' /var/log/messages');
+	$output=shell_exec('tail -'.$SI_LOG_SEARCH_NORMAL_LINES.' '.$SI_LOGFILE);
 	$out=explode(PHP_EOL,$output);
 	$out=array_reverse($out);
 	$d="";
@@ -235,7 +241,9 @@ function formatBytes($size, $precision=2){
 				echo("<b>$d</b><br />");
 			}
 			$l=substr($l,6,strlen($l));
-			echo($l."<br />");
+			if (!empty($l)){
+				echo($l."<br />");
+			}
 		}
 	}
 	
@@ -257,7 +265,9 @@ function formatBytes($size, $precision=2){
 		$output=file_get_contents($SI_OTHER_LOG_DATA_FILE);
 		$out=explode(PHP_EOL,$output);
 		foreach($out as $l){
-			echo($l."<br />");
+			if (!empty($l)){
+				echo($l."<br />");
+			}
 		}
 ?>
 

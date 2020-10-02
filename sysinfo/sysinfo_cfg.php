@@ -25,6 +25,9 @@ $SI_CSS="sysinfo_w.css";
 # page refresh time in seconds
 $SI_REFRESH_TIME=60;
 
+# log file
+$SI_LOGFILE="/var/log/messages";
+
 # log line search
 $SI_LOG_SEARCH_BAD_LINES=4000;
 $SI_LOG_SEARCH_NORMAL_LINES=200;
