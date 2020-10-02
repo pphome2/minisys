@@ -74,7 +74,15 @@ mentésre.
 
 # SysInfo
 
-Fejlesztés alatt.
+A program lekérdezi a rendszeradatokat és megjeleníti a log-ban található hibákat,
+figyelmeztetéseket. A alapvető redszeradatok mellett lehetőség van időzítve shell 
+script segítségével adatfájlba rakni a megjeleníteni kívánt rendszer specifikus 
+adatokat. ('sysinfo_cfg.php' fájlban állítható)
+
+Ha nem elérhető a rendszerlog, akkor cron-val időzítve shell script segítségével
+lehet összeszedni a log-okat, a programnak pedig be lehet állítani mit tekint
+log-fájlnak. ('sysinfo_cfg.php' fájlban állítható) Emellett saját log fájl is 
+összeállítható megjelenítésre. ('sysinfo_cfg.php' fájlban állítható).
 
 
 
