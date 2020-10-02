@@ -148,6 +148,16 @@ function formatBytes($size, $precision=2){
 	echo($v[0]);
 	echo("</td></tr>");
 
+	if (file_exists($SI_OTHER_SYSTEM_DATA_FILE)){
+		echo("<tr><td class=td1>$L_SYSOTHER</td><td class=td2>");
+		$output=file_get_contents($SI_OTHER_SYSTEM_DATA_FILE);
+		$out=explode(PHP_EOL,$output);
+		foreach($out as $l){
+			echo($l."<br />");
+		}
+	}
+	echo("</td></tr>");
+
 	echo("</table>");
 
 ?>
@@ -210,7 +220,6 @@ function formatBytes($size, $precision=2){
 	</div>
 
 	<div class="card">
-
 	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_NORMAL); ?></div>
 	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
 
@@ -229,11 +238,35 @@ function formatBytes($size, $precision=2){
 			echo($l."<br />");
 		}
 	}
+	
 ?>
 
 	</div>
 	</div>
 	</div>
+
+<?php
+	if (file_exists($SI_OTHER_LOG_DATA_FILE)){
+?>
+
+	<div class="card">
+	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_LOGOTHER); ?></div>
+	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
+
+<?php
+		$output=file_get_contents($SI_OTHER_LOG_DATA_FILE);
+		$out=explode(PHP_EOL,$output);
+		foreach($out as $l){
+			echo($l."<br />");
+		}
+?>
+
+	</div>
+	</div>
+	</div>
+<?php
+	}
+?>
 
 	</div>
 <footer>

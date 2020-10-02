@@ -29,5 +29,11 @@ $SI_REFRESH_TIME=60;
 $SI_LOG_SEARCH_BAD_LINES=4000;
 $SI_LOG_SEARCH_NORMAL_LINES=200;
 
+# other system data (created by local shell script):
+$SI_OTHER_SYSTEM_DATA_FILE="sys.txt";
+
+# other log data (created by local shell script):
+$SI_OTHER_LOG_DATA_FILE="log.txt";
+
 
 ?>

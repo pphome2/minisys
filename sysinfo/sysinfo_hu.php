@@ -28,10 +28,13 @@ $L_OS="Szerver operációs rendszer";
 $L_WEBSERVER="Web szerver";
 $L_PHP="PHP verzió";
 $L_SQL="Mysql/MariaDB verzió";
+$L_SYSOTHER="Egyéb";
+
 $L_LOG="Rendszerüzenetek";
 $L_ERROR="Hiba";
 $L_WARNING="Figyelmeztetés";
 $L_NORMAL="Egyéb";
+$L_LOGOTHER="Egyéb log adatok";
 
 
 ?>
