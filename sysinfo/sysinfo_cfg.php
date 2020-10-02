@@ -22,5 +22,12 @@ $SI_LANGFILE="sysinfo_hu.php";
 # directories
 $SI_CSS="sysinfo_w.css";
 
+# page refresh time in seconds
+$SI_REFRESH_TIME=60;
+
+# log line search
+$SI_LOG_SEARCH_BAD_LINES=4000;
+$SI_LOG_SEARCH_NORMAL_LINES=200;
+
 
 ?>

@@ -1,7 +1,6 @@
 
 body {
 	margin:0px;
-	font-size:16px;
 	color: lightgrey;
 	background-color: black;
 }
@@ -19,13 +18,22 @@ a {
 
 
 .content {
-	margin:20px;
-	padding:20px;
+	margin-left:20px;
+	margin-right:20px;
 	flex: 1 0 auto;
 }
 
 .insidecontent {
 	padding:20px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+.insidecontent2 {
+	padding:20px;
+	margin-right:20px;
+	white-space:nowrap;
+	overflow:hidden;
 }
 
 .menu {
@@ -162,7 +170,6 @@ li:last-child {
 	display:block;
 	cursor:default;
 	clear:both;
-	font-size:0.8em;
 	margin-top:20px;
 	margin-bottom:20px;
 	box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);

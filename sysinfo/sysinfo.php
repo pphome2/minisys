@@ -20,10 +20,9 @@ if (file_exists($APP_URL.$SI_LANGFILE)){
 	include($APP_URL.$SI_LANGFILE);
 }
 
-header("Refresh:60");
+header("Refresh:$SI_REFRESH_TIME");
 
 ?>
-
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -66,8 +65,7 @@ function formatBytes($size, $precision=2){
 	}
 	$base=log($size, 1024);
 	$suffixes=array('b', 'Kb', 'Mb', 'Gb', 'Tb','Pb');
-	#return round(pow(1024,$base-floor($base)),$precision).' '.$suffixes[floor($base)];
-	return round(pow(1024,$base-floor($base)),$precision).' '.$suffixes[ceil($base)];
+	return round(pow(1024,$base-floor($base)),$precision).' '.$suffixes[floor($base)];
 }
 
 
@@ -98,14 +96,25 @@ function formatBytes($size, $precision=2){
 	echo("</td></tr>");
 
 	echo("<tr><td class=td1>$L_MEMORY</td><td class=td2>");
-	$free=shell_exec('free');
+	$free=shell_exec('free -b');
 	$free=(string)trim($free);
 	$free_arr=explode("\n",$free);
 	$mem=explode(" ",$free_arr[1]);
 	$mem=array_filter($mem);
 	$mem=array_merge($mem);
-	echo("összes: ".formatBytes($mem[1])."<br />szabad: ".formatBytes($mem[3]));
+	$perc=round($mem[1]/100,0);
+	$perc=round($mem[3]/$perc,0);
+	echo("$L_ALL: ".formatBytes($mem[1])." - $L_FREE: ".formatBytes($mem[3])." ($perc%)");
 	echo("</td></tr>");
+
+	echo("<tr><td class=td1>$L_DISK</td><td class=td2>");
+	$dt=disk_total_space('/');
+	$df=disk_free_space('/');
+	$perc=round($dt/100,0);
+	$perc=round($df/$perc,0);
+	echo("$L_ALL: ".formatBytes($dt)." - $L_FREE: ".formatBytes($df)." ($perc%)");
+	echo("</td></tr>");
+
 	echo("<tr><td class=td1>$L_UPTIME</td><td class=td2>");
 	#echo(shell_exec("uptime -p"));
 	$str=@file_get_contents('/proc/uptime');
@@ -146,18 +155,53 @@ function formatBytes($size, $precision=2){
 	</div>
 	</div>
 	</div>
-	
+
 	<div class="card">
 
 	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_ERROR); ?></div>
-	<div class="cardbody" id="cardbodyf"><div class="insidecontent">
+	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
 
 <?php
-	$output=shell_exec('tail -2000 /var/log/messages | grep -i \'fatal\|error\|critical\' ');
+	$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' /var/log/messages | grep -i \'fatal\|error\|critical\' ');
 	$out=explode(PHP_EOL,$output);
 	$out=array_reverse($out);
+	$d="";
 	foreach($out as $l){
-		echo($l."<br />");
+		if ($l<>""){
+			if ($d<>substr($l,0,6)){
+				$d=substr($l,0,6);
+				echo("<b>$d</b><br />");
+			}
+			$l=substr($l,6,strlen($l));
+			echo($l."<br />");
+		}
+	}
+?>
+
+	</div>
+	</div>
+	</div>
+
+
+	<div class="card">
+	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_WARNING); ?></div>
+	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
+
+<?php
+	$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' /var/log/messages | grep -i warning');
+	#echo($output);
+	$out=explode(PHP_EOL,$output);
+	$out=array_reverse($out);
+	$d="";
+	foreach($out as $l){
+		if ($l<>""){
+			if ($d<>substr($l,0,6)){
+				$d=substr($l,0,6);
+				echo("<b>$d</b><br />");
+			}
+			$l=substr($l,6,strlen($l));
+			echo($l."<br />");
+		}
 	}
 ?>
 
@@ -166,16 +210,24 @@ function formatBytes($size, $precision=2){
 	</div>
 
 	<div class="card">
-	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_WARNING); ?></div>
-	<div class="cardbody" id="cardbodyf"><div class="insidecontent">
+
+	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_NORMAL); ?></div>
+	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
 
 <?php
-	$output=shell_exec('tail -2000 /var/log/messages | grep -i warning');
-	#echo($output);
+	$output=shell_exec('tail -'.$SI_LOG_SEARCH_NORMAL_LINES.' /var/log/messages');
 	$out=explode(PHP_EOL,$output);
 	$out=array_reverse($out);
+	$d="";
 	foreach($out as $l){
-		echo($l."<br />");
+		if ($l<>""){
+			if ($d<>substr($l,0,6)){
+				$d=substr($l,0,6);
+				echo("<b>$d</b><br />");
+			}
+			$l=substr($l,6,strlen($l));
+			echo($l."<br />");
+		}
 	}
 ?>
 
