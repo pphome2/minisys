@@ -82,12 +82,12 @@ function formatBytes($size, $precision=2){
 	echo("</td></tr>");
 
 	echo("<tr><td class=td1>$L_CPU</td><td class=td2>");
-	$out=file("/proc/cpuinfo");
-	$out=explode(":",$out[4]);
-	echo($out[1]);
+	$out=trim(shell_exec("grep -P 'model name' /proc/cpuinfo"));
+	$out2=explode(PHP_EOL,$out);
+	$out2=explode(":",$out2[0]);
+	echo($out2[1]);
 	echo("</td></tr>");
 
-	$core_nums=trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l"));
 	echo("<tr><td class=td1>$L_CPU2</td><td class=td2>");
 	$loads=sys_getloadavg();
 	$core_nums=trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l"));
