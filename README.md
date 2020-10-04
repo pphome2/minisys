@@ -79,10 +79,19 @@ figyelmeztetéseket. A alapvető redszeradatok mellett lehetőség van időzítv
 script segítségével adatfájlba rakni a megjeleníteni kívánt rendszer specifikus 
 adatokat. ('sysinfo_cfg.php' fájlban állítható)
 
-Ha nem elérhető a rendszerlog, akkor cron-val időzítve shell script segítségével
+Nem elérhető a rendszerlog esetén, `cron` időzítővel és shell script segítségével
 lehet összeszedni a log-okat, a programnak pedig be lehet állítani mit tekint
-log-fájlnak. ('sysinfo_cfg.php' fájlban állítható) Emellett saját log fájl is 
-összeállítható megjelenítésre. ('sysinfo_cfg.php' fájlban állítható).
+log-fájlnak. ('sysinfo_cfg.php' fájlban állítható) Alapértelmezetten webes felhasználó
+nem olvashatja a log fájlokat. Biztosági okokból nem adunk plusz jogokat sem a webes
+felhasználónak, sem pedig a rendszerkönyvtáraknak. (Pl.: `/etc/cron.d` könyvtárba egy
+`log` nevű fájlt elhelyezni, melynek tartalma: 
+`*/5 * * * *     root   /usr/bin/tail -2000 /var/log/syslog > /var/www/html/sysinfo/messages`
+Így 5 percenként a syslog utolsó sorairól másolat kerül a SysInfo program könyvtárába és
+meg tudja azt jeleníteni. )
+
+Emellett saját log fájl is összeállítható megjelenítésre. ('sysinfo_cfg.php' 
+fájlban állítható). Ez a lehetőség akkor hasznos, ha több nem rendszer vagy külön 
+kezelt log fájlt akarunk megfigyelni. (pl: Apache, MariaDB...)
 
 
 
