@@ -28,9 +28,9 @@ $MA_COOKIE_PASSWORD="passw";
 $MA_COOKIE_TIME="ltime";
 
 # include files
-$MA_ADMINFILE="start.php";
-$MA_PRIVACY="privacy.php";
-$MA_PRINTFILE="print.php";
+$MA_ADMINFILE="start.html";
+$MA_PRIVACY="privacy.html";
+$MA_PRINTFILE="print.html";
 $MA_CSS=array(
 			"$MA_INCLUDE_DIR/sitew.css",
 			"$MA_INCLUDE_DIR/siteb.css"
@@ -54,6 +54,9 @@ $MA_LANGFILE="hu.php";
 # search
 $MA_SEARCH_ICON_HREF="search.php";
 $MA_SEARCH_ICON_JS="";
+
+# mobile screen detected
+$MA_MOBILE=false;
 
 # other variables
 $MA_NOPAGE=false;

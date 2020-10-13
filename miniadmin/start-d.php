@@ -8,13 +8,13 @@
  #
 
 
-# load config 
+# load config
 if (file_exists("config/config.php")){
 	include("config/config.php");
 }
 
 echo($MA_DOCTYPE);
- 
+
 for ($i=0;$i<count($MA_LIB);$i++){
 	if (file_exists("$MA_LIB[$i]")){
 		include("$MA_LIB[$i]");
