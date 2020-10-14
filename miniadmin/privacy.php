@@ -19,18 +19,19 @@ for ($i=0;$i<count($MA_LIB);$i++){
 	}
 }
 
+mobiledevice();
 
-# build page
-echo("<html>");
-echo("<head>");
-echo("<title>$MA_SITENAME</title><style>");
-include("$MA_CSSPRINT");
-echo("</style>");
-echo("<head>");
-echo("<body onclick=\"window.close();\">");
+$MA_PRIVACY_PAGE=true;
+
+# cookies or param 
+setcss();
+
+# page build
+page_header();
 
 
-# load local app file
+
+# privacy data to screen
 
 $MA_NOPAGE=true;
 
@@ -38,15 +39,18 @@ if (file_exists("$MA_APPFILE")){
 	include("$MA_APPFILE");
 }
 
-if (function_exists("printpage")){
-	printpage();
+if (function_exists("privacypage")){
+	privacypage();
 }
+
+button_back();
 
 # end
 
-echo("<script>window.print();</script>");
 
-echo("</body>");
-echo("</html>");
+
+# page end
+page_footer();
+	
 
 ?>

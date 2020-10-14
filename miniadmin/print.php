@@ -13,14 +13,13 @@ if (file_exists("config/config.php")){
 	include("config/config.php");
 }
 
-$MA_MOBILE=true;
-
 for ($i=0;$i<count($MA_LIB);$i++){
 	if (file_exists("$MA_LIB[$i]")){
 		include("$MA_LIB[$i]");
 	}
 }
 
+mobiledevice();
 
 # build page
 echo("<html>");

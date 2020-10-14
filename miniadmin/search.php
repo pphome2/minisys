@@ -7,7 +7,6 @@
  #
  #
 
-
 # load config
 if (file_exists("config/config.php")){
 	include("config/config.php");
@@ -19,8 +18,7 @@ for ($i=0;$i<count($MA_LIB);$i++){
 	}
 }
 
-
-$MA_PRIVACY_PAGE=true;
+mobiledevice();
 
 # cookies or param 
 setcss();
@@ -38,8 +36,8 @@ if (file_exists("$MA_APPFILE")){
 	include("$MA_APPFILE");
 }
 
-if (function_exists("privacypage")){
-	privacypage();
+if (function_exists("searchpage")){
+	searchpage();
 }
 
 button_back();

@@ -21,6 +21,8 @@ for ($i=0;$i<count($MA_LIB);$i++){
 	}
 }
 
+mobiledevice();
+
 # css setting
 setcss();
 
