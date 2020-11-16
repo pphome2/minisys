@@ -30,11 +30,13 @@ $L_PHP="PHP verzió";
 $L_SQL="Mysql/MariaDB verzió";
 $L_SYSOTHER="Egyéb";
 
-$L_LOG="Rendszerüzenetek";
 $L_ERROR="Hiba";
 $L_WARNING="Figyelmeztetés";
 $L_NORMAL="Egyéb";
-$L_LOGOTHER="Egyéb log adatok";
 
+$L_MESSAGES="Rendszerüzenetek";
+$L_APACHE="Apache web szerver";
+$L_MARIADB="MariaDB adatbáziskezelő";
+$L_MAIL="Levelezés";
 
 ?>

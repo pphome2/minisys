@@ -1,0 +1,200 @@
+Nov 16 13:19:28 debian colord[644]: failed to get session [pid 14566]: Nincs elérhető adat
+Nov 16 13:19:28 debian colord[644]: failed to get session [pid 14566]: Nincs elérhető adat
+Nov 16 13:19:32 debian colord[644]: failed to get session [pid 14566]: Nincs elérhető adat
+Nov 16 13:19:32 debian colord[644]: failed to get session [pid 14566]: Nincs elérhető adat
+Nov 16 13:19:32 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:19:32 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:19:32 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:19:32 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:19:57 debian evolution.desktop[2360]: Reading RSS articles...
+Nov 16 13:19:57 debian evolution[2360]: Source ID 118065 was not found when attempting to remove it
+Nov 16 13:19:57 debian evolution.desktop[2360]: feed Hírek és cikkek - Mobilarena
+Nov 16 13:19:57 debian evolution.desktop[2360]: feed PC World Online Hírek
+Nov 16 13:19:57 debian evolution.desktop[2360]: feed Computerworld Online Hírek
+Nov 16 13:19:57 debian evolution.desktop[2360]: feed HUP
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:19 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:21:31 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:32 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:33 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:33 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:33 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:33 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:33 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:33 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:33 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:33 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:51 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:51 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:26:51 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:28:45 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:29:09 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:29:09 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:29:09 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:29:09 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:29:09 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:29:09 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:29:09 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:29:57 debian evolution.desktop[2360]: Reading RSS articles...
+Nov 16 13:29:57 debian evolution[2360]: Source ID 120777 was not found when attempting to remove it
+Nov 16 13:29:57 debian evolution.desktop[2360]: feed Hírek és cikkek - Mobilarena
+Nov 16 13:29:57 debian evolution.desktop[2360]: feed Computerworld Online Hírek
+Nov 16 13:29:57 debian evolution.desktop[2360]: feed PC World Online Hírek
+Nov 16 13:29:57 debian evolution.desktop[2360]: feed HUP
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:03 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:04 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:04 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:04 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:04 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:04 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:31:04 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:33:40 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:33:40 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:33:40 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:33:40 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:33:41 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:33:41 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:33:41 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:33:41 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:56 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:34:56 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:34:56 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:34:56 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:34:56 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:34:56 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:34:56 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:34:56 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:56 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:56 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:56 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:56 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:56 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14#012_init/id</this._laterId<@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:50:22
+Nov 16 13:34:59 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:59 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:59 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:59 debian gnome-shell[2166]: JS ERROR: Error: Argument width: value is out of range for gfloat#012_relayout@/usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/extension.js:97:14
+Nov 16 13:34:59 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:35:00 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:39:57 debian evolution.desktop[2360]: Reading RSS articles...
+Nov 16 13:39:57 debian evolution[2360]: Source ID 121916 was not found when attempting to remove it
+Nov 16 13:39:57 debian evolution.desktop[2360]: feed Hírek és cikkek - Mobilarena
+Nov 16 13:39:57 debian evolution.desktop[2360]: feed PC World Online Hírek
+Nov 16 13:39:57 debian evolution.desktop[2360]: feed Computerworld Online Hírek
+Nov 16 13:39:57 debian evolution.desktop[2360]: feed HUP
+Nov 16 13:42:31 debian /usr/libexec/gdm-x-session[2026]: (EE) event3  - Dell KB216 Wired Keyboard: client bug: event processing lagging behind by 21ms, your system is too slow
+Nov 16 13:42:42 debian /usr/libexec/gdm-x-session[2026]: (EE) event3  - Dell KB216 Wired Keyboard: client bug: event processing lagging behind by 37ms, your system is too slow
+Nov 16 13:49:57 debian evolution.desktop[2360]: Reading RSS articles...
+Nov 16 13:49:57 debian evolution[2360]: Source ID 122890 was not found when attempting to remove it
+Nov 16 13:49:57 debian evolution.desktop[2360]: feed Hírek és cikkek - Mobilarena
+Nov 16 13:49:57 debian evolution.desktop[2360]: feed Computerworld Online Hírek
+Nov 16 13:49:57 debian evolution.desktop[2360]: feed PC World Online Hírek
+Nov 16 13:49:57 debian evolution.desktop[2360]: feed HUP
+Nov 16 13:50:01 debian /usr/libexec/gdm-x-session[2026]: (EE) event3  - Dell KB216 Wired Keyboard: client bug: event processing lagging behind by 21ms, your system is too slow
+Nov 16 13:51:01 debian /usr/libexec/gdm-x-session[2026]: (EE) event3  - Dell KB216 Wired Keyboard: client bug: event processing lagging behind by 13ms, your system is too slow
+Nov 16 13:51:45 debian /usr/libexec/gdm-x-session[2026]: (EE) event3  - Dell KB216 Wired Keyboard: client bug: event processing lagging behind by 29ms, your system is too slow
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:36 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:37 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:37 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:37 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:37 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:37 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:37 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:37 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:37 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.
+Nov 16 13:53:50 debian gnome-shell[2166]: Can't update stage views actor StWidget is on because it needs an allocation.

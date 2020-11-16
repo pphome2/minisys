@@ -98,6 +98,16 @@ if (file_exists("$MA_CONFIG_DIR/$MA_LANGFILE")){
 }
 
 
+# shared settings with the web page (users, passwords, menu)
+$COMMON_CONFIG_FILE="";
+if (file_exists("$COMMON_CONFIG_FILE")){
+	include("$COMMON_CONFIG_FILE");
+}
+
+#
+#
+#
+
 # if not enable cookie support:
 # - all form need add this lines
 #

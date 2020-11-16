@@ -162,121 +162,58 @@ function formatBytes($size, $precision=2){
 
 	echo("</table>");
 
-?>
+	echo("</div>");
+	echo("</div>");
+	echo("</div>");
 
-	</div>
-	</div>
-	</div>
-
-	<div class="card">
-
-	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_ERROR); ?></div>
-	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
-
-<?php
-	$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' '.$SI_LOGFILE.' | grep -i \'fatal\|error\|critical\' ');
-	$out=explode(PHP_EOL,$output);
-	$out=array_reverse($out);
-	$d="";
-	foreach($out as $l){
-		if ($l<>""){
-			if ($d<>substr($l,0,6)){
-				$d=substr($l,0,6);
-				echo("<b>$d</b><br />");
+	foreach($SI_LOGFILES as $log){
+		echo("<div class='card'>");
+		echo("<div class='card-header topleftmenu1'>$log[0]</div>");
+		echo("<div class='cardbody' id='cardbodyf'><div class='insidecontent2'>");
+		for ($i=1;$i<=3;$i++){
+			switch($i){
+				case 1:
+					echo("<b>$L_ERROR</b><br />");
+					$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' '.$log[1].' | grep -i \'fatal\|error\|critical\' ');
+					break;
+				case 2:
+					echo("<b>$L_WARNING</b><br />");
+					$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' '.$log[1].' | grep -i \'warning\' ');
+					break;
+				case 3:
+					echo("<b>$L_NORMAL</b><br />");
+					$output=file_get_contents($log[1]);
+					break;
+				default:
+					break;
 			}
-			$l=substr($l,6,strlen($l));
-			if (!empty($l)){
-				echo($l."<br />");
+			$out=explode(PHP_EOL,$output);
+			$out=array_reverse($out);
+			$d="";
+			foreach($out as $l){
+				if ($l<>""){
+					if ((substr($l,0,1)<>"[")and(substr($l,2,1)<>" ")){
+						if ($d<>substr($l,0,6)){
+							$d=substr($l,0,6);
+							echo("<b>$d</b><br />");
+						}
+						$l=substr($l,6,strlen($l));
+						if (!empty($l)){
+							echo($l."<br />");
+						}
+					}else{
+						echo($l."<br />");
+					}
+				}
 			}
+			echo("<br />");
 		}
+		echo("</div>");
+		echo("</div>");
+		echo("</div>");
 	}
 ?>
 
-	</div>
-	</div>
-	</div>
-
-
-	<div class="card">
-	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_WARNING); ?></div>
-	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
-
-<?php
-	$output=shell_exec('tail -'.$SI_LOG_SEARCH_BAD_LINES.' '.$SI_LOGFILE.' | grep -i warning');
-	#echo($output);
-	$out=explode(PHP_EOL,$output);
-	$out=array_reverse($out);
-	$d="";
-	foreach($out as $l){
-		if ($l<>""){
-			if ($d<>substr($l,0,6)){
-				$d=substr($l,0,6);
-				echo("<b>$d</b><br />");
-			}
-			$l=substr($l,6,strlen($l));
-			if (!empty($l)){
-				echo($l."<br />");
-			}
-		}
-	}
-?>
-
-	</div>
-	</div>
-	</div>
-
-	<div class="card">
-	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_NORMAL); ?></div>
-	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
-
-<?php
-	$output=shell_exec('tail -'.$SI_LOG_SEARCH_NORMAL_LINES.' '.$SI_LOGFILE);
-	$out=explode(PHP_EOL,$output);
-	$out=array_reverse($out);
-	$d="";
-	foreach($out as $l){
-		if ($l<>""){
-			if ($d<>substr($l,0,6)){
-				$d=substr($l,0,6);
-				echo("<b>$d</b><br />");
-			}
-			$l=substr($l,6,strlen($l));
-			if (!empty($l)){
-				echo($l."<br />");
-			}
-		}
-	}
-	
-?>
-
-	</div>
-	</div>
-	</div>
-
-<?php
-	if (file_exists($SI_OTHER_LOG_DATA_FILE)){
-?>
-
-	<div class="card">
-	<div class="card-header topleftmenu1"><?php echo($L_LOG.": ".$L_LOGOTHER); ?></div>
-	<div class="cardbody" id="cardbodyf"><div class="insidecontent2">
-
-<?php
-		$output=file_get_contents($SI_OTHER_LOG_DATA_FILE);
-		$out=explode(PHP_EOL,$output);
-		foreach($out as $l){
-			if (!empty($l)){
-				echo($l."<br />");
-			}
-		}
-?>
-
-	</div>
-	</div>
-	</div>
-<?php
-	}
-?>
 
 	</div>
 <footer>
