@@ -189,13 +189,16 @@ function formatBytes($size, $precision=2){
 			$d="";
 			foreach($out as $l){
 				if ($l<>""){
+					# apache style log time format
 					if (substr($l,0,1)=="["){
 						echo($l."<br />");
 					}else{
 						$p=0;
+						# mariadb/mysql style log time format
 						if (substr($l,4,1)=="-"){
 							$p=10;
 						}else{
+							# linux style messages log file time format
 							if (substr($l,3,1)==" "){
 								$p=6;
 							}else{
