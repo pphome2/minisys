@@ -31,6 +31,9 @@ if (file_exists($SI_LANGFILE)){
 	include($SI_LANGFILE);
 }
 
+# other info for server
+$SI_OTHER_SYSTEM_DATA_FILE="sys.txt";
+
 # log file
 $SI_LOGFILES=array(
 		array("$L_MESSAGES","l_mess.txt"),

@@ -192,17 +192,31 @@ function formatBytes($size, $precision=2){
 			$d="";
 			foreach($out as $l){
 				if ($l<>""){
-					if ((substr($l,0,1)<>"[")and(substr($l,2,1)<>" ")){
-						if ($d<>substr($l,0,6)){
-							$d=substr($l,0,6);
-							echo("<b>$d</b><br />");
+					if (substr($l,0,1)=="["){
+						echo($l."<br />");
+					}else{
+						$p=0;
+						if (substr($l,4,1)=="-"){
+							$p=10;
+						}else{
+							if (substr($l,3,1)==" "){
+								$p=6;
+							}else{
+								$p=0;
+							}
 						}
-						$l=substr($l,6,strlen($l));
-						if (!empty($l)){
+						if ($p>0){
+							if ($d<>substr($l,0,$p)){
+								$d=substr($l,0,$p);
+								echo("<b>$d</b><br />");
+							}
+							$l=substr($l,$p,strlen($l));
+							if (!empty($l)){
+								echo($l."<br />");
+							}
+						}else{
 							echo($l."<br />");
 						}
-					}else{
-						echo($l."<br />");
 					}
 				}
 			}
