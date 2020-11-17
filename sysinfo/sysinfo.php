@@ -16,9 +16,6 @@ if (file_exists($APP_URL."sysinfo_cfg.php")){
 	exit();
 }
 
-if (file_exists($APP_URL.$SI_LANGFILE)){
-	include($APP_URL.$SI_LANGFILE);
-}
 
 header("Refresh:$SI_REFRESH_TIME");
 
