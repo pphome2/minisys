@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Lokális gép mentése:
+#
+# - rclone gdrive-ba
+#
+
+ur=`pwd`
+cd /usr/local/share/backup 2>>/var/log/sbackup.log
+
+rclone copy ./pi-web.tar.gz google:/Mentés 2>>/var/log/sbackup.log
+rclone copy ./pi-etc.tar.gz google:/Mentés 2>>/var/log/sbackup.log
+rclone copy ./system-backup.tar.gz google:/Mentés 2>>/var/log/sbackup.log
+rclone copy ./dir-*.tar.gz google:/Mentés 2>>/var/log/sbackup.log
+
+cd $ut

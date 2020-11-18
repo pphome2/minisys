@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Lokális gép mentése
+#
+
+ut=`pwd`
+cd /usr/local/bin
+
+# helyi gép
+d=`date`
+echo "$d Helyi gép mentése." >> /var/log/sbackup.log
+./backup-system
+
+# egyéb forrás
+d=`date`
+echo "$d Távoli gép (RPi) mentése." >> /var/log/sbackup.log
+#./backup-pi
+
+# mentés felhőbe, adathordozóra
+d=`date`
+echo "$d Mentés adathordozóra, felhőbe." >> /var/log/sbackup.log
+./backup-usb-mount
+./backup-rclone
+
+# mentés hálózati meghajtóra
+d=`date`
+echo "$d Mentés hálózati meghajtóra." >> /var/log/sbackup.log
+#.backup-net-copy
+
+d=`date`
+echo "$d Kész." >> /var/log/sbackup.log
+
+cd $ut
+
+#

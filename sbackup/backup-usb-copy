@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Lokális gép mentése:
+#
+# - másolat USB adathordozóra
+#
+
+FILENAME=".backupusb"
+
+ut=`pwd`
+cd /usr/local/share/backup 2>>/dev/null
+
+
+drv=`find /media 2>>/dev/null | grep "$FILENAME" | awk '{print $1 }'`
+
+for x in $drv; do
+  if [ -f "$x" ]; then
+    x=`echo $x | awk 'BEGIN {FS="."};{printf $1 } '`
+    cp * $x 2>>/var/log/sbackup.log
+    sync
+  else
+    drv2=""
+  fi
+done
+
+cd $ut
+
+#

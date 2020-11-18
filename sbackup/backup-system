@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Lokális gép mentése:
+#	- rendszer: /etc/backup fájlban
+#	- könyvtárlista: $HOME/.backupdir
+#	- beállítások: $HOME/.backupconf
+#
+
+ut=`pwd`
+cd /usr/local/share/backup 2>>/dev/null
+
+bfile=.backupconf
+bdfile=.backupdir
+etcfile=/etc/backup
+
+ldir=`ls -a /home`
+
+
+if (test -f $etcfile); then
+  rm system-backup.tar.gz 2>>/dev/null
+  tar cvf system-backup.tar $etcfile 2>>/var/log/sbackup.log >>/dev/null
+  for i in `cat $etcfile`; do
+    tar rvf system-backup.tar $i 2>>/var/log/sbackup.log >>/dev/null
+  done
+  gzip ./system-backup.tar 2>>/var/log/sbackup.log >>/dev/null
+fi
+
+for x in $ldir; do
+  if (test -d "/home/$x/.config/chromium/Default/File System"); then
+    rm -r  "/home/$x/.config/chromium/Default/File System" 2>>/var/log/sbackup.log
+  fi
+  if (test -f /home/$x/$bfile); then
+    rm config-$x.tar.gz 2>>/var/log/sbackup.log >>/dev/null
+    tar -cvf config-$x.tar --exclude=chromium  /home/$x/$bfile 2>>/var/log/sbackup.log >>/dev/null
+    for i in `cat /home/$x/$bfile`; do
+      tar -rvf config-$x.tar --exclude=chromium /home/$x/$i 2>>/var/log/sbackup.log >>/dev/null
+    done
+    gzip ./config-$x.tar 2>>/var/log/sbackup.log >>/dev/null
+  fi
+  if (test -f /home/$x/$bdfile); then
+    rm dir-$x.tar.gz 2>>/var/log/sbackup.log >>/dev/null
+    tar  -cvf dir-$x.tar --exclude=chromium /home/$x/$bdfile 2>>/var/log/sbackup.log >>/dev/null
+    for i in `cat /home/$x/$bdfile`; do
+      tar -rvf dir-$x.tar --exclude=chromium /home/$x/$i 2>>/var/log/sbackup.log >>/dev/null
+    done
+    gzip -f ./dir-$x.tar 2>>sbackup.log >>/dev/null
+  fi
+done
+
+cd $ut

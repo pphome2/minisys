@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Lokális gép mentése:
+#
+# - RaspberryPi mentés web szerverről
+#
+
+ut=`pwd`
+
+cd /usr/local/share/backup 2>>/var/log/sbackup.log
+rm pi*.tar.gz 2>>/var/log/sbackup.log
+
+wget http://hydra.hu/backup/pi-etc.tar.gz 2>>/var/log/sbackup.log
+wget http://hydra.hu/backup/pi-web.tar.gz 2>>/var/log/sbackup.log
+wget http://hydra.hu/backup/pi-mysql.tar.gz 2>>/var/log/sbackup.log
+wget http://hydra.hu/backup/pi-home.tar.gz 2>>/var/log/sbackup.log
+wget http://hydra.hu/backup/pi-usrbin.tar.gz 2>>/var/log/sbackup.log
+
+cd $ut
+
+#

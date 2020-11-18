@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Lokális gép mentése:
+#
+# - mentés hálózati meghajtóra
+#
+
+cel="/mnt/n"
+
+mount //192.168.16.2/szerviz /mnt -o username=admin,password=Ki0 2>>/var/log/sbackup.log
+
+if [ -d $cel ]; then
+   cp /usr/local/share/backup/* $cel 2>>/var/log/sbackup.log
+   umount /mnt 2>>/var/log/sbackup.log
+fi
