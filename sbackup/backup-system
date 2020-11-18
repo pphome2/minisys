@@ -20,11 +20,11 @@ ldir=`ls -a /home`
 
 if (test -f $etcfile); then
   rm system-backup.tar.gz 2>>/dev/null
-  tar cvf system-backup.tar $etcfile 2>>/var/log/sbackup.log >>/dev/null
+  tar cf system-backup.tar $etcfile 2>>/dev/null >>/var/log/sbackup.log
   for i in `cat $etcfile`; do
-    tar rvf system-backup.tar $i 2>>/var/log/sbackup.log >>/dev/null
+    tar rf system-backup.tar $i 2>>/dev/null >>/var/log/sbackup.log
   done
-  gzip ./system-backup.tar 2>>/var/log/sbackup.log >>/dev/null
+  gzip ./system-backup.tar 2>&1 >>/var/log/sbackup.log
 fi
 
 for x in $ldir; do
@@ -32,18 +32,18 @@ for x in $ldir; do
     rm -r  "/home/$x/.config/chromium/Default/File System" 2>>/var/log/sbackup.log
   fi
   if (test -f /home/$x/$bfile); then
-    rm config-$x.tar.gz 2>>/var/log/sbackup.log >>/dev/null
-    tar -cvf config-$x.tar --exclude=chromium  /home/$x/$bfile 2>>/var/log/sbackup.log >>/dev/null
+    rm config-$x.tar.gz 2>&1 >>/dev/null
+    tar -cf config-$x.tar --exclude=chromium  /home/$x/$bfile 2>>/dev/null >>/var/log/sbackup.log
     for i in `cat /home/$x/$bfile`; do
-      tar -rvf config-$x.tar --exclude=chromium /home/$x/$i 2>>/var/log/sbackup.log >>/dev/null
+      tar -rf config-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>/var/log/sbackup.log
     done
     gzip ./config-$x.tar 2>>/var/log/sbackup.log >>/dev/null
   fi
   if (test -f /home/$x/$bdfile); then
     rm dir-$x.tar.gz 2>>/var/log/sbackup.log >>/dev/null
-    tar  -cvf dir-$x.tar --exclude=chromium /home/$x/$bdfile 2>>/var/log/sbackup.log >>/dev/null
+    tar  -cf dir-$x.tar --exclude=chromium /home/$x/$bdfile 2>>/dev/null >>/var/log/sbackup.log
     for i in `cat /home/$x/$bdfile`; do
-      tar -rvf dir-$x.tar --exclude=chromium /home/$x/$i 2>>/var/log/sbackup.log >>/dev/null
+      tar -rf dir-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>/var/log/sbackup.log
     done
     gzip -f ./dir-$x.tar 2>>sbackup.log >>/dev/null
   fi
