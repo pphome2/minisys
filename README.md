@@ -100,7 +100,8 @@ kezelt log fájlt akarunk megfigyelni. (pl: Apache, MariaDB...)
 cockpit-project.org Cockpit program alá készült plugin. Egyedileg testre kell szabni.
 Két funkciót tud: fájl tartalmát írja ki (pl.: egy shell script által elkészített
 log fájlt), és/vagy shell parancsot tud futtatni (pl.: shell script ami a szerveren 
-végez feladatokat).
+végez feladatokat). Alapvetően a saját fejlesztések adatainak megjelenítését segíti a 
+Cockpit rendszeren belül.
 
 
 
