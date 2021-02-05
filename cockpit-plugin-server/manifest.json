@@ -1,0 +1,32 @@
+{
+    "version": "001",
+    "requires": {
+        "cockpit": "122"
+    },
+
+    "tools": {
+        "index": {
+            "label": "System test",
+            "path": "index.html",
+            "docs": [
+                {
+                    "label": "System test help",
+                    "url": "/cockpit-plugin-server/sys_help.html"
+                },
+                {
+                    "label": "Developer",
+                    "url": "https://pphome2.github.io"
+                }
+            ],
+            "keywords": [
+                {
+                    "matches": ["test", "teszt"]
+                },
+                {
+                    "matches": ["2", "2"],
+                    "goto": "/cockpit-plugin-server/s2"
+                }
+            ]
+        }
+    }
+}

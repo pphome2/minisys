@@ -95,6 +95,15 @@ kezelt log fájlt akarunk megfigyelni. (pl: Apache, MariaDB...)
 
 
 
+# Cockpit-plugin-servre
+
+cockpit-project.org Cockpit program alá készült plugin. Egyedileg testre kell szabni.
+Két funkciót tud: fájl tartalmát írja ki (pl.: egy shell script által elkészített
+log fájlt), és/vagy shell parancsot tud futtatni (pl.: shell script ami a szerveren 
+végez feladatokat).
+
+
+
 # Sys_utils
 
 Eredeti verziója az AppMan csomagnak.
