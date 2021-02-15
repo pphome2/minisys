@@ -371,12 +371,12 @@ input[type=submit]:hover {
 
 
   .df-content {
-    margin:20px;
-    padding:20px;
+    margin:0px;
+    padding:0px;
   }
 
   .df_table {
-    width:90%;
+    width:80%;
   }
 
   .df_trh {
@@ -432,11 +432,14 @@ input[type=submit]:hover {
 
   .df_table_full {
     width:100%;
-    padding:20px;
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:10px;
+    padding-bottom:10px;
   }
 
 .row {
-    width: 95%;
+    width: 90%;
     margin:auto;
     position:relative;
     display:block;

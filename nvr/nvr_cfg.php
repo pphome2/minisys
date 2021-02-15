@@ -32,7 +32,7 @@ $NVR_TAG="v";
 $NVR_DAY_TAG="d";
 
 # video dimension
-$NVR_WIDTH="55%";
-$NVR_HEIGHT="55%";
+$NVR_WIDTH="65%";
+$NVR_HEIGHT="65%";
 
 ?>

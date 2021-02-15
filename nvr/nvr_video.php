@@ -32,8 +32,11 @@ if (!file_exists($videofile)) {
 
 if (empty($videofile)){
 	$outtext=$L_NOFILE;
+	$otext="";
 } else {
 	$outtext=$videofile;
+	$ot=explode("/",$videofile);
+	$outtext=$ot[count($ot)-1];
 }
 
 ?>
@@ -60,9 +63,6 @@ if (empty($videofile)){
 	<div class="content">
 
 
-	<div class=insidecontent>
-		<input type=submit id=submitar name=submitar value='<?php echo("$outtext") ?>' >
-	</div>
 	<center>
 
 <?php
@@ -71,9 +71,29 @@ if (empty($videofile)){
 		echo("<source src=$videofile type=video/mp4>");
 		echo($L_ERROR_VIDEO);
 		echo("</video>");
-	}
 ?>
 
+	<div class=insidecontent>
+	<div class=row>
+		<div class=col2>
+			<div class=space>
+			<input type=submit id=submitar name=submitar value='<?php echo("$outtext") ?>' >
+			</div>
+		</div>
+		<div class=col2>
+			<div class=space>
+			<a onclick="window.history.back();">
+				<input type=submit id=submitar name=submitar value=<?php echo($L_BACKPAGE) ?> >
+			</a>
+			</div>
+		</div>
+
+	</div>
+	</div>
+
+<?php
+	}else{
+?>
 
 	<div class=insidecontent>
 		<a onclick="window.history.back();">
@@ -81,7 +101,9 @@ if (empty($videofile)){
 		</a>
 	</div>
 
-
+<?php
+	}
+?>
 	</div>
 
 
