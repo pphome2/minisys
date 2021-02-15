@@ -26,7 +26,7 @@ if (!empty($_GET[$NVR_TAG])) {
 	$videofile=$_GET[$NVR_TAG];
 }
 
-if (!file_exists($NVR_DIR."/".$videofile)) {
+if (!file_exists($videofile)) {
 	$videofile="";
 }
 
@@ -67,7 +67,7 @@ if (empty($videofile)){
 
 <?php
 	if (!empty($videofile)){
-		echo("<video width=55% height=55% controls>");
+		echo("<video width=$NVR_WIDTH height=$NVR_HEIGHT controls>");
 		echo("<source src=$videofile type=video/mp4>");
 		echo($L_ERROR_VIDEO);
 		echo("</video>");

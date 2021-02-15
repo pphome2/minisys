@@ -29,7 +29,7 @@ if (!empty($_GET[$NVR_DAY_TAG])) {
 
 $aktdir=$NVR_DIR;
 if ($day<>"-") {
-	$aktdir=$aktdir.$NVR_DIR_DAYS[$day];
+	$aktdir=$aktdir."/".$NVR_DIR_DAYS[$day];
 }
 
 
@@ -58,7 +58,7 @@ function filetable($dir){
 				echo("<td class='df_td2'>");
 				echo("<a href='$dir/$entry' download class='df_tda2' onclick='delrow(this);'>$L_DOWNLOAD</a>");
 				echo("<td class='df_td2'>");
-				echo("<a href='$NVR_VIDEO_PLAYER?$NVR_TAG=$entry' class='df_tda2' onclick='delrow(this);'>$L_PLAYER</a>");
+				echo("<a href='$NVR_VIDEO_PLAYER?$NVR_TAG=$dir/$entry' class='df_tda2' onclick='delrow(this);'>$L_PLAYER</a>");
 				echo("</td>");
 				echo("</tr>");
 			}

@@ -10,9 +10,10 @@
 ur=`pwd`
 cd /usr/local/share/backup 2>>/var/log/sbackup.log
 
-rclone copy ./pi-web.tar.gz google:/Mentés 2>>/var/log/sbackup.log
-rclone copy ./pi-etc.tar.gz google:/Mentés 2>>/var/log/sbackup.log
-rclone copy ./system-backup.tar.gz google:/Mentés 2>>/var/log/sbackup.log
-rclone copy ./dir-*.tar.gz google:/Mentés 2>>/var/log/sbackup.log
+li=`ls -a *.tar.gz`
+
+for x in $li; do
+	rclone copy $x google:/Mentés 2>>/var/log/sbackup.log
+done
 
 cd $ut

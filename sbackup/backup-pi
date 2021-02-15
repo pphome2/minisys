@@ -14,9 +14,8 @@ rm pi*.tar.gz 2>>/var/log/sbackup.log
 
 wget -q --no-check-certificate https://192.168.10.200/backup/pi-etc.tar.gz 2>>/var/log/sbackup.log
 wget -q --no-check-certificate https://192.168.10.200/backup/pi-web.tar.gz 2>>/var/log/sbackup.log
-wget -q --no-check-certificate https://192.168.10.200/backup/pi-mysql.tar.gz 2>>/var/log/sbackup.log
-wget -q --no-check-certificate https://192.168.10.200/backup/pi-home.tar.gz 2>>/var/log/sbackup.log
-wget -q --no-check-certificate https://192.168.10.200/backup/pi-usrbin.tar.gz 2>>/var/log/sbackup.log
+wget -q --no-check-certificate https://192.168.10.200/backup/pi-sql.tar.gz 2>>/var/log/sbackup.log
+wget -q --no-check-certificate https://192.168.10.200/backup/pi-bin.tar.gz 2>>/var/log/sbackup.log
 
 cd $ut
 
