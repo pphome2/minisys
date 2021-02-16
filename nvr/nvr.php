@@ -30,6 +30,9 @@ if (!empty($_GET[$NVR_DAY_TAG])) {
 $aktdir=$NVR_DIR;
 if ($day<>"-") {
 	$aktdir=$aktdir."/".$NVR_DIR_DAYS[$day];
+	$thispage=$L_DAYS[$day];
+}else{
+	$thispage=$L_DAYS[0];
 }
 
 
@@ -89,6 +92,8 @@ function filetable($dir){
 <header>
 	<ul class="sidenav">
 		<li class="padleft"><a href="index.html"><?php echo("$L_APPNAME - $L_FILES"); ?></a></li>
+		<li class="padleft"><a href="index.html"><?php echo("$thispage"); ?></a></li>
+		<li class="padleft"><a href="nvr_serv.php"><?php echo("$L_SERVICES"); ?></a></li>
 	</ul>
 </header>
 	<div class="content">

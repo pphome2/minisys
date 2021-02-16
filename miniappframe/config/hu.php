@@ -9,9 +9,9 @@
 
 
 # system zone / rendszerhez szükséges
-$L_SITENAME="Demo";
-$L_SITEHOME="Nyitólap";
-$L_MTHOME="Demo";
+$L_SITENAME="piNVR";
+$L_SITEHOME="";
+$L_MTHOME="piNVR";
 $L_ADMINISTRATION="Adminisztráció";
 $L_PRIVACY_MENU="Adatvédelem";
 $L_THEME="Témaváltás";
@@ -22,6 +22,7 @@ $L_PRINT="Nyomtatás";
 $L_BACKPAGE="Visszalépés";
 $L_SEARCH="Keresés";
 
+$L_NO_AVAILABLE="A funkció jelenleg nem elérhető.";
 
 # system - need change / rendszer, módosítás szükséges
 

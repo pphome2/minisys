@@ -21,6 +21,8 @@ $L_PRINT="Print";
 $L_BACKPAGE="Go back";
 $L_SEARCH="Search";
 
+$L_NO_AVAILABLE="This fuunction not available.";
+
 # system but need change
 
 $L_COOKIE_TEXT="The site use cokies. Please read the Privacy page.";

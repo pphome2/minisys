@@ -11,7 +11,7 @@
 
 <html>
 	<head>
-		<title><?php echo($MA_SITENAME." - ".$L_SITENAME); ?></title>
+		<title><?php echo($MA_SITENAME." ".$L_SITENAME); ?></title>
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,8 +32,12 @@
 
 <?php
 
-	echo("<li><a class=\"active\" href=\"$MA_SITE_HOME\">$L_SITEHOME</a></li>");
-
+	#if (count($_GET)>0){
+	#	echo("<li><a onclick=\"window.history.back();\">&#8592;</a></li>");
+	#}
+	if ($L_SITEHOME<>""){
+		echo("<li><a class=\"active\" href=\"$MA_SITE_HOME\">$L_SITEHOME</a></li>");
+	}
 	if ($MA_ENABLE_COOKIES){
 		echo("<li><a href=\"$MA_ADMINFILE\">$L_MTHOME</a></li>");
 	}else{

@@ -34,8 +34,10 @@ echo("<body onclick=\"window.close();\">");
 
 $MA_NOPAGE=true;
 
-if (file_exists("$MA_APPFILE")){
-	include("$MA_APPFILE");
+for ($i=0;$i<count($MA_APPFILE);$i++){
+	if (file_exists("$MA_APPFILE[$i]")){
+		include("$MA_APPFILE[$i]");
+	}
 }
 
 if (function_exists("printpage")){

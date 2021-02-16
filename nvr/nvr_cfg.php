@@ -17,7 +17,8 @@ $NVR_COPYRIGHT="© ".date("Y").". <a href=https://github.com/pphome2>Github</a>"
 $NVR_NAME="NVR";
 
 # program parameters
-$NVR_FILEEXT=array('mp4');
+$NVR_FILEEXT=array('mp4','jpg');
+$NVR_SUPPORT_VIDEO=array('mp4');
 $NVR_DIR='./seccam';
 $NVR_DIR_DAYS=array('0','1','2','3');
 
@@ -34,5 +35,6 @@ $NVR_DAY_TAG="d";
 # video dimension
 $NVR_WIDTH="65%";
 $NVR_HEIGHT="65%";
+
 
 ?>

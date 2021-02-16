@@ -21,5 +21,6 @@ $L_DOWNLOAD="Letöltés";
 $L_NOFILE="Fájl nem elérhető.";
 $L_FILES="Tárolt fájlok";
 $L_DAYS=array('Ma','-1 nap','-2 nap','-3 nap');
+$L_SERVICES="Szolgáltatások";
 
 ?>

@@ -46,7 +46,9 @@ $MA_LIB=array(
 			);
 
 # local app admin file
-$MA_APPFILE="$MA_CONTENT_DIR/demo.php";
+$MA_APPFILE=array(
+				"$MA_CONTENT_DIR/demo.php"
+			);
 
 # language
 $MA_LANGFILE="hu.php";

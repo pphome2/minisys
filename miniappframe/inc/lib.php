@@ -163,7 +163,7 @@ function page_header(){
 		include("$MA_HEADER");
 	}
 	if (file_exists("$MA_JS_BEGIN")){
-		include("$MT_JS_BEGIN");
+		include("$MA_JS_BEGIN");
 	}
 }
 

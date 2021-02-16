@@ -33,15 +33,36 @@ page_header();
 if ($MA_LOGGEDIN){
 
 	# private menu
+	$param="";
+	$loaded=false;
 	if (isset($_GET["$MA_MENU_FIELD"])){
-		$MA_APPFILE=$MA_CONTENT_DIR."/".$_GET["$MA_MENU_FIELD"];
+		$param=$_GET["$MA_MENU_FIELD"];
+		if (substr($param,strlen($param)-3,3)=="php"){
+			$af=$MA_CONTENT_DIR."/".$param;
+			if (file_exists($af)){
+				include($af);
+				$loaded=true;
+			}
+		}
 	}
-	# load local app file
-	if (file_exists("$MA_APPFILE")){
-		include("$MA_APPFILE");
+
+	if (!$loaded){
+		# load local app file
+		for ($i=0;$i<count($MA_APPFILE);$i++){
+			if (file_exists($MA_APPFILE[$i])){
+				include($MA_APPFILE[$i]);
+			}
+		}
 	}
-	if (function_exists("main")){
-		main();
+
+	if ($param<>"" && !$loaded){
+		if (function_exists($param)){
+			$param();
+		}
+	}else{
+		if (function_exists("main")){
+			main();
+		}
 	}
 	
 }else{
