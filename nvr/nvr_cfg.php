@@ -26,11 +26,13 @@ $NVR_DIR_DAYS=array('0','1','2','3');
 $NVR_CSS="nvr.css";
 $NVR_LANG="nvr_lang.php";
 $NVR_VIDEO_PLAYER="nvr_video.php";
+$NVR_DELETE="nvr_del.php";
 $NVR_PRG="nvr.php";
 
 # page parameter
 $NVR_TAG="v";
 $NVR_DAY_TAG="d";
+$NVR_DEL_TAG="r";
 
 # video dimension
 $NVR_WIDTH="65%";

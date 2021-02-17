@@ -24,11 +24,22 @@ if (file_exists($APP_URL.$NVR_LANG)){
 if (!empty($_GET[$NVR_DAY_TAG])) {
 	$day=$_GET[$NVR_DAY_TAG];
 } else {
-	$day="-";
+	$day="0";
+}
+
+if (!empty($_GET[$NVR_DEL_TAG])) {
+	$del=$_GET[$NVR_DEL_TAG];
+	if (file_exists($del)){
+		if (!unlink($del)){
+			echo("Error: $del");
+		}
+	}
+} else {
+	$del="";
 }
 
 $aktdir=$NVR_DIR;
-if ($day<>"-") {
+if ($day<>"0") {
 	$aktdir=$aktdir."/".$NVR_DIR_DAYS[$day];
 	$thispage=$L_DAYS[$day];
 }else{
@@ -37,7 +48,9 @@ if ($day<>"-") {
 
 
 function filetable($dir){
-	global $NVR_FILEEXT,$L_DOWNLOAD_TEXT,$L_TABLE,$NVR_VIDEO_PLAYER,$NVR_TAG,$L_PLAYER,$L_DOWNLOAD;
+	global $NVR_FILEEXT,$L_DOWNLOAD_TEXT,$L_TABLE,$NVR_VIDEO_PLAYER,$NVR_TAG,
+			$NVR_DEL_TAG,$NVR_DELETE,$NVR_DAY_TAG,$day,
+			$L_PLAYER,$L_DOWNLOAD,$L_DELETE;
 
 	$files=scandir($dir,SCANDIR_SORT_DESCENDING);
 	$fdb=0;
@@ -46,6 +59,7 @@ function filetable($dir){
 	echo("<th class='df_th1'>$L_TABLE[0]</th>");
 	echo("<th class='df_th2'>$L_TABLE[1]</th>");
 	echo("<th class='df_th2'>$L_TABLE[2]</th>");
+	echo("<th class='df_th2'>$L_TABLE[3]</th>");
 	echo("</tr>");
 	foreach ($files as $entry) {
 		if ($entry!="." && $entry!=".." && $entry!="lost+found") {
@@ -59,9 +73,13 @@ function filetable($dir){
 				echo("<a href='$dir/$entry' target='$target' class='df_tda'>$entry</a>");
 				echo("</td>");
 				echo("<td class='df_td2'>");
-				echo("<a href='$dir/$entry' download class='df_tda2' onclick='delrow(this);'>$L_DOWNLOAD</a>");
+				echo("<a href='$NVR_DELETE?$NVR_DAY_TAG=$day&$NVR_TAG=$dir/$entry' class='df_tda2'>$L_DELETE</a>");
+				echo("</td>");
 				echo("<td class='df_td2'>");
-				echo("<a href='$NVR_VIDEO_PLAYER?$NVR_TAG=$dir/$entry' class='df_tda2' onclick='delrow(this);'>$L_PLAYER</a>");
+				echo("<a href='$dir/$entry' download class='df_tda2'>$L_DOWNLOAD</a>");
+				echo("</td>");
+				echo("<td class='df_td2'>");
+				echo("<a href='$NVR_VIDEO_PLAYER?$NVR_DAY_TAG=$day&$NVR_TAG=$dir/$entry' class='df_tda2''>$L_PLAYER</a>");
 				echo("</td>");
 				echo("</tr>");
 			}

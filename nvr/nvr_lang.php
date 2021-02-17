@@ -13,7 +13,7 @@ $L_APPNAME="NVR";
 
 $L_BACKPAGE="Vissza";
 $L_ERROR_VIDEO="A böngésző nem támogatja a videó lejátszását.";
-$L_TABLE=array('Név','Fájl','Videó');
+$L_TABLE=array('Név','Fájl','Fájl','Videó');
 $L_DOWNLOAD_TEXT='Letöltés';
 $L_HEAD_TEXT='Tárolt videók';
 $L_PLAYER="Lejátszás";
@@ -22,5 +22,9 @@ $L_NOFILE="Fájl nem elérhető.";
 $L_FILES="Tárolt fájlok";
 $L_DAYS=array('Ma','-1 nap','-2 nap','-3 nap');
 $L_SERVICES="Szolgáltatások";
+$L_DELETE="Törlés";
+$L_FILENAME="Fájlnév";
+$L_DEL_CONF="Valóban törölni akarja a tárolt fájlt?";
+$L_NO_AVAILABLE="A szolgáltatás még nem elérhető.";
 
 ?>

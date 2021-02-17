@@ -20,6 +20,12 @@ if (file_exists($APP_URL.$NVR_LANG)){
 	include($APP_URL.$NVR_LANG);
 }
 
+$day="";
+if (!empty($_GET[$NVR_DAY_TAG])) {
+	$day=$_GET[$NVR_DAY_TAG];
+}else{
+	$day=0;
+}
 
 $videofile="";
 if (!empty($_GET[$NVR_TAG])) {
@@ -83,14 +89,21 @@ if (empty($videofile)){
 
 	<div class=insidecontent>
 	<div class=row>
-		<div class=col2>
+		<div class=col3>
 			<div class=space>
 			<a href='<?php echo($videofile); ?>' download >
 				<input type=submit id=submitar name=submitar value=<?php echo($L_DOWNLOAD_TEXT) ?> >
 			</a>
 			</div>
 		</div>
-		<div class=col2>
+		<div class=col3>
+			<div class=space>
+			<a href='<?php echo("$NVR_DELETE?$NVR_DAY_TAG=$day&$NVR_TAG=$videofile"); ?>'>
+				<input type=submit id=submitar name=submitar value=<?php echo($L_DELETE) ?> >
+			</a>
+			</div>
+		</div>
+		<div class=col3>
 			<div class=space>
 			<a onclick="window.history.back();">
 				<input type=submit id=submitar name=submitar value=<?php echo($L_BACKPAGE) ?> >
