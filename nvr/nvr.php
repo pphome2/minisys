@@ -26,6 +26,8 @@ if (!empty($_GET[$NVR_DAY_TAG])) {
 } else {
 	$day="0";
 }
+$activebutton=array('','','','');
+$activebutton[$day]='style=\'color:black;\'';
 
 if (!empty($_GET[$NVR_DEL_TAG])) {
 	$del=$_GET[$NVR_DEL_TAG];
@@ -121,28 +123,28 @@ function filetable($dir){
 		<div class=col4>
 			<div class=space>
 			<a href=<?php echo("$NVR_PRG"); ?> >
-				<input type=submit id=submitar name=submitar value='<?php echo($L_DAYS[0]); ?>' >
+				<input type=submit id=submitar name=submitar value='<?php echo($L_DAYS[0]); ?>' <?php echo($activebutton[0]); ?> >
 			</a>
 			</div>
 		</div>
 		<div class=col4>
 			<div class=space>
 			<a href=<?php echo("$NVR_PRG?$NVR_DAY_TAG=$NVR_DIR_DAYS[1]"); ?> >
-				<input type=submit id=submitar name=submitar value='<?php echo($L_DAYS[1]); ?>' >
+				<input type=submit id=submitar name=submitar value='<?php echo($L_DAYS[1]); ?>' <?php echo($activebutton[1]); ?> >
 			</a>
 			</div>
 		</div>
 		<div class=col4>
 			<div class=space>
 			<a href=<?php echo("$NVR_PRG?$NVR_DAY_TAG=$NVR_DIR_DAYS[2]"); ?> >
-				<input type=submit id=submitar name=submitar value='<?php echo($L_DAYS[2]); ?>' >
+				<input type=submit id=submitar name=submitar value='<?php echo($L_DAYS[2]); ?>' <?php echo($activebutton[2]); ?> >
 			</a>
 			</div>
 		</div>
 		<div class=col4>
 			<div class=space>
 			<a href=<?php echo("$NVR_PRG?$NVR_DAY_TAG=$NVR_DIR_DAYS[3]"); ?> >
-				<input type=submit id=submitar name=submitar value='<?php echo($L_DAYS[3]); ?>' >
+				<input type=submit id=submitar name=submitar value='<?php echo($L_DAYS[3]); ?>' <?php echo($activebutton[3]); ?> >
 			</a>
 			</div>
 		</div>
