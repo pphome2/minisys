@@ -175,6 +175,12 @@ li:last-child {
 	text-align:center !important;
 }
 
+.center50{
+	ppadding-left:25%;
+	text-align:center;
+	width:50%;
+}
+
 .container {
 	position:relative;
 	display:block;
@@ -446,7 +452,21 @@ input[type=submit]:hover {
     display:block;
 }
 
+.row100 {
+    width: 100%;
+    margin:auto;
+    position:relative;
+    display:block;
+}
+
 .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.row100:after {
     content: "";
     display: table;
     clear: both;
@@ -482,3 +502,13 @@ input[type=submit]:hover {
 .space{
 	padding:5px;
 }
+
+.spaceright{
+	padding-right:5px;
+}
+
+.spaceleft{
+	padding-left:5px;
+}
+
+

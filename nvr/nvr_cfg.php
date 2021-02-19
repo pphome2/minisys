@@ -28,11 +28,13 @@ $NVR_LANG="nvr_lang.php";
 $NVR_VIDEO_PLAYER="nvr_video.php";
 $NVR_DELETE="nvr_del.php";
 $NVR_PRG="nvr.php";
+$NVR_RUN_FILE="nvr.run";
 
 # page parameter
 $NVR_TAG="v";
 $NVR_DAY_TAG="d";
 $NVR_DEL_TAG="r";
+$NVR_SERV_TAG="s";
 
 # video dimension
 $NVR_WIDTH="65%";
