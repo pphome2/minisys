@@ -29,6 +29,10 @@ Indítás:
 
 # AppMan
 
+Fejlesztő: [pphome2](https:/github.com/pphome2)
+
+**Aktuális verzió: 2020.**
+
 Egyszerű telepítő és frissítő program webes alkalmazásokhoz.
 
 ### Működés
@@ -63,7 +67,7 @@ meg a képrenyőn, a `szöveg` módosítható.
 
 ### Mentés, visszaállítás
 
-Mentés az AppMan jönyvtárában lévő `backup.php` program segítségével lehetséges.
+Mentés az AppMan könyvtárában lévő `backup.php` program segítségével lehetséges.
 Ha a telepített program használ SQL-t, akkor annak biztosítania kell a mentést
 és visszaállítást, egy-egy php fájl segítségével. Ezek a fájlok az `appman_cfg`
 fájlban megadhatók, mentés előtt, illetve visszaállítás után lefutnak. Az SQL
@@ -73,6 +77,11 @@ mentésre.
 
 
 # SysInfo
+
+Fejlesztő: [pphome2](https:/github.com/pphome2)
+
+**Aktuális verzió: 2020.**
+
 
 A program lekérdezi a rendszeradatokat és megjeleníti a log-ban található hibákat,
 figyelmeztetéseket. A alapvető redszeradatok mellett lehetőség van időzítve shell 
@@ -97,7 +106,11 @@ kezelt log fájlt akarunk megfigyelni. (pl: Apache, MariaDB...)
 
 # Cockpit-plugin-servre
 
-cockpit-project.org Cockpit program alá készült plugin. Egyedileg testre kell szabni.
+Fejlesztő: [pphome2](https:/github.com/pphome2)
+
+**Aktuális verzió: 2021.**
+
+`cockpit-project.org` Cockpit program alá készült plugin. Egyedileg testre kell szabni.
 Két funkciót tud: fájl tartalmát írja ki (pl.: egy shell script által elkészített
 log fájlt), és/vagy shell parancsot tud futtatni (pl.: shell script ami a szerveren 
 végez feladatokat). Alapvetően a saját fejlesztések adatainak megjelenítését segíti a 
@@ -105,6 +118,29 @@ Cockpit rendszeren belül.
 
 
 
+
+# NVR
+
+Fejlesztő: [pphome2](https:/github.com/pphome2)
+
+**Aktuális verzió: 2021.**
+
+Raspberry Pi használata biztonsági kamera rögzítőnek. Ehhez a Linux alaprendzser
+`motion` programját használjuk, ami rögzíti a mozgásokat. Ez a program web-es felületet
+biztosítít a rögzített fájlok kezeléséhez.
+
+A rögzítés ki- és bekapcsolásához, valamint az időzítésekhez egy időszakos ellenőrző 
+script-et használhatunk, amit `cron`-ból futtatunk. A rögzített fájlok naponkénti 
+tárolását egy `cron`-ból futtatott script végzi. A program három előző napot tárol.
+
+
+
+
+
 # Sys_utils
+
+Fejlesztő: [pphome2](https:/github.com/pphome2)
+
+**Eredeti megjelenés: 2018.**
 
 Eredeti verziója az AppMan csomagnak.
