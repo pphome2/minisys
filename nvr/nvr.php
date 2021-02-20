@@ -52,11 +52,20 @@ if ($day<>"0") {
 function filetable($dir){
 	global $NVR_FILEEXT,$L_DOWNLOAD_TEXT,$L_TABLE,$NVR_VIDEO_PLAYER,$NVR_TAG,
 			$NVR_DEL_TAG,$NVR_DELETE,$NVR_DAY_TAG,$day,
-			$L_PLAYER,$L_DOWNLOAD,$L_DELETE;
+			$L_PLAYER,$L_DOWNLOAD,$L_DELETE,$L_FILTER;
 
 	$files=scandir($dir,SCANDIR_SORT_DESCENDING);
-	$fdb=0;
-	echo("<table class='df_table_full'>");
+	usort($files, function ($a, $b){
+		$s1=strtotime(substr($b,strlen($b)-12,8));
+		$s2=strtotime(substr($a,strlen($a)-12,8));
+		return  $s1-$s2;
+	});
+	echo("<div class=filter>");
+	echo('<input type="text" placeholder=\''.$L_FILTER.'\' id="filterin" autofocus
+			onkeyup="tfilter(\'filterin\')"
+			onclick="this.value=\'\'">');
+	echo("</div>");
+	echo("<table class='df_table_full' id='ktable'>");
 	echo("<tr class='df_trh'>");
 	echo("<th class='df_th1'>$L_TABLE[0]</th>");
 	echo("<th class='df_th2'>$L_TABLE[1]</th>");
@@ -71,8 +80,8 @@ function filetable($dir){
 			if ((in_array($fileext_name, $NVR_FILEEXT))or(in_array($fileext_name2, $NVR_FILEEXT))){
 				echo("<tr class='df_tr'>");
 				$fileext_name=strtoupper($fileext_name);
-				echo("<td class='df_td'><span class='df_tds'>[$fileext_name]</span> ");
-				echo("<a href='$dir/$entry' target='$target' class='df_tda'>$entry</a>");
+				echo("<td class='df_td'>");
+				echo("$entry");
 				echo("</td>");
 				echo("<td class='df_td2'>");
 				echo("<a href='$NVR_DELETE?$NVR_DAY_TAG=$day&$NVR_TAG=$dir/$entry' class='df_tda2'>$L_DELETE</a>");
@@ -160,6 +169,31 @@ function filetable($dir){
 		<li class="padleft"><?php echo($NVR_COPYRIGHT); ?></li>
 	</ul>
 </footer>
+
+
+
+<script>
+
+function tfilter(inname) {
+	var input, sfilter, table, tr, td, i;
+	input = document.getElementById(inname);
+	sfilter = input.value.toUpperCase();
+	table = document.getElementById("ktable");
+	tr = table.getElementsByTagName("tr");
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+		if (td) {
+			if (td.innerHTML.toUpperCase().indexOf(sfilter) > -1) {
+				tr[i].style.display = "";
+			} else {
+				tr[i].style.display = "none";
+			}
+		}
+	}
+}
+
+</script>
+
 </body>
 </html>
 
