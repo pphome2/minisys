@@ -21,6 +21,7 @@ $NVR_FILEEXT=array('mp4','jpg');
 $NVR_SUPPORT_VIDEO=array('mp4');
 $NVR_DIR='./seccam';
 $NVR_DIR_DAYS=array('0','1','2','3');
+$NVR_STORE_DIR="TT";
 
 # directories, files
 $NVR_CSS="nvr.css";
@@ -29,12 +30,14 @@ $NVR_VIDEO_PLAYER="nvr_video.php";
 $NVR_DELETE="nvr_del.php";
 $NVR_PRG="nvr.php";
 $NVR_RUN_FILE="nvr.run";
+$NVR_SERV_FILE="nvr_serv.php";
 
 # page parameter
 $NVR_TAG="v";
 $NVR_DAY_TAG="d";
 $NVR_DEL_TAG="r";
 $NVR_SERV_TAG="s";
+$NVR_STORE_TAG="t";
 
 # video dimension
 $NVR_WIDTH="65%";

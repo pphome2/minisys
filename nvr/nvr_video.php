@@ -26,6 +26,10 @@ if (!empty($_GET[$NVR_DAY_TAG])) {
 }else{
 	$day=0;
 }
+$store=false;
+if ($day===$NVR_STORE_DIR){
+	$store=true;
+}
 
 $videofile="";
 if (!empty($_GET[$NVR_TAG])) {
@@ -64,8 +68,10 @@ if (empty($videofile)){
 <header>
 	<ul class="sidenav">
 		<li class="padleft"><a onclick="window.history.back();">&#8592;</a></li>
-		<li class="padleft"><a href="index.html"><?php echo("$L_APPNAME - $L_PLAYER - $outtext"); ?></a></li>
-		<li class="padleft"><a href="nvr_serv.php"><?php echo("$L_SERVICES"); ?></a></li>
+		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$L_APPNAME - $L_PLAYER - $outtext"); ?></a></li>
+		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$L_DAYS[0]"); ?></a></li>
+		<li class="padleft"><a href="<?php echo($NVR_SERV_FILE); ?>"><?php echo("$L_SERVICES"); ?></a></li>
+		<li class="padleft"><a href='<?php echo("$NVR_PRG?$NVR_DAY_TAG=$NVR_STORE_DIR"); ?>'><?php echo("$L_STORE"); ?></a></li>
 	</ul>
 </header>
 	<div class="content">
@@ -74,36 +80,76 @@ if (empty($videofile)){
 	<center>
 
 <?php
-	if (!empty($videofile)){
-		$fileext=explode('.',$videofile);
-		$fileext_name=$fileext[count($fileext)-1];
-		if (in_array($fileext_name,$NVR_SUPPORT_VIDEO)){
-			echo("<video width=$NVR_WIDTH height=$NVR_HEIGHT controls>");
-			echo("<source src=$videofile type=video/mp4>");
-			echo($L_ERROR_VIDEO);
-			echo("</video>");
+
+$vf="";
+if (!empty($_GET[$NVR_STORE_TAG])) {
+	if (file_exists($videofile)) {
+		$ot=explode("/",$videofile);
+		$of=$ot[count($ot)-1];
+		$vf=$NVR_DIR."/".$NVR_STORE_DIR."/".$of;
+		if (file_exists($vf)){
+				echo("$L_STORE_FILE_EXISTS: $videofile");
 		}else{
-			echo("<img width=$NVR_WIDTH height=$NVR_HEIGHT src=$videofile>");
+			if (copy($videofile,$vf)){
+				echo("$L_STORE_COPY: $videofile");
+			}else{
+				echo("$L_ERROR: $videofile");
+			}
 		}
+	}else{
+		echo("$L_ERROR: $videofile");
+	}
+	echo("<br /><br />");
+}else{
+}
+
+if (!empty($videofile)){
+	$fileext=explode('.',$videofile);
+	$fileext_name=$fileext[count($fileext)-1];
+	if (in_array($fileext_name,$NVR_SUPPORT_VIDEO)){
+		echo("<video width=$NVR_WIDTH height=$NVR_HEIGHT controls>");
+		echo("<source src=$videofile type=video/mp4>");
+		echo($L_ERROR_VIDEO);
+		echo("</video>");
+	}else{
+		echo("<img width=$NVR_WIDTH height=$NVR_HEIGHT src=$videofile>");
+	}
 ?>
 
 	<div class=insidecontent>
 	<div class=row>
-		<div class=col3>
+		<div class=col4>
 			<div class=space>
 			<a href='<?php echo($videofile); ?>' download >
 				<input type=submit id=submitar name=submitar value=<?php echo($L_DOWNLOAD_TEXT) ?> >
 			</a>
 			</div>
 		</div>
-		<div class=col3>
+		<div class=col4>
 			<div class=space>
 			<a href='<?php echo("$NVR_DELETE?$NVR_DAY_TAG=$day&$NVR_TAG=$videofile"); ?>'>
 				<input type=submit id=submitar name=submitar value=<?php echo($L_DELETE) ?> >
 			</a>
 			</div>
 		</div>
-		<div class=col3>
+		<div class=col4>
+			<div class=space>
+			<?php
+			if ((!$store)and(!file_exists($vf))){
+			?>
+				<a href='<?php echo("?$NVR_STORE_TAG=1&$NVR_TAG=$videofile"); ?>'>
+					<input type=submit id=submitar name=submitar value='<?php echo($L_STORE_COPYTO) ?>' >
+				</a>
+			<?php
+			}else{
+			?>
+				<input type=submit id=submitar name=submitar value='<?php echo($L_STORE_FILE_EXISTS) ?>' >
+			<?php
+			}
+			?>
+			</div>
+		</div>
+		<div class=col4>
 			<div class=space>
 			<a onclick="window.history.back();">
 				<input type=submit id=submitar name=submitar value=<?php echo($L_BACKPAGE) ?> >
@@ -115,20 +161,21 @@ if (empty($videofile)){
 	</div>
 
 <?php
-	}else{
+}else{
 ?>
 
 	<div class=insidecontent>
+	<div class=center50>
 		<a onclick="window.history.back();">
 			<input type=submit id=submitar name=submitar value=<?php echo($L_BACKPAGE) ?> >
 		</a>
 	</div>
-
-<?php
-	}
-?>
 	</div>
 
+<?php
+}
+?>
+	</div>
 
 <footer>
 	<ul class="sidenav">

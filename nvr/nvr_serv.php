@@ -43,7 +43,7 @@ function file_del($all,$dir){
 				$fileext_name2='.'.$fileext_name;
 				if ((in_array($fileext_name, $NVR_FILEEXT))or(in_array($fileext_name2, $NVR_FILEEXT))){
 					if (!unlink($dir."/".$entry)){
-						echo("Error: $entry. ");
+						echo("$L_ERROR: $entry. ");
 						$r=false;
 					}
 				}
@@ -74,8 +74,10 @@ function file_del($all,$dir){
 <header>
 	<ul class="sidenav">
 		<li class="padleft"><a onclick="window.history.back();">&#8592;</a></li>
-		<li class="padleft"><a href="index.html"><?php echo("$L_APPNAME - $L_PLAYER"); ?></a></li>
-		<li class="padleft"><a href="nvr_serv.php"><?php echo("$L_SERVICES"); ?></a></li>
+		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$L_APPNAME - $L_PLAYER"); ?></a></li>
+		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$L_DAYS[0]"); ?></a></li>
+		<li class="padleft"><a href="<?php echo($NVR_SERV_FILE); ?>"><?php echo("$L_SERVICES"); ?></a></li>
+		<li class="padleft"><a href='<?php echo("$NVR_PRG?$NVR_DAY_TAG=$NVR_STORE_DIR"); ?>'><?php echo("$L_STORE"); ?></a></li>
 	</ul>
 </header>
 	<div class="content">
@@ -90,12 +92,12 @@ function file_del($all,$dir){
 			case "1": 		# indító fájl a service-nek
 				if (file_exists($NVR_DIR."/".$NVR_RUN_FILE)){
 					if (!unlink($NVR_DIR."/".$NVR_RUN_FILE)){
-						echo("Error: $NVR_RUN_FILE");
+						echo("$L_ERROR: $NVR_RUN_FILE");
 					}
 				}else{
 					$str="1";
 					if (!file_put_contents($NVR_DIR."/".$NVR_RUN_FILE,$str)){
-						echo("Error: $NVR_RUN_FILE");
+						echo("$L_ERROR: $NVR_RUN_FILE");
 					}
 				}
 				break;
@@ -156,9 +158,11 @@ function file_del($all,$dir){
 
 	<div class=spaceline></div>
 	<div class=insidecontent>
+	<div class=center50>
 		<a href=<?php echo($NVR_PRG); ?> >
 			<input type=submit id=submitar name=submitar value='<?php echo($L_BACKPAGE) ?>' >
 		</a>
+	</div>
 	</div>
 
 <?php

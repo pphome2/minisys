@@ -64,8 +64,10 @@ if (empty($videofile)){
 <header>
 	<ul class="sidenav">
 		<li class="padleft"><a onclick="window.history.back();">&#8592;</a></li>
-		<li class="padleft"><a href="index.html"><?php echo("$L_APPNAME - $L_PLAYER - $outtext"); ?></a></li>
+		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$L_APPNAME - $L_PLAYER - $outtext"); ?></a></li>
+		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$L_DAYS[0]"); ?></a></li>
 		<li class="padleft"><a href="nvr_serv.php"><?php echo("$L_SERVICES"); ?></a></li>
+		<li class="padleft"><a href='<?php echo("$NVR_PRG?$NVR_DAY_TAG=$NVR_STORE_DIR"); ?>'><?php echo("$L_STORE"); ?></a></li>
 	</ul>
 </header>
 	<div class="content">

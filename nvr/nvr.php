@@ -33,26 +33,33 @@ if (!empty($_GET[$NVR_DEL_TAG])) {
 	$del=$_GET[$NVR_DEL_TAG];
 	if (file_exists($del)){
 		if (!unlink($del)){
-			echo("Error: $del");
+			echo("$L_ERROR: $del");
 		}
 	}
 } else {
 	$del="";
 }
 
+$daymenu=true;
 $aktdir=$NVR_DIR;
-if ($day<>"0") {
-	$aktdir=$aktdir."/".$NVR_DIR_DAYS[$day];
-	$thispage=$L_DAYS[$day];
-}else{
+if ($day==$NVR_STORE_DIR){
+	$aktdir=$aktdir."/".$NVR_STORE_DIR;
+	$daymenu=false;
 	$thispage=$L_DAYS[0];
+}else{
+	if ($day<>"0") {
+		$aktdir=$aktdir."/".$NVR_DIR_DAYS[$day];
+		$thispage=$L_DAYS[$day];
+	}else{
+		$thispage=$L_DAYS[0];
+	}
 }
 
 
 function filetable($dir){
 	global $NVR_FILEEXT,$L_DOWNLOAD_TEXT,$L_TABLE,$NVR_VIDEO_PLAYER,$NVR_TAG,
 			$NVR_DEL_TAG,$NVR_DELETE,$NVR_DAY_TAG,$day,
-			$L_PLAYER,$L_DOWNLOAD,$L_DELETE,$L_FILTER;
+			$L_PLAYER,$L_DOWNLOAD,$L_DELETE,$L_FILTER,$L_STORE,$daymenu;
 
 	$files=scandir($dir,SCANDIR_SORT_DESCENDING);
 	usort($files, function ($a, $b){
@@ -60,8 +67,13 @@ function filetable($dir){
 		$s2=strtotime(substr($a,strlen($a)-12,8));
 		return  $s1-$s2;
 	});
+	if (!$daymenu){
+		$fil=$L_FILTER." - ".$L_STORE;
+	}else{
+		$fil=$L_FILTER;
+	}
 	echo("<div class=filter>");
-	echo('<input type="text" placeholder=\''.$L_FILTER.'\' id="filterin" autofocus
+	echo('<input type="text" placeholder=\''.$fil.'\' id="filterin" autofocus
 			onkeyup="tfilter(\'filterin\')"
 			onclick="this.value=\'\'">');
 	echo("</div>");
@@ -120,14 +132,17 @@ function filetable($dir){
 	<div class=all-page>
 <header>
 	<ul class="sidenav">
-		<li class="padleft"><a href="index.html"><?php echo("$L_APPNAME - $L_FILES"); ?></a></li>
-		<li class="padleft"><a href="index.html"><?php echo("$thispage"); ?></a></li>
-		<li class="padleft"><a href="nvr_serv.php"><?php echo("$L_SERVICES"); ?></a></li>
+		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$L_APPNAME - $L_FILES"); ?></a></li>
+		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$thispage"); ?></a></li>
+		<li class="padleft"><a href="<?php echo($NVR_SERV_FILE); ?>"><?php echo("$L_SERVICES"); ?></a></li>
+		<li class="padleft"><a href='<?php echo("$NVR_PRG?$NVR_DAY_TAG=$NVR_STORE_DIR"); ?>'><?php echo("$L_STORE"); ?></a></li>
 	</ul>
 </header>
 	<div class="content">
 
-
+<?php
+	if ($daymenu){
+?>
 	<div class=row>
 		<div class=col4>
 			<div class=space>
@@ -159,7 +174,10 @@ function filetable($dir){
 		</div>
 	</div>
 
-	<?php filetable($aktdir); ?>
+	<?php 
+	}
+	filetable($aktdir);
+	?>
 
 	</div>
 
