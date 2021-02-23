@@ -30,6 +30,7 @@ $NVR_VIDEO_PLAYER="nvr_video.php";
 $NVR_DELETE="nvr_del.php";
 $NVR_PRG="nvr.php";
 $NVR_RUN_FILE="nvr.run";
+$NVR_TIME_FILE="time.run";
 $NVR_SERV_FILE="nvr_serv.php";
 
 # page parameter

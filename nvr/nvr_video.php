@@ -88,16 +88,16 @@ if (!empty($_GET[$NVR_STORE_TAG])) {
 		$of=$ot[count($ot)-1];
 		$vf=$NVR_DIR."/".$NVR_STORE_DIR."/".$of;
 		if (file_exists($vf)){
-				echo("$L_STORE_FILE_EXISTS: $videofile");
+			echo("<div class=infobar>$L_STORE_FILE_EXISTS: $videofile</div>");
 		}else{
 			if (copy($videofile,$vf)){
-				echo("$L_STORE_COPY: $videofile");
+				echo("<div class=infobar>$L_STORE_COPY: $videofile</div>");
 			}else{
-				echo("$L_ERROR: $videofile");
+				echo("<div class=errorbar>$L_ERROR: $videofile</div>");
 			}
 		}
 	}else{
-		echo("$L_ERROR: $videofile");
+		echo("<div class=errorbar>$L_ERROR: $videofile</div>");
 	}
 	echo("<br /><br />");
 }else{
@@ -109,7 +109,7 @@ if (!empty($videofile)){
 	if (in_array($fileext_name,$NVR_SUPPORT_VIDEO)){
 		echo("<video width=$NVR_WIDTH height=$NVR_HEIGHT controls>");
 		echo("<source src=$videofile type=video/mp4>");
-		echo($L_ERROR_VIDEO);
+		echo("<div class=errorbar>$L_ERROR_VIDEO: $videofile</div>");
 		echo("</video>");
 	}else{
 		echo("<img width=$NVR_WIDTH height=$NVR_HEIGHT src=$videofile>");

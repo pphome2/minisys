@@ -43,7 +43,7 @@ function file_del($all,$dir){
 				$fileext_name2='.'.$fileext_name;
 				if ((in_array($fileext_name, $NVR_FILEEXT))or(in_array($fileext_name2, $NVR_FILEEXT))){
 					if (!unlink($dir."/".$entry)){
-						echo("$L_ERROR: $entry. ");
+						echo("<div class=errorbar>$L_ERROR: $entry</div>");
 						$r=false;
 					}
 				}
@@ -92,23 +92,23 @@ function file_del($all,$dir){
 			case "1": 		# indító fájl a service-nek
 				if (file_exists($NVR_DIR."/".$NVR_RUN_FILE)){
 					if (!unlink($NVR_DIR."/".$NVR_RUN_FILE)){
-						echo("$L_ERROR: $NVR_RUN_FILE");
+						echo("<div class=errorbar>$L_ERROR: $NVR_RUN_FILE</div>");
 					}
 				}else{
 					$str="1";
 					if (!file_put_contents($NVR_DIR."/".$NVR_RUN_FILE,$str)){
-						echo("$L_ERROR: $NVR_RUN_FILE");
+						echo("<div class=errorbar>$L_ERROR: $NVR_RUN_FILE</div>");
 					}
 				}
 				break;
 			case "2":		# mai rögzítés törlése
 				if (file_del(false,$NVR_DIR)){
-						echo("$L_DELETE_OK");
+						echo("<div class=infobar>$L_DELETE_OK</div>");
 				}
 				break;
 			case "3":		# régebbi rögzítés törlése
 				if (file_del(true,$NVR_DIR)){
-						echo("$L_DELETE_OK");
+						echo("<div class=infobar>$L_DELETE_OK</div>");
 				}
 				break;
 			default:
@@ -122,6 +122,56 @@ function file_del($all,$dir){
 		$buttontext="$L_MOTION_STOP";
 		$info=$L_MOTION_NORUN;
 	}
+
+
+	if (isset($_POST["submittime"])){
+		$db=count($L_TIME_DAYS);
+		$out="";
+		for ($i=0;$i<$db;$i++){
+			$out=$out.$_POST["nap1$i"]."-";
+			$out=$out.$_POST["nap2$i"]."-";
+			if (isset($_POST["ej$i"])){
+				$out=$out."X"."\n";
+			}else{
+				$out=$out."I"."\n";
+			}
+		}
+		if ($out<>""){
+			$of=$NVR_DIR."/".$NVR_TIME_FILE;
+			if (file_put_contents($of,$out)){
+				echo("<div class=infobar>$L_TIME_SAVED</div>");
+			}else{
+				echo("<div class=errorbar>$L_ERROR</div>");
+			}
+		}else{
+			echo("<div class=errorbar>$L_ERROR</div>");
+		}
+	}
+
+	if (isset($_POST["submittime"])){
+		$db=count($L_TIME_DAYS);
+		$out="";
+		for ($i=0;$i<$db;$i++){
+			$out=$out.$_POST["nap1$i"]."-";
+			$out=$out.$_POST["nap2$i"]."-";
+			if (isset($_POST["ej$i"])){
+				$out=$out."X"."\n";
+			}else{
+				$out=$out."I"."\n";
+			}
+		}
+		if ($out<>""){
+			$of=$NVR_DIR."/".$NVR_TIME_FILE;
+			if (file_put_contents($of,$out)){
+				echo("<div class=infobar>$L_TIME_SAVED</div>");
+			}else{
+				echo("<div class=errorbar>$L_ERROR</div>");
+			}
+		}else{
+			echo("<div class=errorbar>$L_ERROR</div>");
+		}
+	}
+
 ?>
 
 	<div class=insidecontent>
@@ -153,6 +203,40 @@ function file_del($all,$dir){
 			</div>
 			</div>
 
+		<div class=spaceline></div>
+		<div class=spaceline></div>
+			<h2><?php echo($L_TIME_CONFIG); ?></h2>
+			<p><?php echo($L_TIME_INFO); ?></p>
+			<form class=formfull id="time" method=post>
+				<table class=table id='ktable'>
+					<tr class='df_trh'>
+					<th class='df_th1'><?php echo($L_TIME_TABLE[0]); ?></th>
+					<th class='df_th2'><?php echo($L_TIME_TABLE[1]); ?></th>
+					<th class='df_th2'><?php echo($L_TIME_TABLE[2]); ?></th>
+					<th class='df_th2'><?php echo($L_TIME_TABLE[3]); ?></th>
+					</tr>
+					<?php
+					$db=count($L_TIME_DAYS);
+					for ($i=0;$i<$db;$i++){
+						?>
+						<tr class="df_tr">
+						<td class="df_td">
+							<?php echo($L_TIME_DAYS[$i]); ?>
+						</td>
+						<td class="df_td">
+							<input type=time id='nap1<?php echo($i); ?>' name='nap1<?php echo($i); ?>' min="00:00" max="23:50" step="60" value="06:00" >
+						</td>
+						<td class="df_td">
+							<input type=time id='nap2<?php echo($i); ?>' name='nap2<?php echo($i); ?>' min="00:00" max="23:50" step="60" value="06:00" >
+						</td>
+						<td class="df_td">
+							<input type=checkbox id='ej<?php echo($i); ?>' name='ej<?php echo($i); ?>'  >
+						</td>
+						</tr>
+					<?php } ?>
+				</table>
+				<input type=submit id=submittime name=submittime value='<?php echo($L_TIME_SAVE) ?>' >
+			</form>
 	</div>
 	</div>
 

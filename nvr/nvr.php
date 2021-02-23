@@ -33,7 +33,7 @@ if (!empty($_GET[$NVR_DEL_TAG])) {
 	$del=$_GET[$NVR_DEL_TAG];
 	if (file_exists($del)){
 		if (!unlink($del)){
-			echo("$L_ERROR: $del");
+			echo("<div class=errorbar>$L_ERROR: $del</div>");
 		}
 	}
 } else {
