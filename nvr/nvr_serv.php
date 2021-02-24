@@ -123,7 +123,7 @@ function file_del($all,$dir){
 		$info=$L_MOTION_NORUN;
 	}
 
-
+	$of=$NVR_DIR."/".$NVR_TIME_FILE;
 	if (isset($_POST["submittime"])){
 		$db=count($L_TIME_DAYS);
 		$out="";
@@ -131,13 +131,12 @@ function file_del($all,$dir){
 			$out=$out.$_POST["nap1$i"]."-";
 			$out=$out.$_POST["nap2$i"]."-";
 			if (isset($_POST["ej$i"])){
-				$out=$out."X"."\n";
+				$out=$out."X".PHP_EOL;
 			}else{
-				$out=$out."I"."\n";
+				$out=$out."I".PHP_EOL;
 			}
 		}
 		if ($out<>""){
-			$of=$NVR_DIR."/".$NVR_TIME_FILE;
 			if (file_put_contents($of,$out)){
 				echo("<div class=infobar>$L_TIME_SAVED</div>");
 			}else{
@@ -147,28 +146,24 @@ function file_del($all,$dir){
 			echo("<div class=errorbar>$L_ERROR</div>");
 		}
 	}
-
-	if (isset($_POST["submittime"])){
-		$db=count($L_TIME_DAYS);
-		$out="";
-		for ($i=0;$i<$db;$i++){
-			$out=$out.$_POST["nap1$i"]."-";
-			$out=$out.$_POST["nap2$i"]."-";
-			if (isset($_POST["ej$i"])){
-				$out=$out."X"."\n";
+	$timedata=array();
+	if (file_exists($of)){
+		$lines=file($of);
+		for($i=0;$i<count($lines);$i++){
+			$ol=explode("-",$lines[$i]);
+			$timedata[$i][0]=$ol[0];
+			$timedata[$i][1]=$ol[1];
+			if (trim($ol[2])=="X"){
+				$timedata[$i][2]="checked";
 			}else{
-				$out=$out."I"."\n";
+				$timedata[$i][2]="";
 			}
 		}
-		if ($out<>""){
-			$of=$NVR_DIR."/".$NVR_TIME_FILE;
-			if (file_put_contents($of,$out)){
-				echo("<div class=infobar>$L_TIME_SAVED</div>");
-			}else{
-				echo("<div class=errorbar>$L_ERROR</div>");
-			}
-		}else{
-			echo("<div class=errorbar>$L_ERROR</div>");
+	}else{
+		for($i=0;$i<7;$i++){
+			$timedata[$i][0]="06:00";
+			$timedata[$i][1]="06:00";
+			$timedata[$i][2]="";
 		}
 	}
 
@@ -224,13 +219,14 @@ function file_del($all,$dir){
 							<?php echo($L_TIME_DAYS[$i]); ?>
 						</td>
 						<td class="df_td">
-							<input type=time id='nap1<?php echo($i); ?>' name='nap1<?php echo($i); ?>' min="00:00" max="23:50" step="60" value="06:00" >
+							<input type=time id='nap1<?php echo($i); ?>' name='nap1<?php echo($i); ?>' min="00:00" max="23:50" step="60" value="<?php echo($timedata[$i][0]); ?>" >
 						</td>
 						<td class="df_td">
-							<input type=time id='nap2<?php echo($i); ?>' name='nap2<?php echo($i); ?>' min="00:00" max="23:50" step="60" value="06:00" >
+							<input type=time id='nap2<?php echo($i); ?>' name='nap2<?php echo($i); ?>' min="00:00" max="23:50" step="60" value="<?php echo($timedata[$i][1]); ?>" >
 						</td>
 						<td class="df_td">
-							<input type=checkbox id='ej<?php echo($i); ?>' name='ej<?php echo($i); ?>'  >
+							
+							<input type=checkbox id='ej<?php echo($i); ?>' <?php echo($timedata[$i][2]); ?> name='ej<?php echo($i); ?>'  >
 						</td>
 						</tr>
 					<?php } ?>
