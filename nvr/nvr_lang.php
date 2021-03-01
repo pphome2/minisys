@@ -54,5 +54,6 @@ $L_TIME_INFO="A napközbeni és éjszakai bekapcsolt üzemmód beállítása.
 				A rögzítés indítását és leállítását egy rendszerfolyamat végzi,
 				 ami pár percenként ellenőrzi a beállításokat. A beállítások pár
 				 perc utá lépnek életbe. <br><br> (Éjszaka: 21:00-06:00)";
+$L_LIVE_VIEW="Élőkép";
 
 ?>

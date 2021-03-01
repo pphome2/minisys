@@ -44,5 +44,7 @@ $NVR_STORE_TAG="t";
 $NVR_WIDTH="65%";
 $NVR_HEIGHT="65%";
 
+# live
+$NVR_LIVE_URL="http://192.168.10.200:8080";
 
 ?>
