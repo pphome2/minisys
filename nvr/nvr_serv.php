@@ -78,7 +78,9 @@ function file_del($all,$dir){
 		<li class="padleft"><a href='<?php echo($NVR_PRG); ?>'><?php echo("$L_DAYS[0]"); ?></a></li>
 		<li class="padleft"><a href="<?php echo($NVR_SERV_FILE); ?>"><?php echo("$L_SERVICES"); ?></a></li>
 		<li class="padleft"><a href='<?php echo("$NVR_PRG?$NVR_DAY_TAG=$NVR_STORE_DIR"); ?>'><?php echo("$L_STORE"); ?></a></li>
-		<li class="padleft"><a href='<?php echo("$NVR_LIVE_URL"); ?>' target="_blank"><?php echo("$L_LIVE_VIEW"); ?></a></li>
+		<?php if (!empty($NVR_LIVE_URL)){ ?>
+			<li class="padleft"><a href='<?php echo("$NVR_LIVE_URL"); ?>' target="_blank"><?php echo("$L_LIVE_VIEW"); ?></a></li>
+		<?php } ?>
 	</ul>
 </header>
 	<div class="content">
