@@ -47,4 +47,8 @@ $NVR_HEIGHT="65%";
 # live
 $NVR_LIVE_URL="http://192.168.10.200:8080";
 
+# night config
+$NVR_NIGHT_START="21:00";
+$NVR_NIGHT_STOP="06:00";
+
 ?>
