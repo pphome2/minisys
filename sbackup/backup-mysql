@@ -2,14 +2,19 @@
 #
 # SBackup - MySQL/MariaDB
 #
-# Adatbázisokp mentése:
+# Adatbázisok mentése:
 #
 #
 
 ur=`pwd`
 cd /usr/local/share/backup 2>>/var/log/sbackup.log
 
-mysqldump --all-databases >mysqldb.sql
+mysqldump --all-databases >sqlalldb.sql
+
+# egyessével az adatbázisok:
+#
+# mysqldump mysql > mysql.sql
+# mysqldump phpmyadmin> phpmyadmin.sql
 
 cd $ut
 
