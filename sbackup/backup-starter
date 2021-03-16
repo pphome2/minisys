@@ -18,6 +18,11 @@ d=`date`
 echo "$d Távoli gép (RPi) mentése." >> /var/log/sbackup.log
 #./backup-pi
 
+# mysql
+d=`date`
+echo "$d MySQL adatbázisok mentése." >> /var/log/sbackup.log
+./backup-mysql
+
 # mentés felhőbe, adathordozóra
 d=`date`
 echo "$d Mentés adathordozóra, felhőbe." >> /var/log/sbackup.log
@@ -27,7 +32,7 @@ echo "$d Mentés adathordozóra, felhőbe." >> /var/log/sbackup.log
 # mentés hálózati meghajtóra
 d=`date`
 echo "$d Mentés hálózati meghajtóra." >> /var/log/sbackup.log
-#.backup-net-copy
+#./backup-net-copy
 
 d=`date`
 echo "$d Kész." >> /var/log/sbackup.log

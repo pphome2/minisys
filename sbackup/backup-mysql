@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# SBackup - MySQL/MariaDB
+#
+# Adatbázisokp mentése:
+#
+#
+
+ur=`pwd`
+cd /usr/local/share/backup 2>>/var/log/sbackup.log
+
+mysqldump --all-databases >mysqldb.sql
+
+cd $ut
+
+#
