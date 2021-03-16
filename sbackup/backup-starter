@@ -31,7 +31,7 @@ echo "$d Mentés adathordozóra, felhőbe." >> /var/log/sbackup.log
 
 # mentés hálózati meghajtóra
 d=`date`
-echo "$d Mentés hálózati meghajtóra." >> /var/log/sbackup.log
+# echo "$d Mentés hálózati meghajtóra." >> /var/log/sbackup.log
 #./backup-net-copy
 
 d=`date`
