@@ -10,7 +10,7 @@
 ut=`pwd`
 cd /usr/local/share/backup
 
-li=`ls -a *.tar.gz`
+li=`ls -a *.tar.gz *.sql`
 
 for x in $li; do
 	rclone copy $x google:/Mentés 2>>/var/log/sbackup.log
