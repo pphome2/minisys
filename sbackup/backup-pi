@@ -9,7 +9,7 @@
 
 ut=`pwd`
 
-cd /usr/local/share/backup 2>>/var/log/sbackup.log
+cd /usr/local/share/backup
 rm pi*.tar.gz 2>>/var/log/sbackup.log
 
 wget -q --no-check-certificate https://192.168.10.200/backup/pi-etc.tar.gz 2>>/var/log/sbackup.log

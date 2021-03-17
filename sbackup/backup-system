@@ -9,7 +9,7 @@
 #
 
 ut=`pwd`
-cd /usr/local/share/backup 2>>/dev/null
+cd /usr/local/share/backup
 
 bfile=.backupconf
 bdfile=.backupdir

@@ -7,13 +7,22 @@
 # - mentés hálózati meghajtóra
 #
 
+host=192.168.1.1
+
 cel="/mnt/n"
 
-mount //192.168.16.2/szerviz /mnt -o username=admin,password=Ki0 2>>/var/log/sbackup.log
+if ping -c 1 -W 1 "$host"; then
+	echo $host létezik
+	mount //$host/backupdir /mnt -o username=admin,password=Ki0 2>>/var/log/sbackup.log
 
-if [ -d $cel ]; then
-   cp /usr/local/share/backup/* $cel 2>>/var/log/sbackup.log
-   umount /mnt 2>>/var/log/sbackup.log
+	if [ -d $cel ]; then
+		d=`date`
+	else
+		mkdir $cel 2>>/dev/null
+	fi
+
+	cp /usr/local/share/backup/* $cel 2>>/var/log/sbackup.log
+	mount /mnt 2>>/var/log/sbackup.log
 fi
 
 #

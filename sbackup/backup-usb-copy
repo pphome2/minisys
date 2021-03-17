@@ -10,8 +10,7 @@
 FILENAME=".backupusb"
 
 ut=`pwd`
-cd /usr/local/share/backup 2>>/dev/null
-
+cd /usr/local/share/backup
 
 drv=`find /media 2>>/dev/null | grep "$FILENAME" | awk '{print $1 }'`
 

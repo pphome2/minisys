@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# SBackup - log rotáció
+#
+# Log rotáció
+#
+#
+
+logfile=/var/log/sbackup.log
+
+oldlog1=/var/log/sbackup.log.1
+oldlog2=/var/log/sbackup.log.2
+oldlog3=/var/log/sbackup.log.3
+
+if (test -f $logfile); then
+	if (test -f $oldlog3); then
+		rm $oldlog3 2>>/dev/null
+	fi
+	if (test -f $oldlog2); then
+		mv $oldlog2 $oldlog3 2>>/dev/null
+	fi
+	if (test -f $oldlog1); then
+		mv $oldlog1 $oldlog2 2>>/dev/null
+	fi
+	mv $logfile $oldlog1 2>>/dev/null
+fi
+touch $logfile 2>>/dev/null
+
+#

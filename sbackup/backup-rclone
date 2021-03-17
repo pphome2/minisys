@@ -7,8 +7,8 @@
 # - rclone gdrive-ba
 #
 
-ur=`pwd`
-cd /usr/local/share/backup 2>>/var/log/sbackup.log
+ut=`pwd`
+cd /usr/local/share/backup
 
 li=`ls -a *.tar.gz`
 

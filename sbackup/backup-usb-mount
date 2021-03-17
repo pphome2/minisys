@@ -4,7 +4,7 @@
 #
 # Lokális gép mentése:
 #
-# - USB eszköz keresése
+# - USB eszköz keresése, adatok mentése
 #
 
 e=`cat /proc/partitions | grep sd | awk '{print $4}' | grep -v sda | grep [123456789]`
@@ -14,11 +14,13 @@ for x in $e; do
     /bin/mount /dev/$x /media/$x >>/dev/null 2>>/var/log/sbackup.log
 done
 
-    ./backup-usb-copy
-    #sleep 100
-    sync
+./backup-usb-copy
+sleep 100
+sync
 
 for x in $e; do
     /bin/umount /media/$x >>/dev/null 2>>/var/log/sbackup.log
     rmdir /media/$x >>/dev/null 2>>/var/log/sbackup.log
 done
+
+#
