@@ -6,6 +6,7 @@
 #
 
 . ./backup-config
+
 cd $BINDIR
 
 # helyi gép
@@ -18,10 +19,10 @@ d=`date`
 echo "$d Távoli gép (RPi) mentése." >> $LOGFILE
 ./backup-pi 2>>/dev/null
 
-# mysql
+# sql
 d=`date`
-echo "$d MySQL adatbázisok mentése." >> $LOGFILE
-./backup-mysql 2>>/dev/null
+echo "$d SQL adatbázisok mentése." >> $LOGFILE
+./backup-sql 2>>/dev/null
 
 # mentés felhőbe, adathordozóra
 d=`date`
@@ -37,6 +38,6 @@ d=`date`
 d=`date`
 echo "$d Kész." >>  $LOGFILE
 
-cd $PATH
+cd $TPATH
 
 #

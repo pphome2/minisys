@@ -5,28 +5,45 @@
 # Beállítások
 #
 
-PATH=`pwd`
+# indítási könyvtár
+TPATH=`pwd`
 
-BINDIR=/usr/local/bin
+# a program helye
+BINDIR="/usr/local/bin"
 
-LOGFILE=/var/log/sbackup.log
-OLDLOG1=/var/log/sbackup.log.1
-OLDLOG2=/var/log/sbackup.log.2
-OLDLOG3=/var/log/sbackup.log.3
+# logok
+LOGFILE="/var/log/sbackup.log"
+OLDLOG1="/var/log/sbackup.log.1"
+OLDLOG2="/var/log/sbackup.log.2"
+OLDLOG3="/var/log/sbackup.log.3"
 
-LOCALBACKUPDIR=/usr/local/share/backup
+# mentés helye
+LOCALBACKUPDIR="/usr/local/share/backup"
 
-BACKUPFILE=.backupconf
-BACKUPDIRFILE=.backupdir
-BACKUPETCFILE=/etc/backup
+# az egyes konfigurációk
+BACKUPFILE=".backupconf"
+BACKUPDIRFILE=".backupdir"
+BACKUPETCFILE="/etc/backup"
 
-WEBDOWNLOAD=https://192.168.10.200/backup
+# pi eszközön lévő mentésfájlok
+WEBDOWNLOAD="https://192.168.102.200/backup"
+#WEBFILES[0]="pi-etc.tar.gz"
+#WEBFILES[1]="pi-sql.tar.gz"
+#WEBFILES[2]="pi-web.tar.gz"
+#WEBFILES[3]="pi-bin.tar.gz"
+WEBFILES="pi-etc.tar.gz pi-sql.tar.gz pi-web.tar.gz pi-bin.tar.gz"
 
+# SQL adatbázisok helye
+SQLDIR="/var/lib/mysql"
+
+# rclone konfiguráció a felhős mentéshez
 RCLONETARGET="google:/Mentés"
 
+# USB-n lévő fájl neve
 USBFILENAME=".backupusb"
 
-NETHOST=192.168.1.1
-NETTARGET=/mnt/backupdir
+# hálózati mentési hely SMB kapcsolathoz
+NETHOST="192.168.1.100"
+NETTARGET="/mnt/backupdir"
 
 #

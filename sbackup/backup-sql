@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Adatbázisok mentése
+#
+#
+
+. ./backup-config
+
+if [ -d $SQLDIR ]; then
+    cd $LOCALBACKUPDIR
+    rm sql.tar.gz 2>>/dev/null
+
+    # egyszrre az összes adatbázis
+    #mysqldump --all-databases >sqldb-all.sql 2>>$LOGFILE
+
+    # egyessével az adatbázisok:
+    #
+    # mysqldump mysql > mysql.sql
+    # mysqldump phpmyadmin> phpmyadmin.sql
+    for x in $SQLDIR/*; do
+	if [ -d $x ]; then
+	    y="${x##*/}"
+	    mysqldump $x >sqldb-$y.sql 2>>$LOGFILE
+	fi
+    done
+
+    tar cvvfz sql.tar.gz *.sql >>/dev/null 2>>/dev/null
+    rm *.sql 2>>/dev/null
+    cd $TPATH
+fi
+
+#
+

@@ -17,8 +17,8 @@ for x in $e; do
 done
 
 ./backup-usb-copy
-sleep 100
-sync
+#sleep 10
+#sync
 
 for x in $e; do
     /bin/umount /media/$x >>/dev/null 2>>$LOGFILE

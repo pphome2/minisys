@@ -9,7 +9,7 @@
 
 . ./backup-config
 
-if ping -c 1 -W 1 "$NETHOST"; then
+if ping -c 1 -W 1 "$NETHOST" >>/dev/null; then
 	echo $NETHOST létezik
 	mount //$NETHOST/backupdir /mnt -o username=admin,password=Ki0 2>>$LOGFILE
 

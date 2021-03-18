@@ -12,15 +12,10 @@
 
 cd $LOCALBACKUPDIR
 
-bfile=.backupconf
-bdfile=.backupdir
-etcfile=/etc/backup
-
 ldir=`ls -a /home`
 
-
 if (test -f $BACKUPETCFILE); then
-  rm system-backup.tar.gz 2>>/dev/null
+  rm system-backup.tar.gz 2>&1 >>/dev/null
   tar cf system-backup.tar $BACKUPETCFILE 2>>/dev/null >>$LOGFILE
   for i in `cat $BACKUPETCFILE`; do
     tar rf system-backup.tar $i 2>>/dev/null >>$LOGFILE
@@ -50,5 +45,6 @@ for x in $ldir; do
   fi
 done
 
-cd $PATH
+cd $TPATH
+
 #

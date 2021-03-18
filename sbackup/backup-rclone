@@ -11,12 +11,12 @@
 
 cd $LOCALBACKUPDIR
 
-li=`ls -a *.tar.gz *.sql`
+li=`ls -a *.tar.gz`
 
 for x in $li; do
-	rclone copy $x $RCLONETARGET 2>>$LOGFILE
+    rclone copy $x $RCLONETARGET >>$LOGFILE 2>>/dev/null
 done
 
-cd $PATH
+cd $TPATH
 
 #

@@ -9,14 +9,15 @@
 
 . ./backup-config
 
-cd $LOCALBACKUPDIR
-rm pi*.tar.gz 2>>$LOGFILE
+if wget $WEBDOWNLOAD --timeout 10 -O - 2>>/dev/null; then
+    cd $LOCALBACKUPDIR
+    rm pi*.tar.gz 2>>/dev/null >>/dev/null
 
-wget -q --no-check-certificate $WEBDOWNLOAD/pi-etc.tar.gz 2>>$LOGFILE
-wget -q --no-check-certificate $WEBDOWNLOAD/pi-web.tar.gz 2>>$LOGFILE
-wget -q --no-check-certificate $WEBDOWNLOAD/pi-sql.tar.gz 2>>$LOGFILE
-wget -q --no-check-certificate $WEBDOWNLOAD/pi-bin.tar.gz 2>>$LOGFILE
-
-cd $PATH
+    for x in $WEBFILES; do
+	#echo $WEBDOWNLOAD/$x
+	wget -q --no-check-certificate $WEBDOWNLOAD/$x 2>>$LOGFILE
+    done
+    cd $TPATH
+fi
 
 #
