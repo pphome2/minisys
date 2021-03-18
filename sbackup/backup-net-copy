@@ -11,7 +11,7 @@
 
 if ping -c 1 -W 1 "$NETHOST" >>/dev/null; then
 	echo $NETHOST létezik
-	mount //$NETHOST/backupdir /mnt -o username=admin,password=Ki0 2>>$LOGFILE
+	mount //$NETHOST/backupdir /mnt -o username=admin,password=Ki0 2>>$LOGDIR/$LOGFILE
 
 	if [ -d $NETTARGET ]; then
 		d=`date`
@@ -19,8 +19,8 @@ if ping -c 1 -W 1 "$NETHOST" >>/dev/null; then
 		mkdir $NETTARGET 2>>/dev/null
 	fi
 
-	cp $LOCALBACKUPDIR/* $NETTARGET 2>>$LOGFILE
-	mount /mnt 2>>$LOGFILE
+	cp $LOCALBACKUPDIR/* $NETTARGET 2>>$LOGDIR/$LOGFILE
+	mount /mnt 2>>$LOGDIR/$LOGFILE
 fi
 
 #

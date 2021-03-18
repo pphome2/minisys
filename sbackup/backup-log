@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# SBackup - log rotáció
+# SBackup - rendszer
 #
 # Log rotáció
 #
@@ -8,19 +8,23 @@
 
 . ./backup-config
 
-if (test -f $LOGFILE); then
-	if (test -f $OLDLOG3); then
-		rm $OLDLOG3 2>>/dev/null
-	fi
-	if (test -f $OLDLOG2); then
-		mv $OLDLOG2 $OLDLOG3 2>>/dev/null
-	fi
-	if (test -f $OLDLOG1); then
-		mv $OLDLOG1 $OLDLOG2 2>>/dev/null
-	fi
-	mv $LOGFILE $OLDLOG1 2>>/dev/null
+if (test -f $LOGDIR/$LOGFILE); then
+	for b in $OLDLOG; do
+		c="$b $c"
+	done
+	for b in $c; do
+		if test -z "$n"; then
+			if (test -f "$LOGDIR/$b"); then
+				rm $LOGDIR/$b 2>>/dev/null
+			fi
+		else
+			mv $LOGDIR/$b $LOGDIR/$n 2>>/dev/null
+		fi
+		n=$b
+	done
+	mv $LOGDIR/$LOGFILE $LOGDIR/$b 2>>/dev/null
 fi
 
-touch $LOGFILE 2>>/dev/null
+touch $LOGDIR/$LOGFILE 2>>/dev/null
 
 #

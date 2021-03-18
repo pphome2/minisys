@@ -15,7 +15,7 @@ if wget $WEBDOWNLOAD --timeout 10 -O - 2>>/dev/null; then
 
     for x in $WEBFILES; do
 	#echo $WEBDOWNLOAD/$x
-	wget -q --no-check-certificate $WEBDOWNLOAD/$x 2>>$LOGFILE
+	wget -q --no-check-certificate $WEBDOWNLOAD/$x 2>>$LOGDIR/$LOGFILE
     done
     cd $TPATH
 fi

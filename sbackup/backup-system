@@ -16,32 +16,32 @@ ldir=`ls -a /home`
 
 if (test -f $BACKUPETCFILE); then
   rm system-backup.tar.gz 2>&1 >>/dev/null
-  tar cf system-backup.tar $BACKUPETCFILE 2>>/dev/null >>$LOGFILE
+  tar cf system-backup.tar $BACKUPETCFILE 2>>/dev/null >>$LOGDIR/$LOGFILE
   for i in `cat $BACKUPETCFILE`; do
-    tar rf system-backup.tar $i 2>>/dev/null >>$LOGFILE
+    tar rf system-backup.tar $i 2>>/dev/null >>$LOGDIR/$LOGFILE
   done
-  gzip ./system-backup.tar 2>&1 >>$LOGFILE
+  gzip ./system-backup.tar 2>&1 >>$LOGDIR/$LOGFILE
 fi
 
 for x in $ldir; do
   if (test -d "/home/$x/.config/chromium/Default/File System"); then
-    rm -r  "/home/$x/.config/chromium/Default/File System" 2>>$LOGFILE
+    rm -r  "/home/$x/.config/chromium/Default/File System" 2>>$LOGDIR/$LOGFILE
   fi
   if (test -f /home/$x/$BACKUPFILE); then
     rm config-$x.tar.gz 2>&1 >>/dev/null
-    tar -cf config-$x.tar --exclude=chromium  /home/$x/$BACKUPFILE 2>>/dev/null >>$LOGFILE
+    tar -cf config-$x.tar --exclude=chromium  /home/$x/$BACKUPFILE 2>>/dev/null >>$LOGDIR/$LOGFILE
     for i in `cat /home/$x/$BACKUPFILE`; do
-      tar -rf config-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>$LOGFILE
+      tar -rf config-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>$LOGDIR/$LOGFILE
     done
-    gzip ./config-$x.tar 2>>$LOGFILE >>/dev/null
+    gzip ./config-$x.tar 2>>$LOGDIR/$LOGFILE >>/dev/null
   fi
   if (test -f /home/$x/$BACKUPDIRFILE); then
-    rm dir-$x.tar.gz 2>>$LOGFILE >>/dev/null
-    tar  -cf dir-$x.tar --exclude=chromium /home/$x/$BACKUPDIRFILE 2>>/dev/null >>$LOGFILE
+    rm dir-$x.tar.gz 2>&1 >>/dev/null
+    tar  -cf dir-$x.tar --exclude=chromium /home/$x/$BACKUPDIRFILE 2>>/dev/null >>$LOGDIR/$LOGFILE
     for i in `cat /home/$x/$BACKUPDIRFILE`; do
-      tar -rf dir-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>$LOGFILE
+      tar -rf dir-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>$LOGDIR/$LOGFILE
     done
-    gzip -f ./dir-$x.tar 2>>$LOGFILE >>/dev/null
+    gzip -f ./dir-$x.tar 2>>$LOGDIR/$LOGFILE >>/dev/null
   fi
 done
 

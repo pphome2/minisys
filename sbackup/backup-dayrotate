@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Mentések rotációja
+#
+#
+
+. ./backup-config
+
+cd $LOCALBACKUPDIR
+
+for b in $OLDDAY; do
+	c="$b $c"
+done
+for b in $c; do
+	if test -z "$n"; then
+		if [ -d $b ]; then
+			rm $b/*.tar.gz 2>>/dev/null
+		else
+			mkdir $b 2>>/dev/null
+		fi
+	else
+		if [ -d $n ]; then
+			rm $n/*.tar.gz 2>>/dev/null
+		else
+			mkdir $n 2>>/dev/null
+		fi
+		mv $b/*.tar.gz $n 2>>/dev/null
+	fi
+	n=$b
+done
+if [ -d $b ]; then
+	rm $b/*.tar.gz 2>>/dev/null
+else
+	mkdir $b 2>>/dev/null
+fi
+mv *.tar.gz $b 2>>/dev/null
+
+cd $TPATH
+
+#

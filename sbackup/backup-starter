@@ -9,34 +9,44 @@
 
 cd $BINDIR
 
+# log rotáció
+d=`date`
+./backup-log 2>>/dev/null
+echo "$d Log rotáció." >> $LOGDIR/$LOGFILE
+
+# napi mentés rotáció
+d=`date`
+echo "$d Napi mentés rotáció." >> $LOGDIR/$LOGFILE
+./backup-dayrotate 2>>/dev/null
+
 # helyi gép
 d=`date`
-echo "$d Helyi gép mentése." >> $LOGFILE
+echo "$d Helyi gép mentése." >> $LOGDIR/$LOGFILE
 ./backup-system 2>>/dev/null
 
 # egyéb forrás
 d=`date`
-echo "$d Távoli gép (RPi) mentése." >> $LOGFILE
+echo "$d Távoli gép (RPi) mentése." >> $LOGDIR/$LOGFILE
 ./backup-pi 2>>/dev/null
 
 # sql
 d=`date`
-echo "$d SQL adatbázisok mentése." >> $LOGFILE
+echo "$d SQL adatbázisok mentése." >> $LOGDIR/$LOGFILE
 ./backup-sql 2>>/dev/null
 
 # mentés felhőbe, adathordozóra
 d=`date`
-echo "$d Mentés adathordozóra, felhőbe." >> $LOGFILE
+echo "$d Mentés adathordozóra, felhőbe." >> $LOGDIR/$LOGFILE
 ./backup-usb-mount 2>>/dev/null
 ./backup-rclone 2>>/dev/null
 
 # mentés hálózati meghajtóra
 d=`date`
- echo "$d Mentés hálózati meghajtóra." >>  $LOGFILE
+ echo "$d Mentés hálózati meghajtóra." >> $LOGDIR/$LOGFILE
 ./backup-net-copy 2>>/dev/null
 
 d=`date`
-echo "$d Kész." >>  $LOGFILE
+echo "$d Kész." >> $LOGDIR/$LOGFILE
 
 cd $TPATH
 

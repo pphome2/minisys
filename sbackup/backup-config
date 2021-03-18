@@ -12,13 +12,15 @@ TPATH=`pwd`
 BINDIR="/usr/local/bin"
 
 # logok
-LOGFILE="/var/log/sbackup.log"
-OLDLOG1="/var/log/sbackup.log.1"
-OLDLOG2="/var/log/sbackup.log.2"
-OLDLOG3="/var/log/sbackup.log.3"
+LOGDIR="/var/log"
+LOGFILE="sbackup.log"
+OLDLOG="sbackup.log.1 sbackup.log.2 sbackup.log.3"
 
 # mentés helye
 LOCALBACKUPDIR="/usr/local/share/backup"
+
+# mentés előző napok
+OLDDAY="d-1 d-2 d-3"
 
 # az egyes konfigurációk
 BACKUPFILE=".backupconf"
