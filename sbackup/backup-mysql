@@ -6,17 +6,18 @@
 #
 #
 
-ut=`pwd`
-cd /usr/local/share/backup
+. ./backup-config
 
-mysqldump --all-databases >sqldb-all.sql 2>>/var/log/sbackup.log
+cd $LOCALBACKUPDIR
+
+mysqldump --all-databases >sqldb-all.sql 2>>$LOGFILE
 
 # egyessével az adatbázisok:
 #
 # mysqldump mysql > mysql.sql
 # mysqldump phpmyadmin> phpmyadmin.sql
-mysqldump mysql >sqldb-mysql.sql 2>>/var/log/sbackup.log
+mysqldump mysql >sqldb-mysql.sql 2>>$LOGFILE
 
-cd $ut
+cd $PATH
 
 #

@@ -7,23 +7,22 @@
 # - másolat USB adathordozóra
 #
 
-FILENAME=".backupusb"
+. ./backup-config
 
-ut=`pwd`
-cd /usr/local/share/backup
+cd $LOCALBACKUPDIR
 
-drv=`find /media 2>>/dev/null | grep "$FILENAME" | awk '{print $1 }'`
+drv=`find /media 2>>/dev/null | grep "$USBFILENAME" | awk '{print $1 }'`
 
 for x in $drv; do
   if [ -f "$x" ]; then
     x=`echo $x | awk 'BEGIN {FS="."};{printf $1 } '`
-    cp * $x 2>>/var/log/sbackup.log
+    cp * $x 2>>$LOGFILE
     sync
   else
     drv2=""
   fi
 done
 
-cd $ut
+cd $PATH
 
 #

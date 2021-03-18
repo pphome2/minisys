@@ -7,15 +7,16 @@
 # - rclone gdrive-ba
 #
 
-ut=`pwd`
-cd /usr/local/share/backup
+. ./backup-config
+
+cd $LOCALBACKUPDIR
 
 li=`ls -a *.tar.gz *.sql`
 
 for x in $li; do
-	rclone copy $x google:/Mentés 2>>/var/log/sbackup.log
+	rclone copy $x $RCLONETARGET 2>>$LOGFILE
 done
 
-cd $ut
+cd $PATH
 
 #

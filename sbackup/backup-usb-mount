@@ -7,11 +7,13 @@
 # - USB eszköz keresése, adatok mentése
 #
 
+. ./backup-config
+
 e=`cat /proc/partitions | grep sd | awk '{print $4}' | grep -v sda | grep [123456789]`
 
 for x in $e; do
-    mkdir /media/$x >>/dev/null 2>>/var/log/sbackup.log
-    /bin/mount /dev/$x /media/$x >>/dev/null 2>>/var/log/sbackup.log
+    mkdir /media/$x >>/dev/null 2>>$LOGFILE
+    /bin/mount /dev/$x /media/$x >>/dev/null 2>>$LOGFILE
 done
 
 ./backup-usb-copy
@@ -19,8 +21,8 @@ sleep 100
 sync
 
 for x in $e; do
-    /bin/umount /media/$x >>/dev/null 2>>/var/log/sbackup.log
-    rmdir /media/$x >>/dev/null 2>>/var/log/sbackup.log
+    /bin/umount /media/$x >>/dev/null 2>>$LOGFILE
+    rmdir /media/$x >>/dev/null 2>>$LOGFILE
 done
 
 #

@@ -7,16 +7,16 @@
 # - RaspberryPi mentés web szerverről
 #
 
-ut=`pwd`
+. ./backup-config
 
-cd /usr/local/share/backup
-rm pi*.tar.gz 2>>/var/log/sbackup.log
+cd $LOCALBACKUPDIR
+rm pi*.tar.gz 2>>$LOGFILE
 
-wget -q --no-check-certificate https://192.168.10.200/backup/pi-etc.tar.gz 2>>/var/log/sbackup.log
-wget -q --no-check-certificate https://192.168.10.200/backup/pi-web.tar.gz 2>>/var/log/sbackup.log
-wget -q --no-check-certificate https://192.168.10.200/backup/pi-sql.tar.gz 2>>/var/log/sbackup.log
-wget -q --no-check-certificate https://192.168.10.200/backup/pi-bin.tar.gz 2>>/var/log/sbackup.log
+wget -q --no-check-certificate $WEBDOWNLOAD/pi-etc.tar.gz 2>>$LOGFILE
+wget -q --no-check-certificate $WEBDOWNLOAD/pi-web.tar.gz 2>>$LOGFILE
+wget -q --no-check-certificate $WEBDOWNLOAD/pi-sql.tar.gz 2>>$LOGFILE
+wget -q --no-check-certificate $WEBDOWNLOAD/pi-bin.tar.gz 2>>$LOGFILE
 
-cd $ut
+cd $PATH
 
 #

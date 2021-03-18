@@ -8,8 +8,9 @@
 #	- beállítások: $HOME/.backupconf
 #
 
-ut=`pwd`
-cd /usr/local/share/backup
+. ./backup-config
+
+cd $LOCALBACKUPDIR
 
 bfile=.backupconf
 bdfile=.backupdir
@@ -18,36 +19,36 @@ etcfile=/etc/backup
 ldir=`ls -a /home`
 
 
-if (test -f $etcfile); then
+if (test -f $BACKUPETCFILE); then
   rm system-backup.tar.gz 2>>/dev/null
-  tar cf system-backup.tar $etcfile 2>>/dev/null >>/var/log/sbackup.log
-  for i in `cat $etcfile`; do
-    tar rf system-backup.tar $i 2>>/dev/null >>/var/log/sbackup.log
+  tar cf system-backup.tar $BACKUPETCFILE 2>>/dev/null >>$LOGFILE
+  for i in `cat $BACKUPETCFILE`; do
+    tar rf system-backup.tar $i 2>>/dev/null >>$LOGFILE
   done
-  gzip ./system-backup.tar 2>&1 >>/var/log/sbackup.log
+  gzip ./system-backup.tar 2>&1 >>$LOGFILE
 fi
 
 for x in $ldir; do
   if (test -d "/home/$x/.config/chromium/Default/File System"); then
-    rm -r  "/home/$x/.config/chromium/Default/File System" 2>>/var/log/sbackup.log
+    rm -r  "/home/$x/.config/chromium/Default/File System" 2>>$LOGFILE
   fi
-  if (test -f /home/$x/$bfile); then
+  if (test -f /home/$x/$BACKUPFILE); then
     rm config-$x.tar.gz 2>&1 >>/dev/null
-    tar -cf config-$x.tar --exclude=chromium  /home/$x/$bfile 2>>/dev/null >>/var/log/sbackup.log
-    for i in `cat /home/$x/$bfile`; do
-      tar -rf config-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>/var/log/sbackup.log
+    tar -cf config-$x.tar --exclude=chromium  /home/$x/$BACKUPFILE 2>>/dev/null >>$LOGFILE
+    for i in `cat /home/$x/$BACKUPFILE`; do
+      tar -rf config-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>$LOGFILE
     done
-    gzip ./config-$x.tar 2>>/var/log/sbackup.log >>/dev/null
+    gzip ./config-$x.tar 2>>$LOGFILE >>/dev/null
   fi
-  if (test -f /home/$x/$bdfile); then
-    rm dir-$x.tar.gz 2>>/var/log/sbackup.log >>/dev/null
-    tar  -cf dir-$x.tar --exclude=chromium /home/$x/$bdfile 2>>/dev/null >>/var/log/sbackup.log
-    for i in `cat /home/$x/$bdfile`; do
-      tar -rf dir-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>/var/log/sbackup.log
+  if (test -f /home/$x/$BACKUPDIRFILE); then
+    rm dir-$x.tar.gz 2>>$LOGFILE >>/dev/null
+    tar  -cf dir-$x.tar --exclude=chromium /home/$x/$BACKUPDIRFILE 2>>/dev/null >>$LOGFILE
+    for i in `cat /home/$x/$BACKUPDIRFILE`; do
+      tar -rf dir-$x.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>$LOGFILE
     done
-    gzip -f ./dir-$x.tar 2>>sbackup.log >>/dev/null
+    gzip -f ./dir-$x.tar 2>>$LOGFILE >>/dev/null
   fi
 done
 
-cd $ut
+cd $PATH
 #
