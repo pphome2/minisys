@@ -19,16 +19,16 @@ if [ $LOGROTATEDAY != "0" ]; then
 			for b in $c; do
 				if test -z "$n"; then
 					if (test -f "$LOGDIR/$b"); then
-						rm $LOGDIR/$b 2>>/dev/null
+						rm $LOGDIR/$b 2>/dev/null
 					fi
 				else
-					mv $LOGDIR/$b $LOGDIR/$n 2>>/dev/null
+					mv $LOGDIR/$b $LOGDIR/$n 2>/dev/null
 				fi
 				n=$b
 			done
-			mv $LOGDIR/$LOGFILE $LOGDIR/$b 2>>/dev/null
+			mv $LOGDIR/$LOGFILE $LOGDIR/$b 2>/dev/null
 		fi
-		touch $LOGDIR/$LOGFILE 2>>/dev/null
+		touch $LOGDIR/$LOGFILE 2>/dev/null
 	fi
 fi
 

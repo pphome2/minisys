@@ -11,7 +11,9 @@ d=`dirname $0`
 
 if [ -d $SQLDIR ]; then
 	cd $LOCALBACKUPDIR
-	rm sql.tar.gz 2>>/dev/null
+	if [ -f sql.tar.gz ]; then
+		rm sql.tar.gz 2>>/dev/null
+	fi
 
 	# egyszrre az összes adatbázis
 	# mysqldump --all-databases >sqldb-all.sql 2>>$LOGFILE
@@ -28,8 +30,8 @@ if [ -d $SQLDIR ]; then
 	fi
 	done
 
-	tar cvvfz sql.tar.gz *.sql >>/dev/null 2>>/dev/null
-	rm *.sql 2>>/dev/null
+	tar cvvfz sql.tar.gz *.sql 2>/dev/null >>$LOGDIR/$LOGFILE
+	rm *.sql 2>/dev/null
 	cd $TPATH
 fi
 

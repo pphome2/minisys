@@ -10,12 +10,14 @@
 d=`dirname $0`
 . $d/backup-config
 
-if wget $WEBDOWNLOAD --timeout 10 -O - 2>>/dev/null; then
+if wget $WEBDOWNLOAD --timeout 10 -O - 2>/dev/null; then
 	cd $LOCALBACKUPDIR
-	rm pi*.tar.gz 2>>/dev/null >>/dev/null
 
 	for x in $WEBFILES; do
 		#echo $WEBDOWNLOAD/$x
+		if [ -f $xz ]; then
+			rm $x 2>/dev/null
+		fi
 		wget -q --no-check-certificate $WEBDOWNLOAD/$x 2>>$LOGDIR/$LOGFILE
 	done
 

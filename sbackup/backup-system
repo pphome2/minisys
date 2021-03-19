@@ -14,26 +14,32 @@ ldir=`ls -A /home`
 
 for f in $SYSDIRTOSAVE; do
 	f2=`basename $f`
-	rm system-$f2.tar.gz 2>&1 >>/dev/null
-	tar rf system-$f2.tar $f 2>>/dev/null >>$LOGDIR/$LOGFILE
-	gzip ./system-$f2.tar 2>&1 >>$LOGDIR/$LOGFILE
+	if [ -f system-$f2.tar.gz ]; then
+		rm system-$f2.tar.gz 2>/dev/null
+	fi
+	tar rf system-$f2.tar $f 2>/dev/null >>$LOGDIR/$LOGFILE
+	gzip ./system-$f2.tar 2>/dev/null
 done
 
 for x in $ldir; do
 	if (test -d "/home/$x/.config/chromium/Default/File System"); then
-		rm -r  "/home/$x/.config/chromium/Default/File System" 2>>$LOGDIR/$LOGFILE
+		rm -r  "/home/$x/.config/chromium/Default/File System" 2>/dev/null
 	fi
 	for f in $USERDIRTOSAVE; do
 		f2=`echo $f | tr -d '.'`
-		rm $x-$f2.tar.gz 2>&1 >>/dev/null
-		tar -rf $x-$f2.tar --exclude=chromium /home/$x/$f 2>>/dev/null >>$LOGDIR/$LOGFILE
-		gzip ./$x-$f2.tar 2>>$LOGDIR/$LOGFILE >>/dev/null
+		if [ -f $x-$f2.tar.gz ]; then
+			rm $x-$f2.tar.gz 2>/dev/null
+		fi
+		tar -rf $x-$f2.tar --exclude=chromium /home/$x/$f 2>/dev/null >>$LOGDIR/$LOGFILE
+		gzip ./$x-$f2.tar 2>/dev/null
 	done
 	if (test -f /home/$x/$BACKUPDIRFILE); then
 		for i in `cat /home/$x/$BACKUPDIRFILE`; do
-			rm $x-$i.tar.gz 2>&1 >>/dev/null
-			tar -rf $x-$i.tar --exclude=chromium /home/$x/$i 2>>/dev/null >>$LOGDIR/$LOGFILE
-			gzip -f ./$x-$i.tar 2>>$LOGDIR/$LOGFILE >>/dev/null
+			if [ -f $x-$i.tar.gz ]; then
+				rm $x-$i.tar.gz 2>/dev/null >/dev/null
+			fi
+			tar -rf $x-$i.tar --exclude=chromium /home/$x/$i 2>/dev/null >>$LOGDIR/$LOGFILE
+			gzip -f ./$x-$i.tar 2>/dev/null
 		done
 	fi
 done
