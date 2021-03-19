@@ -10,46 +10,70 @@ d=`dirname $0`
 
 cd $BINDIR
 
-# log rotáció
 d=`date`
-./backup-log 2>>/dev/null
-echo "$d Log rotáció." >> $LOGDIR/$LOGFILE
+echo "$d Mentés elkezdése." >> $LOGDIR/$LOGFILE
+
+# log rotáció
+if [ $ENABLE_LOG = 1 ]; then
+		d=`date`
+		./backup-log 2>/dev/null
+		echo "$d Log rotáció." >> $LOGDIR/$LOGFILE
+fi
 
 # napi mentés rotáció
-d=`date`
-echo "$d Napi mentés rotáció." >> $LOGDIR/$LOGFILE
-./backup-dayrotate 2>>/dev/null
+if [ $ENABLE_DAYROTATE = 1 ]; then
+		d=`date`
+		echo "$d Napi mentés rotáció." >> $LOGDIR/$LOGFILE
+		./backup-dayrotate 2>/dev/null
+fi
 
 # helyi gép
-d=`date`
-echo "$d Helyi gép mentése." >> $LOGDIR/$LOGFILE
-./backup-system 2>>/dev/null
+if [ $ENABLE_SYSTEM = 1 ]; then
+		d=`date`
+		echo "$d Helyi gép mentése." >> $LOGDIR/$LOGFILE
+		./backup-system 2>/dev/null
+fi
 
-# egyéb forrás
-d=`date`
-echo "$d Távoli gép (RPi) mentése." >> $LOGDIR/$LOGFILE
-./backup-pi 2>>/dev/null
+# egyéb WEB forrás
+if [ $ENABLE_WEBDL = 1 ]; then
+		d=`date`
+		echo "$d Távoli gép weboldalról mentése." >> $LOGDIR/$LOGFILE
+		./backup-webdl 2>/dev/null
+fi
 
 # levelezés
-d=`date`
-echo "$d Levelezés könyvtárainak mentése." >> $LOGDIR/$LOGFILE
-./backup-mail 2>>/dev/null
+if [ $ENABLE_MAIL = 1 ]; then
+		d=`date`
+		echo "$d Levelezés könyvtárainak mentése." >> $LOGDIR/$LOGFILE
+		./backup-mail 2>/dev/null
+fi
 
 # sql
-d=`date`
-echo "$d SQL adatbázisok mentése." >> $LOGDIR/$LOGFILE
-./backup-sql 2>>/dev/null
+if [ $ENABLE_SQL = 1 ]; then
+		d=`date`
+		echo "$d SQL adatbázisok mentése." >> $LOGDIR/$LOGFILE
+		./backup-sql 2>>/dev/null
+fi
 
 # mentés felhőbe, adathordozóra
-d=`date`
-echo "$d Mentés adathordozóra, felhőbe." >> $LOGDIR/$LOGFILE
-./backup-usb-mount 2>>/dev/null
-./backup-rclone 2>>/dev/null
+if [ $ENABLE_USB = 1 ]; then
+		d=`date`
+		echo "$d Mentés USB adathordozóra." >> $LOGDIR/$LOGFILE
+		./backup-usb-mount 2>/dev/null
+fi
+
+if [ $ENABLE_RCLONE = 1 ]; then
+		d=`date`
+		echo "$d Mentés felhőbe." >> $LOGDIR/$LOGFILE
+		./backup-rclone 2>/dev/null
+fi
 
 # mentés hálózati meghajtóra
-d=`date`
- echo "$d Mentés hálózati meghajtóra." >> $LOGDIR/$LOGFILE
-./backup-net-copy 2>>/dev/null
+if [ $ENABLE_NETWORK = 1 ]; then
+		d=`date`
+		echo "$d Mentés hálózati meghajtóra." >> $LOGDIR/$LOGFILE
+		./backup-net-copy 2>/dev/null
+fi
 
 d=`date`
 echo "$d Kész." >> $LOGDIR/$LOGFILE
