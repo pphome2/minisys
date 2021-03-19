@@ -7,17 +7,19 @@
 # - RaspberryPi mentés web szerverről
 #
 
-. ./backup-config
+d=`dirname $0`
+. $d/backup-config
 
 if wget $WEBDOWNLOAD --timeout 10 -O - 2>>/dev/null; then
-    cd $LOCALBACKUPDIR
-    rm pi*.tar.gz 2>>/dev/null >>/dev/null
+	cd $LOCALBACKUPDIR
+	rm pi*.tar.gz 2>>/dev/null >>/dev/null
 
-    for x in $WEBFILES; do
-	#echo $WEBDOWNLOAD/$x
-	wget -q --no-check-certificate $WEBDOWNLOAD/$x 2>>$LOGDIR/$LOGFILE
-    done
-    cd $TPATH
+	for x in $WEBFILES; do
+		#echo $WEBDOWNLOAD/$x
+		wget -q --no-check-certificate $WEBDOWNLOAD/$x 2>>$LOGDIR/$LOGFILE
+	done
+
+	cd $TPATH
 fi
 
 #

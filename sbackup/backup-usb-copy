@@ -7,18 +7,19 @@
 # - másolat USB adathordozóra
 #
 
-. ./backup-config
+d=`dirname $0`
+. $d/backup-config
 
 drv=`find /media 2>>/dev/null | grep "$USBFILENAME" | awk '{print $1 }'`
 
 for x in $drv; do
-  if [ -f "$x" ]; then
-    x=`echo $x | awk 'BEGIN {FS="."};{printf $1 } '`
-    cp $LOCALBACKUPDIR/*.tar.gz $x 2>>$LOGDIR/$LOGFILE
-    sync
-  else
-    drv2=""
-  fi
+	if [ -f "$x" ]; then
+		x=`echo $x | awk 'BEGIN {FS="."};{printf $1 } '`
+		cp $LOCALBACKUPDIR/*.tar.gz $x 2>>$LOGDIR/$LOGFILE
+		sync
+	else
+		drv2=""
+	fi
 done
 
 #

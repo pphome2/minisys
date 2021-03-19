@@ -5,7 +5,8 @@
 # Lokális gép mentése
 #
 
-. ./backup-config
+d=`dirname $0`
+. $d/backup-config
 
 cd $BINDIR
 
@@ -28,6 +29,11 @@ echo "$d Helyi gép mentése." >> $LOGDIR/$LOGFILE
 d=`date`
 echo "$d Távoli gép (RPi) mentése." >> $LOGDIR/$LOGFILE
 ./backup-pi 2>>/dev/null
+
+# levelezés
+d=`date`
+echo "$d Levelezés könyvtárainak mentése." >> $LOGDIR/$LOGFILE
+./backup-mail 2>>/dev/null
 
 # sql
 d=`date`

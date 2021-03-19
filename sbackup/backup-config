@@ -14,7 +14,10 @@ BINDIR="/usr/local/bin"
 # logok
 LOGDIR="/var/log"
 LOGFILE="sbackup.log"
-OLDLOG="sbackup.log.1 sbackup.log.2 sbackup.log.3"
+LOGARCHFILE="sbackup.log.1 sbackup.log.2 sbackup.log.3"
+
+# log rotáció - a héten belüli nap száma: 1-7, 0 - letiltva
+LOGROTATEDAY=5
 
 # mentés helye
 LOCALBACKUPDIR="/usr/local/share/backup"
@@ -22,17 +25,15 @@ LOCALBACKUPDIR="/usr/local/share/backup"
 # mentés előző napok
 OLDDAY="d-1 d-2 d-3"
 
-# az egyes konfigurációk
-BACKUPFILE=".backupconf"
+# mentésre jelölt könyvtárak
+SYSDIRTOSAVE="/etc /var/www /usr/local/bin /var/lib/mysql"
+USERDIRTOSAVE=".config .local Dokumentumok public_html"
+
+# egyedi felhasználói könyvtárak $HOME könyvtárba
 BACKUPDIRFILE=".backupdir"
-BACKUPETCFILE="/etc/backup"
 
 # pi eszközön lévő mentésfájlok
 WEBDOWNLOAD="https://192.168.102.200/backup"
-#WEBFILES[0]="pi-etc.tar.gz"
-#WEBFILES[1]="pi-sql.tar.gz"
-#WEBFILES[2]="pi-web.tar.gz"
-#WEBFILES[3]="pi-bin.tar.gz"
 WEBFILES="pi-etc.tar.gz pi-sql.tar.gz pi-web.tar.gz pi-bin.tar.gz"
 
 # SQL adatbázisok helye
@@ -41,11 +42,13 @@ SQLDIR="/var/lib/mysql"
 # rclone konfiguráció a felhős mentéshez
 RCLONETARGET="google:/Mentés"
 
-# USB-n lévő fájl neve
+# USB-n lévő fájl neve, ha van ilyen, akkor arra megy a mentés
 USBFILENAME=".backupusb"
 
 # hálózati mentési hely SMB kapcsolathoz
 NETHOST="192.168.1.100"
+NETUSER="admin"
+NETPASSWORD="Valami"
 NETTARGET="/mnt/backupdir"
 
 #

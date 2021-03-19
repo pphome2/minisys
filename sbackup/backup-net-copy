@@ -7,11 +7,12 @@
 # - mentés hálózati meghajtóra
 #
 
-. ./backup-config
+d=`dirname $0`
+. $d/backup-config
 
 if ping -c 1 -W 1 "$NETHOST" >>/dev/null; then
 	echo $NETHOST létezik
-	mount //$NETHOST/backupdir /mnt -o username=admin,password=Ki0 2>>$LOGDIR/$LOGFILE
+	mount //$NETHOST/backupdir /mnt -o username=$NETUSER,password=$NETPASSWORD 2>>$LOGDIR/$LOGFILE
 
 	if [ -d $NETTARGET ]; then
 		d=`date`

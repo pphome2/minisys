@@ -7,14 +7,15 @@
 # - rclone gdrive-ba
 #
 
-. ./backup-config
+d=`dirname $0`
+. $d/backup-config
 
 cd $LOCALBACKUPDIR
 
 li=`ls -a *.tar.gz`
 
 for x in $li; do
-    rclone copy $x $RCLONETARGET >>$LOGDIR/$LOGFILE 2>>/dev/null
+	rclone copy $x $RCLONETARGET >>$LOGDIR/$LOGFILE 2>>/dev/null
 done
 
 cd $TPATH

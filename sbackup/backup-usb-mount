@@ -7,13 +7,14 @@
 # - USB eszköz keresése, adatok mentése
 #
 
-. ./backup-config
+d=`dirname $0`
+. $d/backup-config
 
 e=`cat /proc/partitions | grep sd | awk '{print $4}' | grep -v sda | grep [123456789]`
 
 for x in $e; do
-    mkdir /media/$x >>/dev/null 2>>$LOGDIR/$LOGFILE
-    /bin/mount /dev/$x /media/$x >>/dev/null 2>>$LOGDIR/$LOGFILE
+	mkdir /media/$x >>/dev/null 2>>$LOGDIR/$LOGFILE
+	/bin/mount /dev/$x /media/$x >>/dev/null 2>>$LOGDIR/$LOGFILE
 done
 
 ./backup-usb-copy
@@ -21,8 +22,8 @@ done
 #sync
 
 for x in $e; do
-    /bin/umount /media/$x >>/dev/null 2>>$LOGDIR/$LOGFILE
-    rmdir /media/$x >>/dev/null 2>>$LOGDIR/$LOGFILE
+	/bin/umount /media/$x >>/dev/null 2>>$LOGDIR/$LOGFILE
+	rmdir /media/$x >>/dev/null 2>>$LOGDIR/$LOGFILE
 done
 
 #

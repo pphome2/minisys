@@ -6,7 +6,8 @@
 #
 #
 
-. ./backup-config
+d=`dirname $0`
+. $d/backup-config
 
 cd $LOCALBACKUPDIR
 
