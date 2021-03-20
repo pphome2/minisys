@@ -10,7 +10,7 @@
 d=`dirname $0`
 . $d/backup-config
 
-if wget $WEBDOWNLOAD --timeout 10 -O - 2>/dev/null; then
+if wget $WEBDOWNLOAD --no-check-certificate -q --timeout 10 --spider 2>/dev/null; then
 	cd $LOCALBACKUPDIR
 
 	for x in $WEBFILES; do
