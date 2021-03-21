@@ -30,7 +30,7 @@ if [ -d $SQLDIR ]; then
 	fi
 	done
 
-	tar cvvfz sql.tar.gz *.sql 2>/dev/null >>$LOGDIR/$LOGFILE
+	tar cvvfz $DEVICENAME-sql.tar.gz *.sql 2>/dev/null >>$LOGDIR/$LOGFILE
 	rm *.sql 2>/dev/null
 	cd $TPATH
 fi

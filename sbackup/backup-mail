@@ -15,25 +15,25 @@ ldir=`ls -A /home`
 
 for x in $ldir; do
 	if [ -d /home/$x/Maildir ]; then
-		if [ -f $x-Maildir.tar.gz ]; then
-			rm $x-Maildir.tar.gz 2>/dev/null
+		if [ -f $DEVICENAME-$x-Maildir.tar.gz ]; then
+			rm $DEVICENAME-$x-Maildir.tar.gz 2>/dev/null
 		fi
-		tar -rf $x-Maildir.tar /home/$x/Maildir 2>/dev/null >>$LOGDIR/$LOGFILE
-		gzip ./$x-Maildir.tar 2>/dev/null
+		tar -rf $DEVICENAME-$x-Maildir.tar /home/$x/Maildir 2>/dev/null >>$LOGDIR/$LOGFILE
+		gzip ./$DEVICENAME-$x-Maildir.tar 2>/dev/null
 	fi
 	if [ -d /home/$x/mail ]; then
-		if [ -f $x-mail.tar.gz ]; then
-			rm $x-mail.tar.gz 2>/dev/null
+		if [ -f $DEVICENAME-$x-mail.tar.gz ]; then
+			rm $DEVICENAME-$x-mail.tar.gz 2>/dev/null
 		fi
-		tar -rf $x-mail.tar /home/$x/mail 2>/dev/null >>$LOGDIR/$LOGFILE
-		gzip ./$x-mail.tar 2>/dev/null
+		tar -rf $DEVICENAME-$x-mail.tar /home/$x/mail 2>/dev/null >>$LOGDIR/$LOGFILE
+		gzip ./$DEVICENAME-$x-mail.tar 2>/dev/null
 	fi
 	if [ -d /var/mail ]; then
-		if [ -f var-mail.tar.gz ]; then
-			rm var-mail.tar.gz 2>/dev/null
+		if [ -f $DEVICENAME-var-mail.tar.gz ]; then
+			rm $DEVICENAME-var-mail.tar.gz 2>/dev/null
 		fi
-		tar -rf var-mail.tar /var/mail 2>/dev/null >>$LOGDIR/$LOGFILE
-		gzip ./var-mail.tar 2>/dev/null
+		tar -rf $DEVICENAME-var-mail.tar /var/mail 2>/dev/null >>$LOGDIR/$LOGFILE
+		gzip ./$DEVICENAME-var-mail.tar 2>/dev/null
 	fi
 done
 

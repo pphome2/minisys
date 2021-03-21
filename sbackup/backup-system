@@ -14,11 +14,11 @@ ldir=`ls -A /home`
 
 for f in $SYSDIRTOSAVE; do
 	f2=`basename $f`
-	if [ -f system-$f2.tar.gz ]; then
-		rm system-$f2.tar.gz 2>/dev/null
+	if [ -f $DEVICENAME-system-$f2.tar.gz ]; then
+		rm $DEVICENAME-system-$f2.tar.gz 2>/dev/null
 	fi
-	tar rf system-$f2.tar $f 2>/dev/null >>$LOGDIR/$LOGFILE
-	gzip ./system-$f2.tar 2>/dev/null
+	tar rf $DEVICENAME-system-$f2.tar $f 2>/dev/null >>$LOGDIR/$LOGFILE
+	gzip ./$DEVICENAME-system-$f2.tar 2>/dev/null
 done
 
 for x in $ldir; do
@@ -27,19 +27,19 @@ for x in $ldir; do
 	fi
 	for f in $USERDIRTOSAVE; do
 		f2=`echo $f | tr -d '.'`
-		if [ -f $x-$f2.tar.gz ]; then
-			rm $x-$f2.tar.gz 2>/dev/null
+		if [ -f $DEVICENAME-$x-$f2.tar.gz ]; then
+			rm $DEVICENAME-$x-$f2.tar.gz 2>/dev/null
 		fi
-		tar -rf $x-$f2.tar --exclude=chromium /home/$x/$f 2>/dev/null >>$LOGDIR/$LOGFILE
-		gzip ./$x-$f2.tar 2>/dev/null
+		tar -rf $DEVICENAME-$x-$f2.tar --exclude=chromium /home/$x/$f 2>/dev/null >>$LOGDIR/$LOGFILE
+		gzip ./$DEVICENAME-$x-$f2.tar 2>/dev/null
 	done
 	if (test -f /home/$x/$BACKUPDIRFILE); then
 		for i in `cat /home/$x/$BACKUPDIRFILE`; do
-			if [ -f $x-$i.tar.gz ]; then
-				rm $x-$i.tar.gz 2>/dev/null >/dev/null
+			if [ -f $DEVICENAME-$x-$i.tar.gz ]; then
+				rm $DEVICENAME-$x-$i.tar.gz 2>/dev/null >/dev/null
 			fi
-			tar -rf $x-$i.tar --exclude=chromium /home/$x/$i 2>/dev/null >>$LOGDIR/$LOGFILE
-			gzip -f ./$x-$i.tar 2>/dev/null
+			tar -rf $DEVICENAME-$x-$i.tar --exclude=chromium /home/$x/$i 2>/dev/null >>$LOGDIR/$LOGFILE
+			gzip -f ./$DEVICENAME-$x-$i.tar 2>/dev/null
 		done
 	fi
 done
