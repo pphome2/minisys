@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# SBackup - rendszer
+#
+# Lokális gép mentése:
+#
+# - mentés másolása web-szerver alá
+#
+
+d=`dirname $0`
+. $d/backup-config
+
+if [ -d $WEBDIR ]; then
+	cd $LOCALBACKUPDIR
+
+	tar rf /$WEBDIR/$DEVICENAME-backup.tar *.tar.gz 2>/dev/null >>$LOGDIR/$LOGFILE
+
+	cd $TPATH
+fi
+
+#

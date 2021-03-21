@@ -4,24 +4,34 @@
 #
 # Lokális gép mentése:
 #
-# - RaspberryPi mentés web szerverről
+# - mentés letöltése web szerverről
 #
 
 d=`dirname $0`
 . $d/backup-config
 
-if wget $WEBDOWNLOAD --no-check-certificate -q --timeout 10 --spider 2>/dev/null; then
-	cd $LOCALBACKUPDIR
+cd $LOCALBACKUPDIR
 
+if wget $WEBDOWNLOAD --no-check-certificate -q --timeout 10 --spider 2>/dev/null; then
 	for x in $WEBFILES; do
 		#echo $WEBDOWNLOAD/$x
-		if [ -f $xz ]; then
+		if [ -f $x ]; then
 			rm $x 2>/dev/null
 		fi
 		wget -q --no-check-certificate $WEBDOWNLOAD/$x 2>>$LOGDIR/$LOGFILE
 	done
-
-	cd $TPATH
 fi
+
+for x in $WEBBACKUPSITES; do
+	if wget $WEBDOWNLOAD --no-check-certificate -q --timeout 10 --spider 2>/dev/null; then
+		y=`echo $x | rev | cut -d'/' -f1 | rev`
+		if [ -f $y ]; then
+			rm $y 2>/dev/null
+		fi
+		wget -q --no-check-certificate $x 2>>$LOGDIR/$LOGFILE
+	fi
+done
+
+cd $TPATH
 
 #
