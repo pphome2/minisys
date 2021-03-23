@@ -17,26 +17,26 @@ done
 for b in $c; do
 	if test -z "$n"; then
 		if [ -d $b ]; then
-			rm $b/*.tar.gz 2>/dev/null
+			rm $b/*.tar* 2>/dev/null
 		else
 			mkdir $b 2>/dev/null
 		fi
 	else
 		if [ -d $n ]; then
-			rm $n/*.tar.gz 2>/dev/null
+			rm $n/*.tar* 2>/dev/null
 		else
 			mkdir $n 2>/dev/null
 		fi
-		mv $b/*.tar.gz $n 2>/dev/null
+		mv $b/*.tar* $n 2>/dev/null
 	fi
 	n=$b
 done
 if [ -d $b ]; then
-	rm $b/*.tar.gz 2>/dev/null
+	rm $b/*.tar* 2>/dev/null
 else
 	mkdir $b 2>/dev/null
 fi
-mv *.tar.gz $b 2>/dev/null
+mv *.tar* $b 2>/dev/null
 
 cd $TPATH
 

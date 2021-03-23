@@ -11,8 +11,8 @@ d=`dirname $0`
 
 if [ -d $SQLDIR ]; then
 	cd $LOCALBACKUPDIR
-	if [ -f sql.tar.gz ]; then
-		rm sql.tar.gz 2>>/dev/null
+	if [ -f $DEVICENAME-sql.tar.gz ]; then
+		rm $DEVICENAME-sql.tar.gz 2>>/dev/null
 	fi
 
 	# egyszrre az összes adatbázis

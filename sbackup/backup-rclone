@@ -12,7 +12,7 @@ d=`dirname $0`
 
 cd $LOCALBACKUPDIR
 
-li=`ls -a *.tar.gz`
+li=`ls -a *.tar*`
 
 for x in $li; do
 	rclone copy $x $RCLONETARGET >>$LOGDIR/$LOGFILE 2>/dev/null
