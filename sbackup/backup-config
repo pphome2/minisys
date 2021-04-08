@@ -53,10 +53,14 @@ BACKUPDIRFILE=".backupdir"
 WEBDOWNLOAD="https://192.168.10.200/backup"
 WEBFILES="pi-etc.tar.gz pi-sql.tar.gz pi-web.tar.gz pi-bin.tar.gz"
 
-WEBBACKUPSITES="http://192.168.10.88/0-backup.tar http://192.168.10.88/1-backup.tar"
+WEBBACKUPSITES="http://192.168.10.210/backup/griff-backup.tar http://192.168.10.88/1-backup.tar"
+
+# minden webhelyről ezzel az azonosítóval próbál letölteni
+WEBDLUSER="backup"
+WEBDLPASSWD="backup"
 
 # webszerver metéskönyvtára
-WEBDIR="/var/www/html"
+WEBDIR="/var/www/html/backup"
 
 # SQL adatbázisok helye
 SQLDIR="/var/lib/mysql"
