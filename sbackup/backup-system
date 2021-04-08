@@ -21,7 +21,7 @@ for f in $SYSDIRTOSAVE; do
 	gzip ./$DEVICENAME-system-$f2.tar 2>/dev/null
 done
 
-if [ $ENABLE_WEBDIR = 1 ]; then
+if [ $ENABLE_USER = 1 ]; then
 	for x in $ldir; do
 		if (test -d "/home/$x/.config/chromium/Default/File System"); then
 			rm -r  "/home/$x/.config/chromium/Default/File System" 2>/dev/null
