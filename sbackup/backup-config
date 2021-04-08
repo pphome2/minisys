@@ -10,6 +10,7 @@ TPATH=`pwd`
 
 # modulok engedélyezése: 0 - letiltva, 1 - engedélyezve
 ENABLE_SYSTEM=1
+ENABLE_USER=1
 ENABLE_DAYROTATE=1
 ENABLE_LOG=1
 ENABLE_MAIL=1

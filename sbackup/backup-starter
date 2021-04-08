@@ -75,6 +75,13 @@ if [ $ENABLE_NETWORK = 1 ]; then
 		./backup-net-copy 2>/dev/null
 fi
 
+# mentés web könyvtárba
+if [ $ENABLE_WEBDIR = 1 ]; then
+		d=`date`
+		echo "$d Mentés web könyvtárba." >> $LOGDIR/$LOGFILE
+		./backup-webdir 2>/dev/null
+fi
+
 d=`date`
 echo "$d Kész." >> $LOGDIR/$LOGFILE
 
