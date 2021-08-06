@@ -375,6 +375,57 @@ input[type=submit]:hover {
 	cursor: pointer;
 }
 
+.row {
+	width: 90%;
+	margin:auto;
+	position:relative;
+	display:block;
+}
+
+.row100 {
+	width: 100%;
+	margin:auto;
+	position:relative;
+	display:block;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.row100:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.col2{
+	width:50%;
+	float:left;
+	padding:0px;
+}
+
+.col3{
+	width:33.3%;
+	float:left;
+	padding:0px;
+	text-align:center;
+}
+
+.col4{
+	width:25%;
+	float:left;
+	padding:0px;
+	text-align:center;
+}
+
+.col5{
+	width:20%;
+	float:left;
+	padding:0px;
+}
 
 
 
