@@ -45,10 +45,11 @@ $MA_LIB=array(
 			"$MA_INCLUDE_DIR/libview.php"
 			);
 
-# local app admin file
+# local app main and css file
 $MA_APPFILE=array(
 				"$MA_CONTENT_DIR/demo.php"
 			);
+$MA_APPCSSFILE="$MA_CONTENT_DIR/demo.css";
 
 # language
 $MA_LANGFILE="hu.php";

@@ -9,9 +9,9 @@
 
 
 # system zone / rendszerhez szükséges
-$L_SITENAME="piNVR";
+$L_SITENAME="Demo";
 $L_SITEHOME="";
-$L_MTHOME="piNVR";
+$L_MTHOME="Demo";
 $L_ADMINISTRATION="Adminisztráció";
 $L_PRIVACY_MENU="Adatvédelem";
 $L_THEME="Témaváltás";
