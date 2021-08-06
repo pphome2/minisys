@@ -27,6 +27,10 @@
 
 <footer>
 
+<?php
+if ($MA_ENABLE_FOOTER){
+?>
+
     <ul class="sidenav">
 	<li class="padleft"><?php echo($MA_COPYRIGHT); ?></li>
 
@@ -68,6 +72,10 @@ if ($MA_ENABLE_COOKIES){
 
 	</li>
 	</ul>
+
+<?php
+}
+?>
 
 </footer>
 

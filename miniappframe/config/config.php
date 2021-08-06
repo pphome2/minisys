@@ -72,8 +72,12 @@ $MA_ENABLE_COOKIES=true;
 $MA_ADMIN_USER=false;
 $MA_USERPAGE=false;
 
+# header, footer
+$MA_ENABLE_HEADER=true;
+$MA_ENABLE_FOOTER=true;
+
 # login
-$ENABLE_LOGIN=true;
+$MA_ENABLE_LOGIN=true;
 
 # multiuser
 $MA_ENABLE_USERNAME=false;

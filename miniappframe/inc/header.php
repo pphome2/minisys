@@ -26,6 +26,11 @@
 
 
 <header>
+
+<?php
+if ($MA_ENABLE_HEADER){
+?>
+
 <div class="menu">
 <ul class="sidenav">
 
@@ -78,6 +83,10 @@
 ?>
 </ul>
 </div>
+
+<?php
+}
+?>
 
 </header>
 

@@ -25,7 +25,7 @@ for ($i=0;$i<count($MA_LIB);$i++){
 setcss();
 
 # login
-if ($ENABLE_LOGIN){
+if ($MA_ENABLE_LOGIN){
 	login();
 }else{
 	$MA_LOGGEDIN=true;
@@ -70,8 +70,8 @@ if ($MA_LOGGEDIN){
 	}
 	
 }else{
-	if ($ENABLE_LOGIN){
-		login(_form);
+	if ($MA_ENABLE_LOGIN){
+		login_form();
 	}
 }
 
