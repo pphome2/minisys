@@ -25,7 +25,11 @@ for ($i=0;$i<count($MA_LIB);$i++){
 setcss();
 
 # login
-login();
+if ($ENABLE_LOGIN){
+	login();
+}else{
+	$MA_LOGGEDIN=true;
+}
 
 # build page: header
 page_header();
@@ -66,7 +70,9 @@ if ($MA_LOGGEDIN){
 	}
 	
 }else{
-	login_form();
+	if ($ENABLE_LOGIN){
+		login(_form);
+	}
 }
 
 # end local app file

@@ -72,6 +72,9 @@ $MA_ENABLE_COOKIES=true;
 $MA_ADMIN_USER=false;
 $MA_USERPAGE=false;
 
+# login
+$ENABLE_LOGIN=true;
+
 # multiuser
 $MA_ENABLE_USERNAME=false;
 $MA_USERS_ADMINUSERS=array(
