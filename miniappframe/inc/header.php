@@ -25,12 +25,11 @@
 
 <div class=all-page>
 
-
-<header>
-
 <?php
 if ($MA_ENABLE_HEADER){
 ?>
+
+<header>
 
 <div class="menu">
 <ul class="sidenav">
@@ -85,11 +84,10 @@ if ($MA_ENABLE_HEADER){
 </ul>
 </div>
 
+</header>
+
 <?php
 }
 ?>
 
-</header>
-
 <div class="content">
-
