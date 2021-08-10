@@ -1,3 +1,0 @@
-# /etc/cron.d/mentes: crontab fragment for save important data
-
-0 12,20 * * *     root   /usr/local/bin/sbackup
