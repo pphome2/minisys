@@ -74,5 +74,7 @@ if ($MA_ENABLE_COOKIES){
 }
 ?>
 
+</div>
+
 </body>
 </html>

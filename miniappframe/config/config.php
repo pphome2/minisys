@@ -47,6 +47,8 @@ $MA_LIB=array(
 
 # local app main and css file
 $MA_APPFILE=array(
+				"$MA_CONTENT_DIR/demo.js",
+				"$MA_CONTENT_DIR/democfg.php",
 				"$MA_CONTENT_DIR/demo.php"
 			);
 $MA_APPCSSFILE="$MA_CONTENT_DIR/demo.css";
