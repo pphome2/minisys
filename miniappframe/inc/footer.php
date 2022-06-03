@@ -49,7 +49,7 @@ if ($MA_ENABLE_COOKIES){
 		<a href="<?php echo($MA_ADMINFILE."?".$MA_STYLEPARAM_NAME."=".$nextstyle); ?>"><?php echo($L_THEME); ?></a>
     </li>
     <li class="liright">
-		<a href="<?php echo($MA_PRIVACY."?".$MA_STYLEPARAM_NAME."=".$$MA_STYLEINDEX) ?>" ><?php echo($L_PRIVACY_MENU); ?></a>
+		<a href="<?php echo($MA_PRIVACY."?".$MA_STYLEPARAM_NAME."=".$MA_STYLEINDEX) ?>" ><?php echo($L_PRIVACY_MENU); ?></a>
     </li>
 
 
