@@ -1,4 +1,3 @@
-
 <?php
 
  #
@@ -34,7 +33,7 @@ function button_print(){
 # messages functions
 function mess_error($m){
 	echo('
-		<div class="message_error">
+		<div class="message_error" name="sysmessage" id="sysmessage">
 			<div onclick="this.parentElement.style.display=\'none\'" class="ttoprightclose">
 				<p class="insidecontent">'.$m.'</p>
 			</div>
@@ -45,7 +44,7 @@ function mess_error($m){
 
 function mess_ok($m){
 	echo('
-		<div class="message_ok">
+		<div class="message_ok" name="sysmessage" id="sysmessage">
 			<div onclick="this.parentElement.style.display=\'none\'" class="ttoprightclose">
 				<p class="insidecontent">'.$m.'</p>
 			</div>
@@ -58,9 +57,8 @@ function mess_ok($m){
 function login_form(){
 	global $MA_COOKIE_STYLE,$MA_STYLEINDEX,$L_PASSWORD,$MA_COOKIE_PASSWORD,$L_BUTTON_NEXT,$MA_ENABLE_USERNAME,
 			$MA_USERS,$L_USERNAME,$L_PASS,$MA_COOKIE_USER;
-
+	
 	echo("<div class=spaceline100></div>");
-	echo("<div class=center50>");
 	echo("<form  method='post' enctype='multipart/form-data'>");
 	if ($MA_ENABLE_USERNAME){
 		echo("	<input type='text' name='$MA_COOKIE_USER' id='$MA_COOKIE_USER' placeholder='$L_USERNAME' autofocus>");
@@ -72,7 +70,6 @@ function login_form(){
 	echo("	<div class=spaceline></div>");
 	echo("	<input type='submit' value='$L_BUTTON_NEXT' name='submit'>");
 	echo("</form>");
-	echo("</div>");
 	echo("<div class=spaceline></div>");
 }
 
