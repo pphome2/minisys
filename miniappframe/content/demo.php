@@ -15,7 +15,7 @@ function searchpage(){
 	echo("search page");
 }
 
-	
+
 function privacypage(){
 	echo("privacy page");
 }
@@ -46,6 +46,12 @@ function main(){
 	}else{
 		demo_data();
 	}
+	demo_footer();
+}
+
+function view(){
+	demo_header();
+	demo_data();
 	demo_footer();
 }
 
