@@ -30,6 +30,8 @@ $MA_COOKIE_TIME="ltime";
 
 # include files
 $MA_ADMINFILE="start.php";
+$MA_VIEWFILE="view.php";
+$MA_SEARCHFILE="seaarch.php";
 $MA_PRIVACY="privacy.php";
 $MA_PRINTFILE="print.php";
 
@@ -69,7 +71,7 @@ $MA_APPCSSFILE="$MA_CONTENT_DIR/demo.css";
 $MA_LANGFILE="hu.php";
 
 # search
-$MA_SEARCH_ICON_HREF="search.php";
+$MA_SEARCH_ICON_HREF="";
 $MA_SEARCH_ICON_JS="";
 
 # other variables
@@ -113,32 +115,12 @@ $MA_MENU=array();
 $MA_ADMINMENU_FIELD="m";
 $MA_ADMINMENU=array();
 
-# load language file
-if (file_exists("$MA_CONFIG_DIR/$MA_LANGFILE")){
-	include("$MA_CONFIG_DIR/$MA_LANGFILE");
-}
-
-
 # if not enable cookie support:
 # - all form need add this lines
 #
 #		<input type='hidden' name='$MA_COOKIE_PASSWORD' id='$MA_COOKIE_PASSWORD' value='$MA_PASSWORD'>
 #		<input type='hidden' name='$MA_COOKIE_STYLE' id='$MA_COOKIE_STYLE' value='$MA_STYLEINDEX'>
 #		<input type='hidden' name='$MA_COOKIE_TIME' id='$MA_COOKIE_TIME' value='$MA_LOGIN_TIME'>
-#
-
-
 ############################################
-
-# local app config, variables
-
-$MA_MENU=array(
-				array($L_MENU1,"list.php")
-			);
-
-$MA_ADMINMENU=array(
-				array($L_MENU2,"list.php")
-			);
-
 
 ?>
