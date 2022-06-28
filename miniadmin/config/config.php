@@ -21,6 +21,7 @@ $MA_DOCTYPE="<!DOCTYPE HTML>";
 $MA_CONFIG_DIR="config";
 $MA_INCLUDE_DIR="inc";
 $MA_CONTENT_DIR="content";
+$MA_PLUGIN_DIR="plugins";
 
 $MA_COOKIE_STYLE="st";
 $MA_COOKIE_USER="user";
@@ -44,6 +45,10 @@ $MA_LIB=array(
 			"$MA_INCLUDE_DIR/lib.php",
 			"$MA_INCLUDE_DIR/libview.php"
 			);
+
+# directory name: load dirname.php, .css, .js from directory
+# "$MA_PLUGIN_DIR/table"
+$MA_PLUGINS=array();
 
 # local app admin file
 $MA_APPFILE="$MA_CONTENT_DIR/demo.php";

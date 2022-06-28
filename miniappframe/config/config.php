@@ -54,6 +54,7 @@ $MA_LIB=array(
 			"$MA_INCLUDE_DIR/libview.php"
 			);
 
+# add directory: load dirname.php, .css, .js from directory
 $MA_PLUGINS=array(
             "$MA_PLUGIN_DIR/table",
             "$MA_PLUGIN_DIR/cards"
