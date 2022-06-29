@@ -32,7 +32,7 @@ $MA_COOKIE_TIME="ltime";
 $MA_ADMINFILE="start.php";
 $MA_VIEWFILE="view.php";
 $MA_SEARCHFILE="seaarch.php";
-$MA_PRIVACY="privacy.php";
+$MA_PRIVACYFILE="privacy.php";
 $MA_PRINTFILE="print.php";
 
 $MA_CSS=array(
@@ -55,10 +55,7 @@ $MA_LIB=array(
 			);
 
 # add directory: load dirname.php, .css, .js from directory
-$MA_PLUGINS=array(
-            "$MA_PLUGIN_DIR/table",
-            "$MA_PLUGIN_DIR/cards"
-            );
+$MA_PLUGINS=array();
 
 # local app main and css file
 $MA_APPFILE=array(
@@ -74,15 +71,6 @@ $MA_LANGFILE="hu.php";
 # search
 $MA_SEARCH_ICON_HREF="";
 $MA_SEARCH_ICON_JS="";
-
-# other variables
-$MA_NOPAGE=false;
-$MA_PASSWORD="";
-$MA_LOGIN_TIME="";
-$MA_LOGGEDIN=false;
-$MA_STYLEINDEX=0;
-$MA_LOGOUT_IN_HEADER=true;
-$MA_PRIVACY_PAGE=false;
 
 # auto logout - second
 $MA_LOGIN_TIMEOUT=600;
@@ -115,6 +103,16 @@ $MA_MENU=array();
 # adminmenu
 $MA_ADMINMENU_FIELD="m";
 $MA_ADMINMENU=array();
+
+# other variables (no change)
+$MA_NOPAGE=false;
+$MA_PASSWORD="";
+$MA_LOGIN_TIME="";
+$MA_LOGGEDIN=false;
+$MA_STYLEINDEX=0;
+$MA_LOGOUT_IN_HEADER=true;
+$MA_PRIVACY_PAGE=false;
+$MA_SEARCH_PAGE=false;
 
 # if not enable cookie support:
 # - all form need add this lines

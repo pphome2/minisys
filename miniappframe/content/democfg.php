@@ -22,6 +22,10 @@ $MA_ADMINMENU=array(
 
 
 # variables
-$DEMOTEXT="Demo page";
+$DEMO_TEXT="Demo page";
+$DEMO_TITLE="Demo page";
+$DEMO_BUTTON_TEXT="Next";
+$DEMO_SEARCH_TEXT="Search";
+$DEMO_PRIVACY_FILE=$MA_CONTENT_DIR."/privacy.txt";
 
 ?>

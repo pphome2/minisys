@@ -17,6 +17,7 @@ if (file_exists("$MA_CONFIG_DIR/$MA_LANGFILE")){
 	include("$MA_CONFIG_DIR/$MA_LANGFILE");
 }
 
+$MA_ADMINFILE=$MA_VIEWFILE;
 
 echo($MA_DOCTYPE);
 
@@ -39,7 +40,11 @@ if ($MA_ENABLE_LOGIN_VIEW){
 }
 
 # build page: header
-page_header_view();
+if ($MA_ENABLE_HEADER_VIEW){
+    page_header();
+}else{
+    page_header_view();
+}
 
 if ($MA_LOGGEDIN){
     # load local app file
@@ -60,6 +65,10 @@ if ($MA_LOGGEDIN){
 }
 
 # page footer
-page_footer_view();
+if ($MA_ENABLE_FOOTER_VIEW){
+    page_footer();
+}else{
+    page_footer_view();
+}
 
 ?>
