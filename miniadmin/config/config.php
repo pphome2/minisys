@@ -29,9 +29,11 @@ $MA_COOKIE_PASSWORD="passw";
 $MA_COOKIE_TIME="ltime";
 
 # include files
-$MA_ADMINFILE="start.html";
-$MA_PRIVACY="privacy.html";
-$MA_PRINTFILE="print.html";
+$MA_ADMINFILE="start.php";
+$MA_PRIVACYFILE="privacy.php";
+$MA_PRINTFILE="print.php";
+$MA_SEARCHFILE="search.php";
+
 $MA_CSS=array(
 			"$MA_INCLUDE_DIR/sitew.css",
 			"$MA_INCLUDE_DIR/siteb.css"
@@ -42,6 +44,7 @@ $MA_JS_END="$MA_INCLUDE_DIR/js_end.js";
 $MA_HEADER="$MA_INCLUDE_DIR/header.php";
 $MA_FOOTER="$MA_INCLUDE_DIR/footer.php";
 $MA_LIB=array(
+			"$MA_INCLUDE_DIR/libadmin.php",
 			"$MA_INCLUDE_DIR/lib.php",
 			"$MA_INCLUDE_DIR/libview.php"
 			);
@@ -51,7 +54,10 @@ $MA_LIB=array(
 $MA_PLUGINS=array();
 
 # local app admin file
-$MA_APPFILE="$MA_CONTENT_DIR/demo.php";
+$MA_APPFILE=array("$MA_CONTENT_DIR/demo.js",
+				"$MA_CONTENT_DIR/democfg.php",
+				"$MA_CONTENT_DIR/demo.php"
+				);
 
 # language
 $MA_LANGFILE="hu.php";
@@ -60,17 +66,20 @@ $MA_LANGFILE="hu.php";
 $MA_SEARCH_ICON_HREF="search.php";
 $MA_SEARCH_ICON_JS="";
 
+# header, footer
+$MA_HEADER="$MA_INCLUDE_DIR/header.php";
+$MA_FOOTER="$MA_INCLUDE_DIR/footer.php";
+$MA_HEADER_VIEW="$MA_INCLUDE_DIR/header_view.php";
+$MA_FOOTER_VIEW="$MA_INCLUDE_DIR/footer_view.php";
+
+# footer/header
+$MA_ENABLE_HEADER=true;
+$MA_ENABLE_FOOTER=true;
+$MA_ENABLE_HEADER_VIEW=true;
+$MA_ENABLE_FOOTER_VIEW=true;
+
 # mobile screen detected
 $MA_MOBILE=false;
-
-# other variables
-$MA_NOPAGE=false;
-$MA_PASSWORD="";
-$MA_LOGIN_TIME="";
-$MA_LOGGEDIN=false;
-$MA_STYLEINDEX=0;
-$MA_LOGOUT_IN_HEADER=true;
-$MA_PRIVACY_PAGE=false;
 
 # auto logout - second
 $MA_LOGIN_TIMEOUT=600;
@@ -91,17 +100,10 @@ $MA_USERS_CRED=array(
 
 # menu
 $MA_MENU_FIELD="m";
+# user menu
 $MA_MENU=array();
-
 # adminmenu
-$MA_ADMINMENU_FIELD="m";
 $MA_ADMINMENU=array();
-
-# load language file
-if (file_exists("$MA_CONFIG_DIR/$MA_LANGFILE")){
-	include("$MA_CONFIG_DIR/$MA_LANGFILE");
-}
-
 
 # shared settings with the web page (users, passwords, menu)
 $COMMON_CONFIG_FILE="";
@@ -109,9 +111,16 @@ if (file_exists("$COMMON_CONFIG_FILE")){
 	include("$COMMON_CONFIG_FILE");
 }
 
-#
-#
-#
+# other variables (no change)
+$MA_NOPAGE=false;
+$MA_PASSWORD="";
+$MA_LOGIN_TIME="";
+$MA_LOGGEDIN=false;
+$MA_STYLEINDEX=0;
+$MA_LOGOUT_IN_HEADER=true;
+$MA_PRIVACY_PAGE=false;
+$MA_SEARCH_PAGE=false;
+$MA_ENABLE_LOGIN=true;
 
 # if not enable cookie support:
 # - all form need add this lines
@@ -123,16 +132,5 @@ if (file_exists("$COMMON_CONFIG_FILE")){
 
 
 ############################################
-
-# local app config, variables
-
-$MA_MENU=array(
-				array($L_MENU1,"list.php")
-			);
-
-$MA_ADMINMENU=array(
-				array($L_MENU2,"list.php")
-			);
-
 
 ?>

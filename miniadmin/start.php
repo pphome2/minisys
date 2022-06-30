@@ -12,6 +12,10 @@
 if (file_exists("config/config.php")){
 	include("config/config.php");
 }
+# load language file
+if (file_exists("$MA_CONFIG_DIR/$MA_LANGFILE")){
+	include("$MA_CONFIG_DIR/$MA_LANGFILE");
+}
 
 echo($MA_DOCTYPE);
 
@@ -21,33 +25,55 @@ for ($i=0;$i<count($MA_LIB);$i++){
 	}
 }
 
-mobiledevice();
+# load local app file
+for ($i=0;$i<count($MA_APPFILE);$i++){
+	if (file_exists($MA_APPFILE[$i])){
+		include($MA_APPFILE[$i]);
+	}
+}
+
+plugins();
 
 # css setting
 setcss();
 
 # login
-login();
+if ($MA_ENABLE_LOGIN){
+    login();
+}else{
+	$MA_LOGGEDIN=true;
+}
+
+if ($MA_LOGGEDIN){
+    if (!$MA_ENABLE_USERNAME){
+        $MA_ADMIN_USER=true;
+    }
+}
 
 # build page: header
 page_header();
 
 if ($MA_LOGGEDIN){
-
-	# private menu
+	# user/admin menu start
 	if (isset($_GET["$MA_MENU_FIELD"])){
-		$MA_APPFILE=$MA_CONTENT_DIR."/".$_GET["$MA_MENU_FIELD"];
+		$param=$_GET["$MA_MENU_FIELD"];
+   		if (function_exists($param)){
+    		$param();
+    	}else{
+		    if (function_exists("main")){
+			    main();
+		    }
+		}
+	}else{
+	    if (function_exists("main")){
+		    main();
+	    }
 	}
-	# load local app file
-	if (file_exists("$MA_APPFILE")){
-		include("$MA_APPFILE");
-	}
-	if (function_exists("main")){
-		main();
-	}
-	
+
 }else{
-	login_form();
+	if ($MA_ENABLE_LOGIN){
+		login_form();
+	}
 }
 
 # end local app file

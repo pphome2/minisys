@@ -20,9 +20,18 @@ a {
 
 .content {
 	margin:20px;
-	padding:20px;
 	flex: 1 0 auto;
 }
+
+
+.contentbox {
+    margin-top:20px;
+	margin-left:20%;
+	margin-right:20%;
+    margin-bottom:20px;
+	flex: 1 0 auto;
+}
+
 
 .insidecontent {
 	padding:20px;
@@ -69,6 +78,7 @@ ul {
 }
 
 li {
+	list-style-type: none;
 	float: left;
 }
 
@@ -338,6 +348,16 @@ input[type=submit]:hover {
 #inputlabel {
 	width: 20%;
 	border: 1px solid;
+}
+
+textarea {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 

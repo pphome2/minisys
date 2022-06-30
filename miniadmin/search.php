@@ -11,6 +11,11 @@
 if (file_exists("config/config.php")){
 	include("config/config.php");
 }
+# load language file
+if (file_exists("$MA_CONFIG_DIR/$MA_LANGFILE")){
+	include("$MA_CONFIG_DIR/$MA_LANGFILE");
+}
+
 
 for ($i=0;$i<count($MA_LIB);$i++){
 	if (file_exists("$MA_LIB[$i]")){
@@ -18,22 +23,31 @@ for ($i=0;$i<count($MA_LIB);$i++){
 	}
 }
 
-mobiledevice();
+$MA_SEARCH_PAGE=true;
+login();
 
 # cookies or param 
 setcss();
 
-# page build
-page_header();
+# build page: header
+$mainpage=refererpage();
+if ($mainpage<>$MA_ADMINFILE){
+    if ($MA_ENABLE_HEADER_VIEW){
+        page_header();
+    }else{
+        page_header_view();
+    }
+}else{
+    page_header();
+}
 
 
-
-# privacy data to screen
-
-$MA_NOPAGE=true;
-
-if (file_exists("$MA_APPFILE")){
-	include("$MA_APPFILE");
+# search
+#$MA_NOPAGE=true;
+for ($i=0;$i<count($MA_APPFILE);$i++){
+	if (file_exists("$MA_APPFILE[$i]")){
+		include("$MA_APPFILE[$i]");
+	}
 }
 
 if (function_exists("searchpage")){
@@ -42,12 +56,16 @@ if (function_exists("searchpage")){
 
 button_back();
 
-# end
+# page footer
+if ($mainpage<>$MA_ADMINFILE){
+    if ($MA_ENABLE_FOOTER_VIEW){
+        page_footer();
+    }else{
+        page_footer_view();
+    }
+}else{
+    page_footer();
+}
 
-
-
-# page end
-page_footer();
-	
 
 ?>

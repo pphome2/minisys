@@ -12,6 +12,11 @@
 if (file_exists("config/config.php")){
 	include("config/config.php");
 }
+# load language file
+if (file_exists("$MA_CONFIG_DIR/$MA_LANGFILE")){
+	include("$MA_CONFIG_DIR/$MA_LANGFILE");
+}
+
 
 for ($i=0;$i<count($MA_LIB);$i++){
 	if (file_exists("$MA_LIB[$i]")){
@@ -19,24 +24,23 @@ for ($i=0;$i<count($MA_LIB);$i++){
 	}
 }
 
-mobiledevice();
-
-# build page
-echo("<html>");
-echo("<head>");
-echo("<title>$MA_SITENAME</title><style>");
-include("$MA_CSSPRINT");
-echo("</style>");
-echo("<head>");
-echo("<body onclick=\"window.close();\">");
-
-
-# load local app file
 
 $MA_NOPAGE=true;
 
-if (file_exists("$MA_APPFILE")){
-	include("$MA_APPFILE");
+# build page
+#page_header_view();
+if (file_exists($MA_CSSPRINT)){
+    echo("<style>");
+    include("$MA_CSSPRINT");
+    echo("</style>");
+}
+echo("<body onclick=\"window.close();\">");
+
+# load local app file
+for ($i=0;$i<count($MA_APPFILE);$i++){
+	if (file_exists("$MA_APPFILE[$i]")){
+		include("$MA_APPFILE[$i]");
+	}
 }
 
 if (function_exists("printpage")){
@@ -47,7 +51,6 @@ if (function_exists("printpage")){
 
 echo("<script>window.print();</script>");
 
-echo("</body>");
-echo("</html>");
+#page_footer_view();
 
 ?>
