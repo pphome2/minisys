@@ -1,12 +1,11 @@
 <?php
 
  #
- # MiniApp - demo
+ # MiniApp - admin
  #
  # info: main folder copyright file
  #
  #
 
-echo("Menu demo. File: list.php");
 
 ?>

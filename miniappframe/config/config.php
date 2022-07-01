@@ -51,7 +51,8 @@ $MA_FOOTER_VIEW="$MA_INCLUDE_DIR/footer_view.php";
 
 $MA_LIB=array(
 			"$MA_INCLUDE_DIR/lib.php",
-			"$MA_INCLUDE_DIR/libview.php"
+			"$MA_INCLUDE_DIR/libview.php",
+			"$MA_INCLUDE_DIR/libadmin.php"
 			);
 
 # add directory: load dirname.php, .css, .js from directory
@@ -84,12 +85,18 @@ $MA_ENABLE_FOOTER=true;
 $MA_ENABLE_HEADER_VIEW=false;
 $MA_ENABLE_FOOTER_VIEW=false;
 
+# pages
+$MA_ENABLE_PRIVACY=true;
+$MA_ENABLE_PRINT=true;
+$MA_ENABLE_SEARCH=true;
+$MA_ENABLE_THEME=true;
+
 # login
 $MA_ENABLE_LOGIN=true;
 $MA_ENABLE_LOGIN_VIEW=true;
 
 # multiuser
-$MA_ENABLE_USERNAME=false;
+$MA_ENABLE_USERNAME=true;
 $MA_USERS_ADMINUSERS=array(
 				"admin"
 			);
