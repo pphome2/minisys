@@ -9,20 +9,22 @@
 
 # configuration
 
+$MA_MINIAPP_DIR="../miniappframe";
+
 # copyright link
 $MA_COPYRIGHT="© ".date("Y").". <a href=https://github.com/pphome2>Github</a>";
 
 # title, home link
-$MA_SITENAME="MiniApp - Demo";
-$MA_CODENAME="mapp";
+$MA_SITENAME="MiniAppSubSite - Demo";
+$MA_CODENAME="msubapp";
 $MA_SITE_HOME="http://www.google.com";
 $MA_DOCTYPE="<!DOCTYPE HTML>";
 
 # directories
 $MA_CONFIG_DIR="config";
-$MA_INCLUDE_DIR="inc";
+$MA_INCLUDE_DIR=$MA_MINIAPP_DIR."/inc";
 $MA_CONTENT_DIR="content";
-$MA_PLUGIN_DIR="plugins";
+$MA_PLUGIN_DIR=$MA_MINIAPP_DIR."/plugins";
 
 # cookie names
 $MA_COOKIE_STYLE=$MA_CODENAME."st";
@@ -96,10 +98,10 @@ $MA_ENABLE_THEME=true;
 
 # login
 $MA_ENABLE_LOGIN=true;
-$MA_ENABLE_LOGIN_VIEW=true;
+$MA_ENABLE_LOGIN_VIEW=false;
 
 # multiuser
-$MA_ENABLE_USERNAME=true;
+$MA_ENABLE_USERNAME=false;
 $MA_USERS_ADMINUSERS=array(
 				"admin"
 			);
@@ -111,8 +113,10 @@ $MA_USERS_CRED=array(
 
 # menu
 $MA_MENU_FIELD="m";
+
 # user menu
 $MA_MENU=array();
+
 # adminmenu
 $MA_ADMINMENU=array();
 

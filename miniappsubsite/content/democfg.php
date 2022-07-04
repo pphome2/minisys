@@ -8,10 +8,10 @@
  #
 
 # app language file
-$fmlang="$MA_CONTENT_DIR/$MA_LANGFILE";
-if (file_exists($fmlang)){
-	include($fmlang);
-}
+#$fmlang="$MA_CONTENT_DIR/$MA_LANGFILE";
+#if (file_exists($fmlang)){
+#	include($fmlang);
+#}
 
 # app menu
 $MA_MENU=array(
