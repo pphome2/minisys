@@ -7,10 +7,12 @@
  #
  #
 
-# system zone
+# app zone
 $L_SITENAME="Demo";
-$L_ROOTHOME="Google";
+$L_ROOTHOME="Google search";
 $L_SITEHOME="Demo page";
+
+# system zone
 $L_THEME="Next theme";
 $L_PRIVACY_MENU="Privacy";
 $L_PASS="Access code";

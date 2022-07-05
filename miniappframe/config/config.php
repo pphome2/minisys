@@ -17,6 +17,7 @@ $MA_SITENAME="MiniApp";
 $MA_TITLE="MiniApp";
 $MA_CODENAME="mapp";
 $MA_ROOT_HOME="https://google.com";
+$MA_ROOT_NAME="Google";
 $MA_SITE_HOME="";
 $MA_DOCTYPE="<!DOCTYPE HTML>";
 

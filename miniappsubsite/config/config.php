@@ -19,6 +19,7 @@ $MA_SITENAME="MiniAppSubSite";
 $MA_TITLE="MiniAppSubSite";
 $MA_CODENAME="msubapp";
 $MA_ROOT_HOME="https://google.com";
+$MA_ROOT_NAME="Google";
 $MA_SITE_HOME="";
 $MA_DOCTYPE="<!DOCTYPE HTML>";
 

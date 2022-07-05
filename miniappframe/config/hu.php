@@ -8,10 +8,12 @@
  #
 
 
-# system zone / rendszerhez szükséges
-$L_SITENAME="Demo";
-$L_ROOTHOME="Google";
+# app zone / applikációhoz szükséges
+$L_SITENAME="Demo app";
+$L_ROOTHOME="Google kereső";
 $L_SITEHOME="Demo oldal";
+
+# system zone / rendszerhez szükséges
 $L_PRIVACY_MENU="Adatvédelem";
 $L_THEME="Témaváltás";
 $L_BUTTON_NEXT="Tovább";

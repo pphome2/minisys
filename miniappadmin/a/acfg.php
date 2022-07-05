@@ -12,9 +12,11 @@
 $MA_COPYRIGHT="© ".date("Y").". <a href=https://github.com/pphome2>Github</a>";
 
 # title, home link
-$MA_SITENAME="Admin";
-$MA_SITE_HOME=$MA_MALOCATION."/index.html";
-$MA_ADMINFILE=$MA_MALOCATION."/index.html";
+$MA_SITENAME="MiniApp";
+$MA_TITLE="MiniApp Admin";
+$MA_CODENAME="amapp";
+$MA_ROOT_HOME=$MA_MALOCATION."/index.html";
+$MA_SITE_HOME="";
 $MA_DOCTYPE="<!DOCTYPE HTML>";
 
 # files
