@@ -1,15 +1,15 @@
 <?php
 
  #
- # MiniApps - Demo language
+ # MiniApps - subsite
  #
  # info: main folder copyright file
  #
  #
 
-$DEMO_TEXT="Demo page";
-$DEMO_TITLE="Demo page";
-$DEMO_BUTTON_TEXT="Next";
-$DEMO_SEARCH_TEXT="Search";
+# system zone
+$L_SITENAME="SubSiteDemo";
+$L_ROOTHOME="Google";
+$L_SITEHOME="SubSite Demo page";
 
 ?>

@@ -13,9 +13,11 @@
 $MA_COPYRIGHT="© ".date("Y").". <a href=https://github.com/pphome2>Github</a>";
 
 # title, home link
-$MA_SITENAME="MiniApp - Demo";
+$MA_SITENAME="MiniApp";
+$MA_TITLE="MiniApp";
 $MA_CODENAME="mapp";
-$MA_SITE_HOME="http://www.google.com";
+$MA_ROOT_HOME="https://google.com";
+$MA_SITE_HOME="";
 $MA_DOCTYPE="<!DOCTYPE HTML>";
 
 # directories
@@ -115,8 +117,11 @@ $MA_MENU_FIELD="m";
 $MA_MENU=array();
 # adminmenu
 $MA_ADMINMENU=array();
+# back icon in menu
+$MA_BACKPAGE=false;
 
-# other variables (no change)
+# other variables
+$MA_BACKPAGE=false;
 $MA_NOPAGE=false;
 $MA_PASSWORD="";
 $MA_LOGIN_TIME="";

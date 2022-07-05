@@ -26,6 +26,8 @@ for ($i=0;$i<count($MA_LIB);$i++){
 }
 
 $MA_SEARCH_PAGE=true;
+$MA_BACKPAGE=true;
+
 login();
 
 # cookies or param 

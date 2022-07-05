@@ -27,6 +27,7 @@ for ($i=0;$i<count($MA_LIB);$i++){
 
 
 $MA_PRIVACY_PAGE=true;
+$MA_BACKPAGE=true;
 
 # cookies or param 
 setcss();

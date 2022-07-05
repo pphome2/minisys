@@ -1,15 +1,15 @@
 <?php
 
  #
- # MiniApps - Demo language
+ # MiniApps - subsite
  #
  # info: main folder copyright file
  #
  #
 
-$DEMO_TEXT="Demo oldal - subsite";
-$DEMO_TITLE="Demo oldal";
-$DEMO_BUTTON_TEXT="Következő";
-$DEMO_SEARCH_TEXT="Kersés";
+# system zone / rendszerhez szükséges
+$L_SITENAME="SubSiteDemo";
+$L_ROOTHOME="Google";
+$L_SITEHOME="SubSite demo oldal";
 
 ?>

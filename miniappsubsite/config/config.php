@@ -15,9 +15,11 @@ $MA_MINIAPP_DIR="../miniappframe";
 $MA_COPYRIGHT="© ".date("Y").". <a href=https://github.com/pphome2>Github</a>";
 
 # title, home link
-$MA_SITENAME="MiniAppSubSite - Demo";
+$MA_SITENAME="MiniAppSubSite";
+$MA_TITLE="MiniAppSubSite";
 $MA_CODENAME="msubapp";
-$MA_SITE_HOME="http://www.google.com";
+$MA_ROOT_HOME="https://google.com";
+$MA_SITE_HOME="";
 $MA_DOCTYPE="<!DOCTYPE HTML>";
 
 # directories
@@ -113,12 +115,12 @@ $MA_USERS_CRED=array(
 
 # menu
 $MA_MENU_FIELD="m";
-
 # user menu
 $MA_MENU=array();
-
 # adminmenu
 $MA_ADMINMENU=array();
+# back icon in menu
+$MA_BACKPAGE=false;
 
 # other variables (no change)
 $MA_NOPAGE=false;
