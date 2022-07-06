@@ -31,14 +31,12 @@ $MA_PLUGIN_DIR=$MA_MINIAPP_DIR."/plugins";
 
 # cookie names
 $MA_COOKIE_STYLE=$MA_CODENAME."st";
-$MA_COOKIE_USER=$MA_CODENAME."u";
-$MA_COOKIE_PASSWORD=$MA_CODENAME."p";
-$MA_COOKIE_TIME=$MA_CODENAME."lt";
+$MA_COOKIE_LOGIN=$MA_CODENAME."l";
 
 # include files
 $MA_ADMINFILE="start.php";
 $MA_VIEWFILE="view.php";
-$MA_SEARCHFILE="seaarch.php";
+$MA_SEARCHFILE="search.php";
 $MA_PRIVACYFILE="privacy.php";
 $MA_PRINTFILE="print.php";
 
@@ -55,6 +53,8 @@ $MA_HEADER="$MA_INCLUDE_DIR/header.php";
 $MA_FOOTER="$MA_INCLUDE_DIR/footer.php";
 $MA_HEADER_VIEW="$MA_INCLUDE_DIR/header_view.php";
 $MA_FOOTER_VIEW="$MA_INCLUDE_DIR/footer_view.php";
+
+$MA_FAVICON="$MA_MINIAPP_DIR/favicon.png";
 
 $MA_LIB=array(
 			"$MA_INCLUDE_DIR/lib.php",
@@ -76,16 +76,6 @@ $MA_APPFILE=array(
 				"$MA_CONTENT_DIR/$MA_LANGFILE"
 			);
 $MA_APPCSSFILE="$MA_CONTENT_DIR/demo.css";
-
-# search
-$MA_SEARCH_ICON_HREF="";
-$MA_SEARCH_ICON_JS="";
-
-# auto logout - second
-$MA_LOGIN_TIMEOUT=600;
-$MA_ENABLE_COOKIES=true;
-$MA_ADMIN_USER=false;
-$MA_USERPAGE=false;
 
 # header, footer
 $MA_ENABLE_HEADER=true;
@@ -123,22 +113,16 @@ $MA_ADMINMENU=array();
 # back icon in menu
 $MA_BACKPAGE=false;
 
-# other variables (no change)
+# other variables
+$MA_BACKPAGE=false;
 $MA_NOPAGE=false;
-$MA_PASSWORD="";
-$MA_LOGIN_TIME="";
 $MA_LOGGEDIN=false;
+$MA_ADMIN_USER=false;
 $MA_STYLEINDEX=0;
 $MA_LOGOUT_IN_HEADER=true;
 $MA_PRIVACY_PAGE=false;
 $MA_SEARCH_PAGE=false;
-
-# if not enable cookie support:
-# - all form need add this lines
-#
-#		<input type='hidden' name='$MA_COOKIE_PASSWORD' id='$MA_COOKIE_PASSWORD' value='$MA_PASSWORD'>
-#		<input type='hidden' name='$MA_COOKIE_STYLE' id='$MA_COOKIE_STYLE' value='$MA_STYLEINDEX'>
-#		<input type='hidden' name='$MA_COOKIE_TIME' id='$MA_COOKIE_TIME' value='$MA_LOGIN_TIME'>
-############################################
+$MA_COOKIE_USER="user";
+$MA_COOKIE_PASS="pass";
 
 ?>

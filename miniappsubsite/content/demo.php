@@ -61,7 +61,13 @@ function userpage(){
 }
 
 function adminpage(){
-    echo("subsite adminpage");
+    global $MA_ADMIN_USER;
+
+    if ($MA_ADMIN_USER){
+        echo("subsite adminpage");
+    }else{
+        main();
+    }
 }
 
 

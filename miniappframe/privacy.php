@@ -34,6 +34,7 @@ setcss();
 
 # build page: header
 $mainpage=refererpage();
+echo($mainpage);
 if ($mainpage<>$MA_ADMINFILE){
     if ($MA_ENABLE_HEADER_VIEW){
         page_header();

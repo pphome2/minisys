@@ -37,7 +37,7 @@ function demo_data(){
 	global $DEMO_TEXT;
 
 	echo("<br /><br />");
-	echo("<a href=print.php target=_blank>$DEMO_TEXT</a>");
+	echo("$DEMO_TEXT");
 }
 
 function main(){
@@ -57,11 +57,24 @@ function view(){
 }
 
 function userpage(){
-    echo("userpage");
+    mess_ok("Ok: User page");
+    mess_error("Error: User page");
+    mess_info("Info: User page");
+    mess_warning("Warning: User page");
 }
 
 function adminpage(){
-    echo("adminpage");
+    global $MA_ADMIN_USER;
+
+    if ($MA_ADMIN_USER){
+        echo("Admin");
+        mess_ok("Ok: Admin page");
+        mess_error("Error: Admin page");
+        mess_info("Info: Admin page");
+        mess_warning("Warning: Admin page");
+    }else{
+        main();
+    }
 }
 
 
