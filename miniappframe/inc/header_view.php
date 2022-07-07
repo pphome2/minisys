@@ -7,6 +7,10 @@
  #
  #
 
+if ($L_SITENAME<>""){
+    $MA_TITLE=$MA_TITLE." - ".$L_SITENAME;
+}
+
 echo("<html>");
 
 echo("<head>");

@@ -15,8 +15,9 @@ $MA_COPYRIGHT="© ".date("Y").". <a href=https://github.com/pphome2>Github</a>";
 $MA_SITENAME="MiniApp";
 $MA_TITLE="MiniApp Admin";
 $MA_CODENAME="amapp";
-$MA_ROOT_HOME=$MA_MALOCATION."/index.html";
-$MA_SITE_HOME="";
+$MA_ROOT_HOME="https://google.com";
+$MA_ROOT_NAME="MainSite";
+$MA_SITE_HOME="$MA_MALOCATION/index.html";
 $MA_DOCTYPE="<!DOCTYPE HTML>";
 
 # files
@@ -34,6 +35,7 @@ $MA_HEADER_VIEW="$MA_MALOCATION/$MA_INCLUDE_DIR/header_view.php";
 $MA_FOOTER_VIEW="$MA_MALOCATION/$MA_INCLUDE_DIR/footer_view.php";
 $MA_ENABLE_HEADER=true;
 $MA_ENABLE_FOOTER=true;
+$MA_FAVICON="$MA_MALOCATION/favicon.png";
 
 # main files
 $MA_ADMIN_FILE=array("a/a.css",
@@ -67,9 +69,7 @@ $MA_ENABLE_THEME=true;
 
 # cookie names
 $MA_COOKIE_STYLE=$MA_CODENAME."ast";
-$MA_COOKIE_USER=$MA_CODENAME."au";
-$MA_COOKIE_PASSWORD=$MA_CODENAME."ap";
-$MA_COOKIE_TIME=$MA_CODENAME."alt";
+$MA_COOKIE_LOGIN=$MA_CODENAME."au";
 
 
 ?>

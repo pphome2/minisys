@@ -25,7 +25,7 @@ if (file_exists("$MA_MALOCATION/$MA_CONFIG_DIR/$MA_LANGFILE")){
 }
 # load admin language file
 if (file_exists("$MA_ADMIN_DIR/$MA_LANGFILE")){
-	include("$MA_ADMIN_DIR/$MA_CONFIG_DIR/$MA_LANGFILE");
+	include("$MA_ADMIN_DIR/$MA_LANGFILE");
 }
 
 echo($MA_DOCTYPE);
@@ -39,8 +39,8 @@ for ($i=0;$i<count($MA_LIB);$i++){
 
 # load admin files
 for ($i=0;$i<count($MA_ADMIN_FILE);$i++){
-	if (file_exists("$MA_ADMIN_DIR/$MA_ADMIN_FILE[$i]")){
-		include("$MA_ADMIN_DIR/$MA_ADMIN_FILE[$i]");
+	if (file_exists("$MA_ADMIN_FILE[$i]")){
+		include("$MA_ADMIN_FILE[$i]");
 	}
 }
 
@@ -69,15 +69,17 @@ if (($MA_LOGGEDIN)and($MA_ADMIN_USER)){
 	}else{
 	    if (function_exists("main")){
 		    main();
+	    }else{
+	        button_back_logout();
 	    }
 	}
 
 }else{
-    if (($MA_LOGGEDIN)and(!$MA_ADMIN_USER)){
+    if ($MA_LOGGEDIN){
         button_back_logout();
     }else{
-    	login_form();
-	}
+        login_form();
+    }
 }
 
 # end local app file
