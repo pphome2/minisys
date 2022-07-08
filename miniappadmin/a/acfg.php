@@ -25,16 +25,18 @@ $MA_CSS=array(
 			"$MA_MALOCATION/$MA_INCLUDE_DIR/sitew.css",
 			"$MA_MALOCATION/$MA_INCLUDE_DIR/siteb.css"
 			);
+$MA_ENABLE_SYSTEM_CSS=true;
 $MA_JS_BEGIN="$MA_MALOCATION/$MA_INCLUDE_DIR/js_begin.js";
 $MA_JS_END="$MA_MALOCATION/$MA_INCLUDE_DIR/js_end.js";
+$MA_ENABLE_SYSTEM_JS=true;
 
 # footer/header
 $MA_HEADER="$MA_MALOCATION/$MA_INCLUDE_DIR/header.php";
 $MA_FOOTER="$MA_MALOCATION/$MA_INCLUDE_DIR/footer.php";
-$MA_HEADER_VIEW="$MA_MALOCATION/$MA_INCLUDE_DIR/header_view.php";
-$MA_FOOTER_VIEW="$MA_MALOCATION/$MA_INCLUDE_DIR/footer_view.php";
+
 $MA_ENABLE_HEADER=true;
 $MA_ENABLE_FOOTER=true;
+
 $MA_FAVICON="$MA_MALOCATION/favicon.png";
 
 # main files
@@ -70,6 +72,5 @@ $MA_ENABLE_THEME=true;
 # cookie names
 $MA_COOKIE_STYLE=$MA_CODENAME."ast";
 $MA_COOKIE_LOGIN=$MA_CODENAME."au";
-
 
 ?>

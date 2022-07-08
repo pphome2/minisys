@@ -21,7 +21,7 @@ $MA_CODENAME="msubapp";
 $MA_ROOT_HOME="https://google.com";
 $MA_ROOT_NAME="Google";
 $MA_SITE_HOME="";
-$MA_DOCTYPE="<!DOCTYPE HTML>";
+$MA_DOCTYPE="<!DOCTYPE html>";
 
 # directories
 $MA_CONFIG_DIR="config";
@@ -44,10 +44,12 @@ $MA_CSS=array(
 			"$MA_INCLUDE_DIR/sitew.css",
 			"$MA_INCLUDE_DIR/siteb.css"
 			);
+$MA_ENABLE_SYSTEM_CSS=false;
 $MA_CSSPRINT="$MA_INCLUDE_DIR/sitepr.css";
 
 $MA_JS_BEGIN="$MA_INCLUDE_DIR/js_begin.js";
 $MA_JS_END="$MA_INCLUDE_DIR/js_end.js";
+$MA_ENABLE_SYSTEM_JS=false;
 
 $MA_HEADER="$MA_INCLUDE_DIR/header.php";
 $MA_FOOTER="$MA_INCLUDE_DIR/footer.php";
@@ -68,14 +70,21 @@ $MA_PLUGINS=array();
 # language
 $MA_LANGFILE="hu.php";
 
-# local app main and css file
+# local app main php files (no css or js)
 $MA_APPFILE=array(
-				"$MA_CONTENT_DIR/demo.js",
 				"$MA_CONTENT_DIR/democfg.php",
 				"$MA_CONTENT_DIR/demo.php",
 				"$MA_CONTENT_DIR/$MA_LANGFILE"
 			);
-$MA_APPCSSFILE="$MA_CONTENT_DIR/demo.css";
+# local css files
+$MA_APPCSSFILE=array(
+                "$MA_CONTENT_DIR/demo.css",
+                "$MA_CONTENT_DIR/demo.css"
+            );
+# local js files
+$MA_APPJSFILE=array(
+                "$MA_CONTENT_DIR/demo.js"
+            );
 
 # header, footer
 $MA_ENABLE_HEADER=true;

@@ -28,8 +28,6 @@ if (file_exists("$MA_ADMIN_DIR/$MA_LANGFILE")){
 	include("$MA_ADMIN_DIR/$MA_LANGFILE");
 }
 
-echo($MA_DOCTYPE);
-
 # libraries
 for ($i=0;$i<count($MA_LIB);$i++){
 	if (file_exists("$MA_MALOCATION/$MA_LIB[$i]")){
@@ -37,12 +35,6 @@ for ($i=0;$i<count($MA_LIB);$i++){
 	}
 }
 
-# load admin files
-for ($i=0;$i<count($MA_ADMIN_FILE);$i++){
-	if (file_exists("$MA_ADMIN_FILE[$i]")){
-		include("$MA_ADMIN_FILE[$i]");
-	}
-}
 
 #setcookienames();
 
@@ -54,6 +46,13 @@ login();
 
 # build page: header
 page_header();
+
+# load admin files
+for ($i=0;$i<count($MA_ADMIN_FILE);$i++){
+	if (file_exists("$MA_ADMIN_FILE[$i]")){
+		include("$MA_ADMIN_FILE[$i]");
+	}
+}
 
 if (($MA_LOGGEDIN)and($MA_ADMIN_USER)){
 	# user/admin menu start

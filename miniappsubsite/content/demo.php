@@ -26,11 +26,22 @@ function printpage(){
 }
 
 function demo_header(){
-	echo("<header></header>");
+    global $MA_ENABLE_HEADER;
+
+    if (!$MA_ENABLE_HEADER){
+        echo("<div class=\"all-page\">");
+        echo("<header>");
+        echo("</header>");
+    	echo("<header></header>");
+    }
 }
 
 function demo_footer(){
-	echo("<header></header>");
+    global $MA_ENABLE_FOOTER;
+
+    if (!$MA_ENABLE_FOOTER){
+    	echo("<footer></footer>");
+    }
 }
 
 function demo_data(){
@@ -41,16 +52,16 @@ function demo_data(){
 }
 
 function main(){
-    loadplugin("table");
-    loadplugin("cards");
+    #loadplugin("table");
+    #loadplugin("cards");
 	demo_header();
 	demo_data();
 	demo_footer();
 }
 
 function view(){
-    loadplugin("table");
-    loadplugin("cards");
+    #loadplugin("table");
+    #loadplugin("cards");
 	demo_header();
 	demo_data();
 	demo_footer();

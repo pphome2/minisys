@@ -9,7 +9,7 @@
 
 
 # app zone / applikációhoz szükséges
-$L_SITENAME="Demo app";
+$L_SITENAME="Demo";
 $L_ROOTHOME="Google kereső";
 $L_SITEHOME="Demo oldal";
 
