@@ -8,15 +8,6 @@
  #
 
 
-# preivois page
-function refererpage(){
-    $mainp=basename($_SERVER['HTTP_REFERER']);
-    if (isset($_POST['referer'])){
-        $mainp=$_POST['referer'];
-    }
-    return($mainp);
-}
-
 
 # search in site
 function searchview($title="",$button="",$search=""){

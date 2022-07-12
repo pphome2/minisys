@@ -1,7 +1,7 @@
 <?php
 
  #
- # MiniApps - framework
+ # MiniApps - admin
  #
  # info: main folder copyright file
  #

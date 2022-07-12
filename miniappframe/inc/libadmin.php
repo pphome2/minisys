@@ -8,6 +8,72 @@
  #
 
 
+# preivois page
+function refererpage(){
+    $mainp=basename($_SERVER['REQUEST_URI']);
+    if (isset($_POST['referer'])){
+        $mainp=$_POST['referer'];
+    }
+    return($mainp);
+}
+
+
+# load plugins
+function plugins(){
+    global $MA_PLUGINS;
+
+    for($i=0;$i<count($MA_PLUGINS);$i++){
+        $fnx=basename($MA_PLUGINS[$i]);
+        $fn=$MA_PLUGINS[$i].'/'.$fnx.'.php';
+        if (file_exists($fn)){
+            include($fn);
+        }
+        $fn=$MA_PLUGINS[$i].'/'.$fnx.'.css';
+        if (file_exists($fn)){
+            include($fn);
+        }
+        $fn=$MA_PLUGINS[$i].'/'.$fnx.'.js';
+        if (file_exists($fn)){
+            include($fn);
+        }
+    }
+}
+
+
+# load one plugin
+function loadplugin($p){
+    global $MA_PLUGIN_DIR;
+
+    $fn=$MA_PLUGIN_DIR.'/'.$p.'/'.$p.'.php';
+    if (file_exists($fn)){
+        include($fn);
+    }
+    $fn=$MA_PLUGIN_DIR.'/'.$p.'/'.$p.'.css';
+    if (file_exists($fn)){
+        include($fn);
+    }
+    $fn=$MA_PLUGIN_DIR.'/'.$p.'/'.$p.'.js';
+    if (file_exists($fn)){
+        include($fn);
+    }
+}
+
+
+
+# cookies or param
+function setcss(){
+	global $MA_STYLEINDEX,$MA_COOKIE_STYLE,$MA_CSS;
+
+    if (isset($_COOKIE[$MA_COOKIE_STYLE])){
+   		$MA_STYLEINDEX=intval(vinput($_COOKIE[$MA_COOKIE_STYLE]));
+	}
+	if ($MA_STYLEINDEX>count($MA_CSS)){
+		$MA_STYLEINDEX=0;
+	}
+}
+
+
+# cookie names settings
 function setcookienames(){
     global $MA_COOKIE_STYLE,$MA_COOKIE_LOGIN;
 

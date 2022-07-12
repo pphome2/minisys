@@ -20,6 +20,9 @@ $MA_ROOT_NAME="MainSite";
 $MA_SITE_HOME="$MA_MALOCATION/index.html";
 $MA_DOCTYPE="<!DOCTYPE HTML>";
 
+# backuo folder
+$MA_BACKUPDIR="backup";
+
 # files
 $MA_CSS=array(
 			"$MA_MALOCATION/$MA_INCLUDE_DIR/sitew.css",
