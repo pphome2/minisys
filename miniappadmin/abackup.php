@@ -47,7 +47,7 @@ if (file_exists("$MA_ADMIN_DIR/adminfooter.php")){
 
 
 function adminbackup(){
-    global $MA_MALOCATION,$MA_BACKUPDIR,
+    global $MA_MALOCATION,$MA_BACKUPDIR,$L_BACKUPDOWNLOADFILE,
             $L_BACKUPSTART,$L_BACKUPOK,$L_BACKUPERROR;
 
     echo("<div class=spaceline></div>");
@@ -66,6 +66,7 @@ function adminbackup(){
         $phar->buildFromDirectory(dirname(__FILE__) . '/'.$dir);
         echo($L_BACKUPOK);
         echo("<div class=spaceline></div>");
+        echo("$L_BACKUPDOWNLOADFILE<a href=\"$target\">$d.tar</a>");
     } catch (Exception $e){
         # handle errors
         echo($L_BACKUPERROR." \($target\)");

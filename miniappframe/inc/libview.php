@@ -12,6 +12,7 @@
 # search in site
 function searchview($title="",$button="",$search=""){
     $rp=refererpage();
+    $st="";
 	echo("<header><h3>$title</h3></header>");
 	echo("<div class=spaceline></div>");
 	echo("<div class=contentbox>");
@@ -28,6 +29,7 @@ function searchview($title="",$button="",$search=""){
         echo("</div>");
    	}
     echo("</div>");
+    return($st);
 }
 
 
