@@ -47,12 +47,14 @@ if (file_exists("$MA_ADMIN_DIR/adminfooter.php")){
 
 
 function adminrestore(){
-    global $MA_MALOCATION,$MA_BACKUPDIR,
+    global $MA_MALOCATION,$MA_BACKUPDIR,$L_RESTOREUPLOAD,$L_RESTORELASTFILE,
             $L_RESTORESTART,$L_RESTOREOK,$L_RESTOREERROR,$L_RESTOREFILEERROR,
             $L_RESTOREFILENAME,$L_RESTORESUBMITUP,$L_RESTORESUBMITGO,$L_RESTORENOFILE;
 
     $target="";
     echo("<div class=spaceline></div>");
+    echo("<div class=spaceline></div>");
+    echo("<h3>$L_RESTOREUPLOAD</h3>");
     echo("<div class=spaceline></div>");
 	echo("<form method='post' enctype='multipart/form-data'>");
 	echo("<div class='upload-btn-wrapper'>");
@@ -60,6 +62,10 @@ function adminrestore(){
 	echo("<label for=fileupload class='upload-btn'>$L_RESTOREFILENAME</label>");
 	echo("</div>");
 	echo("<input type='submit' value='$L_RESTORESUBMITUP' id='submitup' name='submitup'>");
+    echo("<div class=spaceline></div>");
+    echo("<div class=spaceline></div>");
+    echo("<h3>$L_RESTORELASTFILE</h3>");
+    echo("<div class=spaceline></div>");
 	echo("<input type='submit' value='$L_RESTORESUBMITGO' id='submitgo' name='submitgo'>");
 	echo("</form>");
     if (isset($_POST['submitup'])){

@@ -47,30 +47,38 @@ if (file_exists("$MA_ADMIN_DIR/adminfooter.php")){
 
 
 function adminbackup(){
-    global $MA_MALOCATION,$MA_BACKUPDIR,$L_BACKUPDOWNLOADFILE,
-            $L_BACKUPSTART,$L_BACKUPOK,$L_BACKUPERROR;
+    global $MA_MALOCATION,$MA_BACKUPDIR,$L_BACKUPDOWNLOADFILE,$L_BACKUPBUTTON,
+            $L_BACKUPSTART,$L_BACKUPOK,$L_BACKUPERROR,$L_BACKUPTITLE;
 
     echo("<div class=spaceline></div>");
     echo("<div class=spaceline></div>");
-    echo($L_BACKUPSTART);
+    echo("<h3>$L_BACKUPTITLE</h3>");
     echo("<div class=spaceline></div>");
-    try {
-        # make sure the script has enough time to run (300 seconds  = 5 minutes)
-        ini_set('max_execution_time', '300');
-        ini_set('set_time_limit', '0');
-        $d=date("Ymd-His");
-        $target="$MA_BACKUPDIR/$d.tar";
-        $dir="$MA_MALOCATION";
-        # setup phar
-        $phar = new PharData($target);
-        $phar->buildFromDirectory(dirname(__FILE__) . '/'.$dir);
-        echo($L_BACKUPOK);
+    if (!isset($_POST['submitgo'])){
+    	echo("<form method='post' enctype='multipart/form-data'>");
+	    echo("<input type='submit' value='$L_BACKUPBUTTON' id='submitgo' name='submitgo'>");
+    	echo("</form>");
+	}else{
+        echo($L_BACKUPSTART);
         echo("<div class=spaceline></div>");
-        echo("$L_BACKUPDOWNLOADFILE<a href=\"$target\">$d.tar</a>");
-    } catch (Exception $e){
-        # handle errors
-        echo($L_BACKUPERROR." \($target\)");
-        echo("<div class=spaceline></div>");
+        try {
+            # make sure the script has enough time to run (300 seconds  = 5 minutes)
+            ini_set('max_execution_time', '300');
+            ini_set('set_time_limit', '0');
+            $d=date("Ymd-His");
+            $target="$MA_BACKUPDIR/$d.tar";
+            $dir="$MA_MALOCATION";
+            # setup phar
+            $phar = new PharData($target);
+            $phar->buildFromDirectory(dirname(__FILE__) . '/'.$dir);
+            echo($L_BACKUPOK);
+            echo("<div class=spaceline></div>");
+            echo("$L_BACKUPDOWNLOADFILE <a href=\"$target\">$d.tar</a>");
+        } catch (Exception $e){
+            # handle errors
+            echo($L_BACKUPERROR." \($target\)");
+            echo("<div class=spaceline></div>");
+        }
     }
 }
 
