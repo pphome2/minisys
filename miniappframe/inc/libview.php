@@ -66,6 +66,23 @@ function button_back(){
 	echo("<div class=\"spaceline\"></div>");
 }
 
+
+# button jump to URL
+function button_go($url="", $title=""){
+    global $L_JUMP,$MA_SITEURL;
+
+    if ($title==""){
+        $title=$L_JUMP;
+    }
+    if ($url==""){
+        $url=$MA_SITEURL;
+    }
+    echo("<div class=\"spaceline\"></div>");
+    echo("<div class=insidecontent><a href=\"$url\"><input type=submit id=submitar name=submitar value=$L_JUMP></a></div>");
+    echo("<div class=\"spaceline\"></div>");
+}
+
+
 # backpage button with logout
 function button_back_logout(){
 	global $L_BACKPAGE,$MA_COOKIE_LOGIN,$L_LOGOUT;

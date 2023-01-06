@@ -20,6 +20,7 @@ $MA_ROOT_HOME="https://google.com";
 $MA_ROOT_NAME="Google";
 $MA_SITE_HOME="";
 $MA_DOCTYPE="<!DOCTYPE html>";
+$MA_SITEURL=basename($_SERVER['PHP_SELF']);
 
 # directories
 $MA_CONFIG_DIR="config";

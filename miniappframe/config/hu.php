@@ -23,6 +23,7 @@ $L_PASSWORD="Jelszó";
 $L_LOGOUT="Kijelentkezés";
 $L_PRINT="Nyomtatás";
 $L_BACKPAGE="Visszalépés";
+$L_JUMP="Ugrás";
 $L_SEARCH="Keresés";
 $L_NO_AVAILABLE="A funkció jelenleg nem elérhető.";
 

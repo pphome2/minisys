@@ -20,6 +20,7 @@ $L_BUTTON_NEXT="Next";
 $L_LOGOUT="Logout";
 $L_PRINT="Print";
 $L_BACKPAGE="Go back";
+$L_JUMP="Go next page";
 $L_SEARCH="Search";
 $L_NO_AVAILABLE="This fuunction not available.";
 
