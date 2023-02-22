@@ -345,7 +345,7 @@ li:last-child {
 	background-color:#f44336!important;
 }
 
-input[type=text], select {
+input[type=text], select, [type=date] {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
