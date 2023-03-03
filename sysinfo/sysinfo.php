@@ -84,6 +84,14 @@ function formatBytes($size, $precision=2){
     $out2=explode(":",$out2[0]);
     if (isset($out2[1])){
           echo($out2[1]);
+    }else{
+          $out=php_uname('r');
+          $out2=explode("-",$out);
+          if (isset($out2[2])){
+                  echo($out2[2]);
+          }else{
+                echo(php_uname('r')." ".php_uname('m'));
+          }
     }
     echo("</td></tr>");
 
@@ -142,9 +150,13 @@ function formatBytes($size, $precision=2){
 
     echo("<tr><td class=td1>$L_SQL</td><td class=td2>");
     $output=shell_exec('mysql -V 2>/dev/null');
-    preg_match('@[0-9]+\.[0-9]+\.[0-9]+@',$output,$version);
-    $v=explode(',',$output);
-    echo($v[0]);
+    if (!empty($output)){
+          preg_match('@[0-9]+\.[0-9]+\.[0-9]+@',$output,$version);
+          $v=explode(',',$output);
+          echo($v[0]);
+        }else{
+          echo("-");
+        }
     echo("</td></tr>");
 
     if (file_exists($SI_OTHER_SYSTEM_DATA_FILE)){
