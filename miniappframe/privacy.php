@@ -41,11 +41,11 @@ for ($i=0;$i<count($MA_APPFILE);$i++){
 # build page: header
 $mainpage=refererpage();
 if ($mainpage<>$MA_ADMINFILE){
-    if ($MA_ENABLE_HEADER_VIEW){
+    #if ($MA_ENABLE_HEADER_VIEW){
         page_header();
-    }else{
-        page_header_view();
-    }
+    #}else{
+    #    page_header_view();
+    #}
 }else{
     page_header();
 }

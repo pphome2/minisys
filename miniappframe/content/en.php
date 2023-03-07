@@ -7,9 +7,12 @@
  #
  #
 
-$DEMO_TEXT="Demo page";
-$DEMO_TITLE="Demo page";
-$DEMO_BUTTON_TEXT="Next";
-$DEMO_SEARCH_TEXT="Search";
+# rendszer
+$L_SITENAME="Demo";
+$L_ROOTHOME="Intranet";
+$L_SITEHOME="Demo app";
+
+# applikáció
+$I_MENU=array("Demo page","","","");
 
 ?>

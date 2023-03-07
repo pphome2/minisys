@@ -1,15 +1,20 @@
 <?php
 
  #
- # MiniApps - Demo language
+ # MiniApp
  #
  # info: main folder copyright file
  #
  #
 
-$DEMO_TEXT="Demo oldal";
-$DEMO_TITLE="Demo oldal";
-$DEMO_BUTTON_TEXT="Következő";
-$DEMO_SEARCH_TEXT="Kersés";
+# rendszer
+$L_SITENAME="Iktatás";
+$L_ROOTHOME="Intranet";
+$L_SITEHOME="Demo program";
+
+# applikáció
+$D_TITLE="Demo";
+$D_MENU=array("Demo menü","","","");
 
 ?>
+

@@ -60,7 +60,8 @@ $MA_FAVICON="favicon.png";
 $MA_LIB=array(
 			"$MA_INCLUDE_DIR/lib.php",
 			"$MA_INCLUDE_DIR/libview.php",
-			"$MA_INCLUDE_DIR/libadmin.php"
+			"$MA_INCLUDE_DIR/libadmin.php",
+			"$MA_INCLUDE_DIR/libsql.php"
 			);
 
 # add directory: load dirname.php, .css, .js from directory
@@ -71,25 +72,26 @@ $MA_LANGFILE="hu.php";
 
 # local app php files (no css os js) file
 $MA_APPFILE=array(
-				"$MA_CONTENT_DIR/democfg.php",
-				"$MA_CONTENT_DIR/demo.php",
-				"$MA_CONTENT_DIR/$MA_LANGFILE"
+				"$MA_CONTENT_DIR/config.php"
 			);
 # local app css files
 $MA_APPCSSFILE=array(
-                "$MA_CONTENT_DIR/demo.css",
-                "$MA_CONTENT_DIR/demo.css"
             );
 # local app js files
 $MA_APPJSFILE=array(
-                "$MA_CONTENT_DIR/demo.js"
             );
+
+# SQL
+$MA_SQL_SERVER="";
+$MA_SQL_DB="";
+$MA_SQL_USER="";
+$MA_SQL_PASS="";
 
 # header, footer
 $MA_ENABLE_HEADER=true;
 $MA_ENABLE_FOOTER=true;
-$MA_ENABLE_HEADER_VIEW=false;
-$MA_ENABLE_FOOTER_VIEW=false;
+$MA_ENABLE_HEADER_VIEW=true;
+$MA_ENABLE_FOOTER_VIEW=true;
 
 # pages
 $MA_ENABLE_PRIVACY=true;
