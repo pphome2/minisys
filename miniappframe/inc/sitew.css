@@ -512,5 +512,8 @@ img {
 	border-radius: 4px;
 }
 
-/* local app css */
+.placeholder{
+    color:transparent;
+}
+
 

@@ -86,6 +86,9 @@ $MA_SQL_SERVER="";
 $MA_SQL_DB="";
 $MA_SQL_USER="";
 $MA_SQL_PASS="";
+$MA_SQL_ERROR="";
+$MA_SQL_RESULT=array();
+$MA_SQL_FILE="$MA_CONFIG_FILE/inst.sql";
 
 # header, footer
 $MA_ENABLE_HEADER=true;
