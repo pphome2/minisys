@@ -123,6 +123,8 @@ $MA_MENU_FIELD="m";
 $MA_MENU=array();
 # adminmenu
 $MA_ADMINMENU=array();
+# footer menu
+$MA_FOOTERMENU=array();
 # back icon in menu
 $MA_BACKPAGE=false;
 
