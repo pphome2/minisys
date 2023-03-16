@@ -4,7 +4,7 @@
 
 Fejlesztő: [pphome2](https:/github.com/pphome2)
 
-**Aktuális verzió: 2020.**
+**Aktuális verzió: 2023.**
 **Első megjelenés: 2018.**
 
 
@@ -14,7 +14,7 @@ Fejlesztő: [pphome2](https:/github.com/pphome2)
 - `config` könyvtár `config.php` fájlátnézése, a beállítások itt taláhatók
 - írási jog kell a `config.php` fájlban megadott dokumentum tároló könyvtárra
 - `config` könyvtárban találhatók a nyelvi fájlok, ha szükséges a módosítható
-
+- sql beállítások a `config.php` fájlban
 
 ### Működés (MiniAdmin, MiniAppFrame)
 
