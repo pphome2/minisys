@@ -58,7 +58,7 @@ if ($MA_ENABLE_HEADER){
     if ($L_ROOTHOME<>""){
       echo("<li><a class=\"active\" href=\"$MA_ROOT_HOME\">$L_ROOTHOME</a></li>");
     }else{
-      echo("<li><a class=\"active\" href=\"$MA_ROOT_HOME\">$MA_ROOTNAME</a></li>");
+      echo("<li><a class=\"active\" href=\"$MA_ROOT_HOME\">$MA_ROOT_NAME</a></li>");
     }
   }
 
