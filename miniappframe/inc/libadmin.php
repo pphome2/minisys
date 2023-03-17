@@ -20,19 +20,19 @@ function refererpage(){
 
 # load plugins
 function plugins(){
-    global $MA_PLUGINS;
+    global $MA_PLUGINS,$MA_PLUGIN_DIR;
 
     for($i=0;$i<count($MA_PLUGINS);$i++){
         $fnx=basename($MA_PLUGINS[$i]);
-        $fn=$MA_PLUGINS[$i].'/'.$fnx.'.php';
+        $fn="$MA_PLUGIN_DIR/$MA_PLUGINS[$i]/$fnx".'.php';
         if (file_exists($fn)){
             include($fn);
         }
-        $fn=$MA_PLUGINS[$i].'/'.$fnx.'.css';
+        $fn="$MA_PLUGIN_DIR/$MA_PLUGINS[$i]/$fnx".'.css';
         if (file_exists($fn)){
             include($fn);
         }
-        $fn=$MA_PLUGINS[$i].'/'.$fnx.'.js';
+        $fn="$MA_PLUGIN_DIR/$MA_PLUGINS[$i]/$fnx".'.js';
         if (file_exists($fn)){
             include($fn);
         }
@@ -42,17 +42,17 @@ function plugins(){
 
 # load one plugin
 function loadplugin($p){
-    global $MA_PLUGIN_DIR;
+    global $MA_PLUGINS,$MA_PLUGIN_DIR;
 
-    $fn=$MA_PLUGIN_DIR.'/'.$p.'/'.$p.'.php';
+    $fn="$MA_PLUGIN_DIR/$p/$p".'.php';
     if (file_exists($fn)){
         include($fn);
     }
-    $fn=$MA_PLUGIN_DIR.'/'.$p.'/'.$p.'.css';
+    $fn="$MA_PLUGIN_DIR/$p/$p".'.css';
     if (file_exists($fn)){
         include($fn);
     }
-    $fn=$MA_PLUGIN_DIR.'/'.$p.'/'.$p.'.js';
+    $fn="$MA_PLUGIN_DIR/$p/$p".'.js';
     if (file_exists($fn)){
         include($fn);
     }

@@ -17,15 +17,16 @@ function page_header(){
 			$L_SITENAME,$MA_ADMIN_USER,$MA_ADMINMENU,$MA_ADMINMENU_FIELD,$MA_APPCSSFILE,
 			$MA_ENABLE_HEADER,$MA_SEARCH_PAGE,$MA_PRIVACY_PAGE,$MA_FAVICON,
             $MA_ENABLE_PRIVACY,$MA_ENABLE_PRINT,$MA_ENABLE_SEARCH,$MA_ENABLE_THEME,
-            $MA_TITLE,$MA_BACKPAGE,$L_SITEHOME,$MA_ENABLE_SYSTEM_JS;
+            $MA_TITLE,$MA_BACKPAGE,$L_SITEHOME,$MA_ENABLE_SYSTEM_JS,
+            $MA_INCLUDE_DIR,$MA_CONTENT_DIR;
 
 
-	if (file_exists("$MA_HEADER")){
-		include("$MA_HEADER");
+	if (file_exists("$MA_INCLUDE_DIR/$MA_HEADER")){
+		include("$MA_INCLUDE_DIR/$MA_HEADER");
 	}
 	if ($MA_ENABLE_SYSTEM_JS){
-    	if (file_exists("$MA_JS_BEGIN")){
-	    	include("$MA_JS_BEGIN");
+    	if (file_exists("$MA_INCLUDE_DIR/$MA_JS_BEGIN")){
+	    	include("$MA_INCLUDE_DIR/$MA_JS_BEGIN");
     	}
 	}
 }
@@ -38,15 +39,16 @@ function page_footer(){
 			$L_PRIVACY_MENU,$MA_LOGGEDIN,$MA_COOKIE_LOGIN,$L_LOGOUT,$L_COOKIE_TEXT,
 			$MA_PRIVACY_PAGE,$MA_ENABLE_FOOTER,$MA_STYLEPARAM_NAME,$MA_SEARCH_PAGE,
             $MA_ENABLE_PRIVACY,$MA_ENABLE_PRINT,$MA_ENABLE_SEARCH,$MA_ENABLE_THEME,
-            $MA_FOOTERMENU,$MA_MENU_FIELD;
+            $MA_FOOTERMENU,$MA_MENU_FIELD,
+            $MA_INCLUDE_DIR,$MA_CONTENT_DIR;
 
 	if ($MA_ENABLE_SYSTEM_JS){
-    	if (file_exists("$MA_JS_END")){
-	    	include("$MA_JS_END");
+    	if (file_exists("$MA_INCLUDE_DIR/$MA_JS_END")){
+	    	include("$MA_INCLUDE_DIR/$MA_JS_END");
     	}
 	}
-	if (file_exists("$MA_FOOTER")){
-		include("$MA_FOOTER");
+	if (file_exists("$MA_INCLUDE_DIR/$MA_FOOTER")){
+		include("$MA_INCLUDE_DIR/$MA_FOOTER");
 	}
 }
 
@@ -60,14 +62,15 @@ function page_header_view(){
 			$L_SITENAME,$MA_ADMIN_USER,$MA_ADMINMENU,$MA_ADMINMENU_FIELD,$MA_APPCSSFILE,
 			$MA_ENABLE_HEADER,$MA_PRIVACY_PAGE,$MA_SEARCH_PAGE,$MA_FAVICON,
 			$MA_ENABLE_LOGIN_VIEW,$MA_ENABLE_PRIVACY,$MA_ENABLE_PRINT,$MA_ENABLE_SEARCH,
-			$MA_ENABLE_THEME,$MA_TITLE,$MA_BACKPAGE,$L_SITEHOME,$MA_ENABLE_SYSTEM_JS;
+			$MA_ENABLE_THEME,$MA_TITLE,$MA_BACKPAGE,$L_SITEHOME,$MA_ENABLE_SYSTEM_JS,
+            $MA_INCLUDE_DIR,$MA_CONTENT_DIR;
 
-	if (file_exists("$MA_HEADER_VIEW")){
-		include("$MA_HEADER_VIEW");
+	if (file_exists("$MA_INCLUDE_DIR/$MA_HEADER_VIEW")){
+		include("$MA_INCLUDE_DIR/$MA_HEADER_VIEW");
 	}
 	if ($MA_ENABLE_SYSTEM_JS){
-    	if (file_exists("$MA_JS_BEGIN")){
-	    	include("$MA_JS_BEGIN");
+    	if (file_exists("$MA_INCLUDE_DIR/$MA_JS_BEGIN")){
+	    	include("$MA_INCLUDE_DIR/$MA_JS_BEGIN");
     	}
 	}
 }
@@ -81,15 +84,16 @@ function page_footer_view(){
 			$MA_PRIVACY_PAGE,$MA_ENABLE_FOOTER,$MA_STYLEPARAM_NAME,$MA_SEARCH_PAGE,
 			$MA_ENABLE_LOGIN_VIEW,$MA_ENABLE_SYSTEM_JS,$MA_ENABLE_FOOTER_VIEW,
             $MA_ENABLE_PRIVACY,$MA_ENABLE_PRINT,$MA_ENABLE_SEARCH,$MA_ENABLE_THEME,
-            $MA_FOOTERMENU,$MA_MENU_FIELD;
+            $MA_FOOTERMENU,$MA_MENU_FIELD,
+            $MA_INCLUDE_DIR,$MA_CONTENT_DIR;
 
 	if ($MA_ENABLE_SYSTEM_JS){
-    	if (file_exists("$MA_JS_END")){
-	    	include("$MA_JS_END");
+    	if (file_exists("$MA_INCLUDE_DIR/$MA_JS_END")){
+	    	include("$MA_INCLUDE_DIR/$MA_JS_END");
     	}
 	}
-	if (file_exists("$MA_FOOTER_VIEW")){
-		include("$MA_FOOTER_VIEW");
+	if (file_exists("$MA_INCLUDE_DIR/$MA_FOOTER_VIEW")){
+		include("$MA_INCLUDE_DIR/$MA_FOOTER_VIEW");
 	}
 }
 

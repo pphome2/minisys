@@ -40,28 +40,28 @@ $MA_PRIVACYFILE="privacy.php";
 $MA_PRINTFILE="print.php";
 
 $MA_CSS=array(
-			"$MA_INCLUDE_DIR/sitew.css",
-			"$MA_INCLUDE_DIR/siteb.css"
+			"sitew.css",
+			"siteb.css"
 			);
 $MA_ENABLE_SYSTEM_CSS=true;
-$MA_CSSPRINT="$MA_INCLUDE_DIR/sitepr.css";
+$MA_CSSPRINT="sitepr.css";
 
-$MA_JS_BEGIN="$MA_INCLUDE_DIR/js_begin.js";
-$MA_JS_END="$MA_INCLUDE_DIR/js_end.js";
+$MA_JS_BEGIN="js_begin.js";
+$MA_JS_END="js_end.js";
 $MA_ENABLE_SYSTEM_JS=true;
 
-$MA_HEADER="$MA_INCLUDE_DIR/header.php";
-$MA_FOOTER="$MA_INCLUDE_DIR/footer.php";
-$MA_HEADER_VIEW="$MA_INCLUDE_DIR/header_view.php";
-$MA_FOOTER_VIEW="$MA_INCLUDE_DIR/footer_view.php";
+$MA_HEADER="header.php";
+$MA_FOOTER="footer.php";
+$MA_HEADER_VIEW="header_view.php";
+$MA_FOOTER_VIEW="footer_view.php";
 
 $MA_FAVICON="favicon.png";
 
 $MA_LIB=array(
-			"$MA_INCLUDE_DIR/lib.php",
-			"$MA_INCLUDE_DIR/libview.php",
-			"$MA_INCLUDE_DIR/libadmin.php",
-			"$MA_INCLUDE_DIR/libsql.php"
+			"lib.php",
+			"libview.php",
+			"libadmin.php",
+			"libsql.php"
 			);
 
 # add directory: load dirname.php, .css, .js from directory
@@ -72,7 +72,7 @@ $MA_LANGFILE="hu.php";
 
 # local app php files (no css os js) file
 $MA_APPFILE=array(
-				"$MA_CONTENT_DIR/config.php"
+				"config.php"
 			);
 # local app css files
 $MA_APPCSSFILE=array(
@@ -88,7 +88,7 @@ $MA_SQL_USER="";
 $MA_SQL_PASS="";
 $MA_SQL_ERROR="";
 $MA_SQL_RESULT=array();
-$MA_SQL_FILE="$MA_CONFIG_FILE/inst.sql";
+$MA_SQL_FILE="inst.sql";
 
 # header, footer
 $MA_ENABLE_HEADER=true;

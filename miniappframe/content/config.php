@@ -25,14 +25,14 @@ $MA_PLUGINS=array();
 $MA_LANGFILE="hu.php";
 
 # local app main and css file
-$MA_APPFILE=array("$MA_CONFIG_DIR/$MA_LANGFILE",
-                "$MA_CONTENT_DIR/$MA_LANGFILE",
-                "$MA_CONTENT_DIR/dcfg.php",
-                "$MA_CONTENT_DIR/d.php"
+$MA_APPFILE=array(
+                "$MA_LANGFILE",
+                "dcfg.php",
+                "d.php"
             );
-$MA_APPCSSFILE=array("$MA_CONTENT_DIR/d.css");
-$MA_APPJSFILE=array("$MA_CONTENT_DIR/d.js");
-$MA_APPPRIVACYFILE="$MA_CONTENT_DIR/privacy.txt";
+$MA_APPCSSFILE=array("d.css");
+$MA_APPJSFILE=array("d.js");
+$MA_APPPRIVACYFILE="privacy.txt";
 
 # SQL
 $MA_SQL_SERVER="";

@@ -25,19 +25,20 @@ echo("<link rel=\"shortcut icon\" type=\"image/png\" href=\"$MA_FAVICON\" />");
 
 echo("<style>");
 if ($MA_ENABLE_SYSTEM_CSS){
-  if (file_exists($MA_CSS[$MA_STYLEINDEX])){
-    include("$MA_CSS[$MA_STYLEINDEX]");
+  if (file_exists("$MA_INCLUDE_DIR/$MA_CSS[$MA_STYLEINDEX]")){
+    include("$MA_INCLUDE_DIR/$MA_CSS[$MA_STYLEINDEX]");
   }else{
-    if (file_exists($MA_CSS[0])){
-      include("$MA_CSS[0]");
+    if (file_exists("$MA_INCLUDE_DIR/$MA_CSS[0]")){
+      include("$MA_INCLUDE_DIR/$MA_CSS[0]");
     }
   }
 }
-if (file_exists($MA_APPCSSFILE[$MA_STYLEINDEX])){
-  include("$MA_APPCSSFILE[$MA_STYLEINDEX]");
+
+if ((isset($MA_APPCSSFILE[$MA_STYLEINDEX])) and (file_exists("$MA_CONTENT_DIR/$MA_APPCSSFILE[$MA_STYLEINDEX]"))){
+  include("$MA_CONTENT_DIR/$MA_APPCSSFILE[$MA_STYLEINDEX]");
 }else{
-  if (file_exists($MA_APPCSSFILE[0])){
-    include("$MA_APPCSSFILE[0]");
+  if ((isset($MA_APPCSSFILE[0]) and (file_exists("$MA_CONTENT_DIR/$MA_APPCSSFILE[0]")))){
+    include("$MA_CONTENT_DIR/$MA_APPCSSFILE[0]");
   }
 }
 echo("</style>");

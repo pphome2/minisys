@@ -91,10 +91,10 @@ function sql_test(){
 # sql adatbázis, táblák létrehozása
 
 function sql_install(){
-  global $MA_SQL_FILE;
+  global $MA_CONFIG_DIR,$MA_SQL_FILE;
 
-  if (file_exists($MA_SQL_FILE)){
-    $line=file_get_contents($MA_SQL_FILE);
+  if (file_exists("$MA_CONFIG_DIR/$MA_SQL_FILE")){
+    $line=file_get_contents("$MA_CONFIG_DIR/$MA_SQL_FILE");
     $lines=explode(PHP_EOL,$line);
     $db=count($lines);
     $sqlc="";

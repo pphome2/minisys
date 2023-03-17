@@ -20,7 +20,7 @@ if ((!$MA_LOGGEDIN)and(!$MA_PRIVACY_PAGE)and(!$MA_SEARCH_PAGE)and($MA_ENABLE_PRI
 
 if ($MA_ENABLE_FOOTER){
   echo("<footer>");
-    echo("<ul class=\"sidenav\">");
+  echo("<ul class=\"sidenav\">");
   echo("<li class=\"padleft\">$MA_COPYRIGHT</li>");
   if ($MA_LOGGEDIN){
     echo("<li class=\"liright\">");

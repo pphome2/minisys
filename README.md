@@ -8,7 +8,7 @@ Fejlesztő: [pphome2](https:/github.com/pphome2)
 **Első megjelenés: 2018.**
 
 
-### Telepítés (MiniAdmin, MiniAppFrame)
+### Telepítés (MiniAppSubSite, MiniAppFrame)
 
 - felmásolni az összes fájlt a webserver megfelelő könyvtárába
 - `config` könyvtár `config.php` fájlátnézése, a beállítások itt taláhatók
@@ -16,7 +16,7 @@ Fejlesztő: [pphome2](https:/github.com/pphome2)
 - `config` könyvtárban találhatók a nyelvi fájlok, ha szükséges a módosítható
 - sql beállítások a `config.php` fájlban
 
-### Működés (MiniAdmin, MiniAppFrame)
+### Működés (MiniAppSubSite, MiniAppFrame)
 
 Az adatok a `config.php` könyvtárban megadott dokumentum könyvtárban tárolódnak,
 külön alkönyvtárakban. Ezeket szekcióknak nevezzük.

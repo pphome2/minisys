@@ -7,12 +7,6 @@
  #
  #
 
-# app language file
-#$fmlang="$MA_CONTENT_DIR/$MA_LANGFILE";
-#if (file_exists($fmlang)){
-#	include($fmlang);
-#}
-
 # app menu
 $MA_MENU=array(
 				array("User","userpage")
@@ -23,5 +17,7 @@ $MA_ADMINMENU=array(
 
 # variables
 $DEMO_PRIVACY_FILE=$MA_CONTENT_DIR."/privacy.txt";
+
+$MA_FAVICON="favicon.png";
 
 ?>

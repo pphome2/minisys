@@ -9,19 +9,6 @@
 
 
 
-# first and one run install:
-# - set databases
-# - copy files
-# - get user and password
-# - set own app properties
-function install(){
-    if (file_exists("install.html")){
-        echo("install mode");
-        unlink("install.html");
-    }
-}
-
-
 # serch page and system form
 function searchpage(){
 	global $DEMO_TITLE,$DEMO_BUTTON_TEXT,$DEMO_SEARCH_TEXT;
@@ -47,41 +34,58 @@ function printpage(){
 
 # my heater
 function demo_header(){
-    global $MA_ENABLE_HEADER;
+    global $MA_FAVICON,$D_SITENAME,$MA_CONTENT_DIR,
+            $MA_APPJSFILE,$MA_APPCSSFILE;
 
-    if (!$MA_ENABLE_HEADER){
-        echo("<div class=\"all-page\">");
-        echo("<header>");
-        echo("</header>");
-    	echo("<header></header>");
+	echo("<html>");
+    echo("<head>");
+    echo("<title>$D_SITENAME</title>");
+    echo("<meta charset=\"utf-8\" />");
+    echo("<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\" />");
+    echo("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />");
+    echo("<link rel=\"icon\" href=\"$MA_FAVICON\" />");
+    echo("<link rel=\"shortcut icon\" type=\"image/png\" href=\"$MA_FAVICON\" />");
+    # load local app css
+    echo("<style>");
+    for ($i=0;$i<count($MA_APPCSSFILE);$i++){
+	    if (file_exists("$MA_CONTENT_DIR/$MA_APPCSSFILE[$i]")){
+		    include("$MA_CONTENT_DIR/$MA_APPCSSFILE[$i]");
+    	}
     }
+    echo("</style>");
+    # load local app jsfile
+    echo("<script>");
+    for ($i=0;$i<count($MA_APPJSFILE);$i++){
+	    if (file_exists("$MA_CONTENT_DIR/$MA_APPJSFILE[$i]")){
+		    include("$MA_CONTENT_DIR/$MA_APPJSFILE[$i]");
+    	}
+    }
+    echo("</script>");
+
+	echo("</head>");
+	echo("<body>");
+	echo("<header></header>");
 }
 
 
 # my footer
 function demo_footer(){
-    global $MA_ENABLE_FOOTER;
-
-    if (!$MA_ENABLE_FOOTER){
-    	echo("<footer></footer>");
-    	echo("</div>");
-    }
+	echo("<footer></footer>");
+	echo("</body>");
+	echo("</html>");
 }
 
 
 # demo
 function demo_data(){
-	global $DEMO_TEXT;
-
-	echo("<br /><br />");
-	echo("$DEMO_TEXT");
+	echo("<div class=demo>");
+	echo("demo");
+	echo("</div>");
 }
 
 
 # main admin page
 function main(){
-    #loadplugin("table");
-    #loadplugin("cards");
 	demo_header();
 	demo_data();
 	demo_footer();
@@ -90,8 +94,6 @@ function main(){
 
 # public page
 function view(){
-    #loadplugin("table");
-    #loadplugin("cards");
 	demo_header();
 	demo_data();
 	demo_footer();
@@ -101,18 +103,6 @@ function view(){
 # user menu page
 function userpage(){
     echo("subsite userpage");
-}
-
-
-# admin menu page
-function adminpage(){
-    global $MA_ADMIN_USER;
-
-    if ($MA_ADMIN_USER){
-        echo("subsite adminpage");
-    }else{
-        main();
-    }
 }
 
 
