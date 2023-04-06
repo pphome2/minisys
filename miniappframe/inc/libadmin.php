@@ -91,7 +91,7 @@ function setcookienames(){
 
 # login from cookie or param
 function login(){
-	global $MA_LOGGEDIN,$MA_COOKIE_LOGIN,
+	global $MA_LOGGEDIN,$MA_COOKIE_LOGIN,$MA_USERNAME,
 			$MA_ADMIN_USER,$MA_ENABLE_USERNAME,
 			$MA_USERS_CRED,$MA_USERS_ADMINUSERS,
 			$MA_COOKIE_PASS,$MA_COOKIE_USER;
@@ -143,6 +143,7 @@ function login(){
 		setcookie($MA_COOKIE_LOGIN, "", ['expires'=>-1,'samesite'=>'Strict']);
 	}
 
+    $MA_USERNAME=$user;
 	# admin
 	if ($MA_LOGGEDIN){
 		if (in_array($user,$MA_USERS_ADMINUSERS)){

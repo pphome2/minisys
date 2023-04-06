@@ -89,6 +89,7 @@ $MA_SQL_PASS="";
 $MA_SQL_ERROR="";
 $MA_SQL_RESULT=array();
 $MA_SQL_FILE="inst.sql";
+$MA_SQL_ERROR_ECHO=true;
 
 # header, footer
 $MA_ENABLE_HEADER=true;
@@ -108,6 +109,7 @@ $MA_ENABLE_LOGIN_VIEW=true;
 
 # multiuser
 $MA_ENABLE_USERNAME=true;
+$MA_USERNAME="";
 $MA_USERS_ADMINUSERS=array(
 				"admin"
 			);
@@ -119,6 +121,7 @@ $MA_USERS_CRED=array(
 
 # menu
 $MA_MENU_FIELD="m";
+$MA_MENUCODE=array();
 # user menu
 $MA_MENU=array();
 # adminmenu
