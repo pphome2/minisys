@@ -38,10 +38,11 @@ $MA_VIEWFILE="view.php";
 $MA_SEARCHFILE="search.php";
 $MA_PRIVACYFILE="privacy.php";
 $MA_PRINTFILE="print.php";
+$MA_DOWNLOADFILE="dl.php";
 
 $MA_CSS=array(
-			"sitew.css",
-			"siteb.css"
+			"site-light.css",
+			"site-dark.css"
 			);
 $MA_ENABLE_SYSTEM_CSS=true;
 $MA_CSSPRINT="sitepr.css";

@@ -9,16 +9,16 @@
 
 
 function searchpage(){
-    global $D_TITLE,$MA_BUTTON_TEXT,$MA_SEARCH_TEXT;
+    global $I_TITLE,$MA_BUTTON_TEXT,$MA_SEARCH_TEXT;
 
-    searchview($D_TITLE,$MA_BUTTON_TEXT,$MA_SEARCH_TEXT);
+    searchview($I_TITLE,$MA_BUTTON_TEXT,$MA_SEARCH_TEXT);
 }
 
 
 function privacypage(){
-    global $D_TITLE,$MA_APPPRIVACYFILE;
+    global $I_TITLE,$MA_APPPRIVACYFILE;
 
-    privacyview($D_TITLE,$MA_APPPRIVACYFILE);
+    privacyview($I_TITLE,$MA_APPPRIVACYFILE);
 }
 
 
@@ -46,7 +46,7 @@ function d_table(){
 
 
 function d_data(){
-    global $MA_MENU_FIELD,$I_MENUCODE;;
+    global $MA_MENU_FIELD,$I_MENUCODE;
 
     echo("<div class=spaceline></div>");
     echo("<div class=content>");

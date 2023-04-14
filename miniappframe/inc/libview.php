@@ -120,7 +120,7 @@ function button_print(){
 # messages functions
 function mess_error($m){
 	echo('
-		<div class="message_error" name="esysmessage" id="esysmessage">
+		<div class="message_error" name="sysmessage" id="esysmessage">
 			<div onclick="this.parentElement.style.display=\'none\'" class="ttoprightclose">
 				<p class="insidecontent">'.$m.'</p>
 			</div>
@@ -131,7 +131,7 @@ function mess_error($m){
 
 function mess_ok($m){
 	echo('
-		<div class="message_ok" name="osysmessage" id="osysmessage">
+		<div class="message_ok" name="sysmessage" id="osysmessage">
 			<div onclick="this.parentElement.style.display=\'none\'" class="ttoprightclose">
 				<p class="insidecontent">'.$m.'</p>
 			</div>
@@ -142,7 +142,7 @@ function mess_ok($m){
 
 function mess_info($m){
 	echo('
-		<div class="message_info" name="isysmessage" id="isysmessage">
+		<div class="message_info" name="sysmessage" id="isysmessage">
 			<div onclick="this.parentElement.style.display=\'none\'" class="ttoprightclose">
 				<p class="insidecontent">'.$m.'</p>
 			</div>
@@ -152,7 +152,7 @@ function mess_info($m){
 
 function mess_warning($m){
 	echo('
-		<div class="message_warning" name="wsysmessage" id="wsysmessage">
+		<div class="message_warning" name="sysmessage" id="wsysmessage">
 			<div onclick="this.parentElement.style.display=\'none\'" class="ttoprightclose">
 				<p class="insidecontent">'.$m.'</p>
 			</div>
