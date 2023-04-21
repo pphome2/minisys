@@ -16,5 +16,7 @@ $L_SITEHOME="Demo program";
 $D_TITLE="Demo";
 $D_MENU=array("Demo menü","","","");
 
+$D_SEARCH_TEXT="Tárolt elem keresése";
+
 ?>
 
