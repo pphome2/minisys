@@ -25,12 +25,6 @@ for ($i=0;$i<count($MA_LIB);$i++){
 	}
 }
 
-$MA_PRIVACY_PAGE=true;
-$MA_BACKPAGE=true;
-
-# cookies or param 
-setcss();
-
 # local app files
 for ($i=0;$i<count($MA_APPFILE);$i++){
 	if (file_exists("$MA_CONTENT_DIR/$MA_APPFILE[$i]")){
@@ -38,28 +32,26 @@ for ($i=0;$i<count($MA_APPFILE);$i++){
 	}
 }
 
+# prepare system
+startcookies();
+setcss();
+
+$MA_PRIVACY_PAGE=true;
+$MA_BACKPAGE=true;
+
 # build page: header
 $mainpage=refererpage();
-if ($mainpage<>$MA_ADMINFILE){
-    #if ($MA_ENABLE_HEADER_VIEW){
-        page_header();
-    #}else{
-    #    page_header_view();
-    #}
-}else{
-    page_header();
-}
+page_header();
 
 # privacy data to screen
 #$MA_NOPAGE=true;
 
 # load local app jsfile
 for ($i=0;$i<count($MA_APPJSFILE);$i++){
-	if (file_exists(""$MA_CONTENT_DIR/$MA_APPJSFILE[$i]")){
-		include(""$MA_CONTENT_DIR/$MA_APPJSFILE[$i]");
+	if (file_exists("$MA_CONTENT_DIR/$MA_APPJSFILE[$i]")){
+		include("$MA_CONTENT_DIR/$MA_APPJSFILE[$i]");
 	}
 }
-
 
 if (function_exists("privacypage")){
 	privacypage();
@@ -68,16 +60,6 @@ if (function_exists("privacypage")){
 button_back();
 
 # page footer
-if ($mainpage<>$MA_ADMINFILE){
-    if ($MA_ENABLE_FOOTER_VIEW){
-        page_footer();
-    }else{
-        page_footer_view();
-    }
-}else{
-    page_footer();
-}
-
-
+page_footer();
 
 ?>
