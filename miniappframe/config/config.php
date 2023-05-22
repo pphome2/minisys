@@ -88,15 +88,11 @@ $MA_COOKIES=array();
 $MA_LANGFILE="hu.php";
 
 # local app php files (no css os js) file
-$MA_APPFILE=array(
-				"config.php"
-			);
+$MA_APPFILE=array("config.php");
 # local app css files
-$MA_APPCSSFILE=array(
-            );
+$MA_APPCSSFILE=array();
 # local app js files
-$MA_APPJSFILE=array(
-            );
+$MA_APPJSFILE=array();
 
 # SQL
 $MA_SQL_SERVER="";

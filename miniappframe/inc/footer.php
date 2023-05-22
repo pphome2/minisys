@@ -23,14 +23,14 @@ if ($MA_ENABLE_FOOTER){
   echo("<ul class=\"sidenav\">");
   echo("<li class=\"lileft\">$MA_COPYRIGHT</li>");
   if ($MA_LOGGEDIN){
-  $link="";
-  if (($MA_PRIVACY_PAGE)or($MA_SEARCH_PAGE)){
-    $link=$MA_ADMINFILE;
-  }
+    $link="";
+    if (($MA_PRIVACY_PAGE)or($MA_SEARCH_PAGE)){
+      $link=$MA_ADMINFILE;
+    }
     echo("<li class=\"liright\">");
-  $mp=1000;
+    $mp=1000;
     if (isset($_GET[$MA_MENU_FIELD])){
-    $mp=array_search($_GET[$MA_MENU_FIELD],$MA_MENUCODE);
+      $mp=array_search($_GET[$MA_MENU_FIELD],$MA_MENUCODE);
     }
     for($i=count($MA_FOOTERMENU)-1;$i>=0;$i--){
       echo("<li class=\"liright\">");

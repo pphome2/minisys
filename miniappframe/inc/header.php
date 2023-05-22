@@ -68,27 +68,27 @@ if ($MA_ENABLE_HEADER){
   }
   $mp=1000;
   if (isset($_GET[$MA_MENU_FIELD])){
-  $mp=array_search($_GET[$MA_MENU_FIELD],$MA_MENUCODE);
+    $mp=array_search($_GET[$MA_MENU_FIELD],$MA_MENUCODE);
   }
   if ($mp==1000){
-  if ($L_SITEHOME<>""){
+    if ($L_SITEHOME<>""){
       echo("<li><a class=actmenu href=\"$MA_ADMINFILE\">$L_SITEHOME</a></li>");
-  }else{
+    }else{
       echo("<li><a class=actmenu href=\"$MA_ADMINFILE\">$MA_SITENAME</a></li>");
-  }
+    }
   }else{
-  if ($L_SITEHOME<>""){
+    if ($L_SITEHOME<>""){
       echo("<li><a href=\"$MA_ADMINFILE\">$L_SITEHOME</a></li>");
-  }else{
+    }else{
       echo("<li><a href=\"$MA_ADMINFILE\">$MA_SITENAME</a></li>");
-  }
+    }
   }
 
   if ($MA_LOGGEDIN){
-  $link="";
-  if (($MA_PRIVACY_PAGE)or($MA_SEARCH_PAGE)){
-    $link=$MA_ADMINFILE;
-  }
+    $link="";
+    if (($MA_PRIVACY_PAGE)or($MA_SEARCH_PAGE)){
+      $link=$MA_ADMINFILE;
+    }
     if ($MA_ADMIN_USER){
       if (count($MA_ADMINMENU)>0){
         $db=count($MA_ADMINMENU);

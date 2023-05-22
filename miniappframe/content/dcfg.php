@@ -14,7 +14,7 @@ $MA_MENU=array(
         array($D_MENU[0],$D_MENUCODE[0])
             );
 $MA_ADMINMENU=array(
-        #array($L_MENU2,"list.php")
+        #array("3","list.php")
             );
 
 $D_SEPARATOR="|";
