@@ -39,6 +39,7 @@ $MA_CONFIG_DIR="config";
 $MA_INCLUDE_DIR="inc";
 $MA_CONTENT_DIR="content";
 $MA_PLUGIN_DIR="plugins";
+$MA_SERVER_DIR=__DIR__;
 
 # cookie names
 $MA_COOKIE_STYLE="st";
@@ -101,8 +102,11 @@ $MA_SQL_USER="";
 $MA_SQL_PASS="";
 $MA_SQL_ERROR="";
 $MA_SQL_RESULT=array();
-$MA_SQL_FILE="inst.sql";
 $MA_SQL_ERROR_ECHO=true;
+$MA_SQL_INSTALL_FILE="sql_install.sql";
+$MA_SQL_UPDATE_FILE="sql_update.sql";
+$MA_SQL_BACKUP_FILE="sql_backup.sql";
+$MA_SQL_RESTORE_FILE="sql_restore.sql";
 
 # header, footer
 $MA_ENABLE_HEADER=true;

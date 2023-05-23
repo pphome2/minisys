@@ -42,6 +42,9 @@ function d_footer(){
 
 function d_table(){
     echo("123...");
+    #sql_install();
+    #sql_backup();
+    #sql_restore();
 }
 
 

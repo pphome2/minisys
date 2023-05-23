@@ -34,9 +34,9 @@ $MA_APPJSFILE=array("d.js");
 $MA_APPPRIVACYFILE="privacy.txt";
 
 # SQL
-$MA_SQL_SERVER="";
-$MA_SQL_DB="";
-$MA_SQL_USER="";
-$MA_SQL_PASS="";
+$MA_SQL_SERVER="localhost";
+$MA_SQL_DB="minifw";
+$MA_SQL_USER="admin";
+$MA_SQL_PASS="minifwadmin";
 
 ?>
