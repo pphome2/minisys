@@ -41,6 +41,8 @@ function d_footer(){
 
 
 function d_table(){
+    global $MA_SERVER_DIR;
+
     echo("123...");
     #sql_install();
     #sql_backup();

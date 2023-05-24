@@ -39,7 +39,7 @@ $MA_CONFIG_DIR="config";
 $MA_INCLUDE_DIR="inc";
 $MA_CONTENT_DIR="content";
 $MA_PLUGIN_DIR="plugins";
-$MA_SERVER_DIR=__DIR__;
+$MA_SERVER_DIR="/".substr(__DIR__,1,strlen(__DIR__)-strlen($MA_CONFIG_DIR)-2);
 
 # cookie names
 $MA_COOKIE_STYLE="st";

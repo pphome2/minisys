@@ -7,6 +7,7 @@
  #
  #
 
+mysqli_report(MYSQLI_REPORT_OFF);
 
 # formázás
 function sqlinput($d){
