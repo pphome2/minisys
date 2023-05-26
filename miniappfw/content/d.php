@@ -46,7 +46,8 @@ function d_table(){
     echo("123...");
     #sql_install();
     #sql_backup();
-    #sql_restore();
+    #sql_restore()
+    update_system();
 }
 
 

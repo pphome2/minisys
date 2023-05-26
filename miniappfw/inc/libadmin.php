@@ -74,16 +74,17 @@ function setcookies($n="",$d="",$td=0){
 
 # cookie names settings
 function setcookienames(){
-    global $MA_CODENAME,$MA_COOKIE_STYLE,$MA_COOKIE_LOGIN;
+    global $MA_CODENAME,$MA_COOKIE_STYLE,$MA_COOKIE_LOGIN,$MA_COOKIE_UPDATE;
 
     $MA_COOKIE_STYLE=$MA_CODENAME."-".$MA_COOKIE_STYLE;
     $MA_COOKIE_LOGIN=$MA_CODENAME."-".$MA_COOKIE_LOGIN;
+    $MA_COOKIE_UPDATE=$MA_CODENAME."-".$MA_COOKIE_UPDATE;
 }
 
 
 # cookie names settings
 function setcookienamesfromdir(){
-    global $MA_CODENAME,$MA_COOKIE_STYLE,$MA_COOKIE_LOGIN;
+    global $MA_CODENAME,$MA_COOKIE_STYLE,$MA_COOKIE_LOGIN,$MA_COOKIE_UPDATE;
 
     $p=explode('/',(dirname(__FILE__)));
     if (count($p)>=2){
@@ -93,6 +94,7 @@ function setcookienamesfromdir(){
     }
     $MA_COOKIE_STYLE=$px."-".$MA_COOKIE_STYLE;
     $MA_COOKIE_LOGIN=$px."-".$MA_COOKIE_LOGIN;
+    $MA_COOKIE_UPDATE=$px."-".$MA_COOKIE_UPDATE;
 }
 
 

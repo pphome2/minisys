@@ -19,7 +19,7 @@
 # configuration
 
 $MA_VERSION="20230501";
-$MA_UPDATE_SRC="http://localhost/minisys/miniappframe/public";
+$MA_UPDATE_SRC="https://127.0.0.1/files";
 
 # copyright link
 $MA_COPYRIGHT="© ".date("Y").". <a href=https://github.com/pphome2>Github</a>";
@@ -44,6 +44,7 @@ $MA_SERVER_DIR="/".substr(__DIR__,1,strlen(__DIR__)-strlen($MA_CONFIG_DIR)-2);
 # cookie names
 $MA_COOKIE_STYLE="st";
 $MA_COOKIE_LOGIN="l";
+$MA_COOKIE_UPDATE="u";
 
 # include files
 $MA_ADMINFILE="start.php";
@@ -150,6 +151,8 @@ $MA_FOOTERMENU=array();
 $MA_BACKPAGE=false;
 
 # other variables
+$MA_UPDATE_EXT=".tar.gz";
+$MA_UPDATE_FILE="";
 $MA_BACKPAGE=false;
 $MA_NOPAGE=false;
 $MA_LOGGEDIN=false;

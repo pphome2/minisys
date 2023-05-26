@@ -38,6 +38,7 @@ $MA_ENABLE_SYSTEM_CSS=true;
 
 # prepare system
 startcookies();
+update_system();
 plugins();
 setcss();
 

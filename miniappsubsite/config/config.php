@@ -9,7 +9,7 @@
 
 # configuration
 
-$MA_MINIAPP_DIR="../miniappframe";
+$MA_MINIAPP_DIR="../miniappfw";
 
 if (file_exists("$MA_MINIAPP_DIR/config/config.php")){
     include("$MA_MINIAPP_DIR/config/config.php");
