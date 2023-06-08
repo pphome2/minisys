@@ -37,8 +37,14 @@ for ($i=0;$i<count($MA_APPFILE);$i++){
 	}
 }
 
-# prepare system
+# cookies
 startcookies();
+if(function_exists("main_cookies")){
+    main_cookies();
+    setcookies();
+}
+
+# prepare system
 
 echo($MA_DOCTYPE);
 

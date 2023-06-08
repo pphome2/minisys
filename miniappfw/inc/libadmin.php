@@ -8,23 +8,40 @@
  #
 
 
-
 # cookie system start
-function startcookies($n="",$d="",$td=0){
+function startcookies(){
 	setcookienames();
-	setcookies($n,$d,$td);
-	getcookies($n,$d,$td);
+	getcookies();
+}
+
+
+# cookie data field
+function cookiedata($n){
+    global $MA_COOKIES;
+
+    $d="";
+    $cdb=count($MA_COOKIES);
+    $i=0;
+    $c=$MA_COOKIES[$i];
+    while(($c[0]<>$n)and($i<$cdb)){
+        $i++;
+        $c=$MA_COOKIES[$i];
+    }
+    if($c[0]===$n){
+        $d=$c[1];
+    }
+    return($d);
 }
 
 
 # load, get cookies
-function getcookies($n="",$d="",$td=0){
+function getcookies($n=""){
 	global $MA_COOKIES;
 
 	$d="";
 	if ($n<>""){
-		if (isset($_COOKIE['$n'])){
-			$d=$_COOKIE['$n'];
+		if (isset($_COOKIE["$n"])){
+			$d=$_COOKIE["$n"];
 		}
 	}else{
 		$cdb=count($MA_COOKIES);
@@ -36,12 +53,7 @@ function getcookies($n="",$d="",$td=0){
 			}else{
 				$acdata="";
 			}
-			if (isset($ac[2])){
-				$acd=$ac[2];
-			}else{
-				$acd=0;
-			}
-			$MA_COOKIES[$i]=array($acname,$acdata,$acd);
+			$MA_COOKIES[$i]=array($acname,$acdata,$ac[2]);
 		}
 	}
 	return($d);
@@ -49,24 +61,21 @@ function getcookies($n="",$d="",$td=0){
 
 
 # store cookie
-function setcookies($n="",$d="",$td=0){
+function setcookies($n="",$d="",$td=1){
 	global $MA_COOKIES;
 
 	if ($n<>""){
-		setcookie($n,$d,time()+(86400*$td),"/");
+		$t=$td*86400;
+	    setcookie($n,$d,['expires'=>time()+$t,'samesite'=>'Strict']);
 	}else{
 		$cdb=count($MA_COOKIES);
 		for($i=0;$i<$cdb;$i++){
 			$ac=$MA_COOKIES[$i];
 			$n=$ac[0];
-			if (isset($_POST['$n'])){
-				$d=$_POST['$n'];
-				$ac[2]=$d;
-				$td=$ac[3];
-				$MA_COOKIES[$i]=array($n,$d,$td);
-				#86400=1nap
-				setcookie($n,$d,time()+(86400*$td),"/");
-			}
+			$d=$ac[1];
+			$td=$ac[2];
+      		$t=$td*86400;
+            setcookie($n,$d,['expires'=>time()+$t,'samesite'=>'Strict']);
 		}
 	}
 }
@@ -163,68 +172,72 @@ function setcss(){
 }
 
 
-
 # login from cookie or param
 function login(){
-	global $MA_LOGGEDIN,$MA_COOKIE_LOGIN,
-			$MA_ADMIN_USER,$MA_ENABLE_USERNAME,
-			$MA_USERS_CRED,$MA_USERS_ADMINUSERS,
-			$MA_COOKIE_PASS,$MA_COOKIE_USER,
-			$MA_USERNAME;
+	global $MA_LOGGEDIN,$MA_COOKIE_LOGIN,$MA_ROLE,$MA_SQL_RESULT,$MA_USERNAME,
+			$MA_ADMIN_USER,$MA_COOKIE_PASS,$MA_COOKIE_USER;
 
 	$MA_LOGGEDIN=false;
+	$MA_ROLE="9999";
 	$pass="";
 	$user="";
 
-	$db=count($MA_USERS_CRED);
 	if (isset($_COOKIE[$MA_COOKIE_LOGIN])){
         $user=$_COOKIE[$MA_COOKIE_LOGIN];
-   		for ($i=0;$i<$db;$i++){
-    		if ($user==$MA_USERS_CRED[$i][0]){
-	    		$MA_LOGGEDIN=true;
-		    }
-	    }
-	}
-	if (!$MA_LOGGEDIN){
+	}else{
 		if (isset($_POST["$MA_COOKIE_PASS"])){
 			$pass=$_POST["$MA_COOKIE_PASS"];
 			$pass=vinput($pass);
-			if ($pass<>""){
-				$pass=md5($pass);
-			}
 		}
 		if (isset($_POST["$MA_COOKIE_USER"])){
 			$user=$_POST["$MA_COOKIE_USER"];
 			$user=vinput($user);
 		}
-		for ($i=0;$i<$db;$i++){
-        	if ($MA_ENABLE_USERNAME){
-	    		if (($user==$MA_USERS_CRED[$i][0])and($pass==$MA_USERS_CRED[$i][1])){
-		    		$MA_LOGGEDIN=true;
-			    }
-			}else{
-	    		if ($pass==$MA_USERS_CRED[$i][1]){
-	    		    $user=$MA_USERS_CRED[$i][0];
-		    		$MA_LOGGEDIN=true;
-			    }
-			}
-		}
+	}
+	if ($user<>""){
+    	$sqlc="select * from mfw_users where name = \"$user\";";
+	    sql_run($sqlc);
+    	$rsql=$MA_SQL_RESULT;
+	    for($i=0;$i<count($rsql);$i++){
+	        $r=$rsql[$i];
+    	    if ($pass<>""){
+        	    if (($user===$r[1])and(password_verify($pass,$r[2]))){
+	  	        	$MA_LOGGEDIN=true;
+	  	        	$MA_USERNAME=$r[1];
+	            	$MA_ROLE=$r[3];
+    	        }
+	        }else{
+    	        if ($user===$r[1]){
+	  	        	$MA_USERNAME=$r[1];
+	  	        	$MA_LOGGEDIN=true;
+    	        	$MA_ROLE=$r[3];
+	            }
+	        }
+    	    if(password_needs_rehash($r[2],PASSWORD_DEFAULT)){
+	            $r[2]=password_hash($r[2],PASSWORD_DEFAULT);
+		    	$sqlc="update mfw_users set";
+			    $sqlc=$sqlc." id = ".$r[0].", ";
+    			$sqlc=$sqlc." name = \"$r[1]\", ";
+	    		$sqlc=$sqlc." pass = \"$r[2]\", ";
+		    	$sqlc=$sqlc." role = \"$r[3]\", ";
+    			$sqlc=$sqlc." email = \"$r[4]\", ";
+	    		$sqlc=$sqlc." comm = \"$r[5]\" ";
+		    	$sqlc=$sqlc." where id=$r[0];";
+    			sql_run($sqlc);
+	        }
+    	}
+    }
+    # admin
+    if (($MA_LOGGEDIN)and($MA_ROLE==="0")){
+      		$MA_ADMIN_USER=true;
 	}
 	# set cookie
 	if ($MA_LOGGEDIN){
-	    $MA_USERNAME=$user;
 		#setcookie($MA_COOKIE_LOGIN, $user, ['expires'=>time()+6000,'samesite'=>'Strict']);
 		setcookie($MA_COOKIE_LOGIN, $user, ['expires'=>0,'samesite'=>'Strict']);
 		#setcookie($MA_COOKIE_LOGIN, $user, ['expires'=>strtotime("+1 day"),'samesite'=>'Strict']);
 	}else{
 		setcookie($MA_COOKIE_LOGIN, "", ['expires'=>-1,'samesite'=>'Strict']);
-	}
-
-	# admin
-	if ($MA_LOGGEDIN){
-		if (in_array($user,$MA_USERS_ADMINUSERS)){
-			$MA_ADMIN_USER=true;
-		}
 	}
 }
 

@@ -36,8 +36,14 @@ for ($i=0;$i<count($MA_APPFILE);$i++){
 
 $MA_ENABLE_SYSTEM_CSS=true;
 
-# prepare system
+# cookies
 startcookies();
+if(function_exists("main_cookies")){
+    main_cookies();
+    setcookies();
+}
+
+# prepare system
 update_system();
 plugins();
 setcss();

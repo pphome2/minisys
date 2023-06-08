@@ -84,6 +84,7 @@ $MA_LIB=array(
 $MA_PLUGINS=array();
 
 # cookies
+# $MA_COOKIES=array(array("miniapp","data","day"));
 $MA_COOKIES=array();
 
 # language

@@ -86,6 +86,9 @@ function main(){
     d_footer();
 }
 
+function main_cookies(){
+}
+
 function view(){
     #loadplugin("table");
     #loadplugin("cards");

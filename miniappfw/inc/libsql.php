@@ -22,7 +22,7 @@ function sqlinput($d){
 # sql parancs futtatása az sql szerveren
 function sql_run($sqlcomm="",$html=false){
   global $MA_SQL_SERVER,$MA_SQL_DB,$MA_SQL_USER,$MA_SQL_PASS,$MA_SQL_ERROR,
-        $MA_SQL_RESULT,$MA_SQL_ERROR_ECHO;
+        $MA_SQL_RESULT,$MA_SQL_ERROR_ECHO,$L_SQL_ERROR;
 
   $ret=false;
   if (function_exists('mysqli_connect')){
@@ -57,7 +57,7 @@ function sql_run($sqlcomm="",$html=false){
     }
   }
   if (($MA_SQL_ERROR<>"")and($MA_SQL_ERROR_ECHO)){
-    echo("$sqlcomm\n");
+    echo("$L_SQL_ERROR: $sqlcomm\n");
     echo("$MA_SQL_ERROR\n");
   }
   return($ret);
@@ -94,7 +94,7 @@ function sql_multi_run($sqlcomm=""){
 # sql kapcsolat tesztelése
 
 function sql_test(){
-  global $MA_SQL_RESULT,$MA_SQL_ERROR;
+  global $MA_SQL_RESULT,$MA_SQL_ERROR,$L_SQL_ERROR;
 
   $sqlc="show databases;";
   if (sql_run($sqlc)){
@@ -106,7 +106,7 @@ function sql_test(){
       echo($d[0]."<br />");
     }
   }else{
-    echo("Error: ".$MA_SQL_ERROR);
+    echo("$L_SQL_ERROR: ".$MA_SQL_ERROR);
   }
 }
 

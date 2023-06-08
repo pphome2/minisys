@@ -13,7 +13,7 @@ function cookie_load(){
 
 
 function update_system(){;
-    global $MA_COOKIE_UPDATE,$MA_UPDATE_FILE;
+    global $MA_COOKIE_UPDATE,$MA_UPDATE_FILE,$MA_UPDATE_CHECK_DAYS;
 
 	if (!isset($_COOKIE[$MA_COOKIE_UPDATE])){
         if (update_check()){
@@ -25,8 +25,9 @@ function update_system(){;
                 }
             }
         }
-		setcookie($MA_COOKIE_UPDATE, $MA_UPDATE_FILE, ['expires'=>time()+86400,'samesite'=>'Strict']);
-		echo(date('Y.m.d')." - $MA_UPDATE_FILE");
+        $t=$MA_UPDATE_CHECK_DAYS*86400;
+		setcookie($MA_COOKIE_UPDATE, $MA_UPDATE_FILE, ['expires'=>time()+$t,'samesite'=>'Strict']);
+		#echo(date('Y.m.d')." - $MA_UPDATE_FILE");
     }
 }
 
@@ -79,8 +80,9 @@ function update_download(){
 
 
 function update_sys(){
-    global $MA_CONFIG_DIR,$MA_UPDATE_FILE,$MA_SERVER_DIR;
+    global $MA_CONFIG_DIR,$MA_UPDATE_FILE,$MA_SERVER_DIR,$L_UPDATE_ERROR;
 
+    $ok=true;
     $f=$MA_CONFIG_DIR."/".$MA_UPDATE_FILE;
     $ft=substr($f,0,strlen($f)-3);
     if (file_exists($ft)){
@@ -92,10 +94,14 @@ function update_sys(){
         $pt=new PharData($ft);
         $pt->extractTo("$MA_SERVER_DIR/",null,true  );
     }catch (exception $e){
+	    echo(date('Y.m.d')." - $MA_UPDATE_FILE - $f - $ft - $MA_SERVER_DIR - $L_UPDATE_ERROR");
+        $ok=false;
     }
     unlink($f);
     unlink($ft);
-    header("Refresh:0");
+    if($ok){
+        header("Refresh:0");
+    }
 }
 
 

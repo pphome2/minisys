@@ -30,5 +30,10 @@ $L_NO_AVAILABLE="A funkció jelenleg nem elérhető.";
 # cookie message
 $L_COOKIE_TEXT="Az oldal cokkie-kat (sütiket) használ. Olvassa el az Adatvédelmi nyilatkozatot.";
 $L_PRIVACY_HEADER="Adatvédelmi nyilatkozat";
+$L_SEARCH_HEADER="Tárolt elemek keresése";
+
+# error
+$L_UPDATE_ERROR="A frissítés nem sikerült.";
+$L_SQL_ERROR="Hiba történt az SQl utasítás végrehajtásakor";
 
 ?>
