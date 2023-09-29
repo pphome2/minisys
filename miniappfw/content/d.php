@@ -89,6 +89,9 @@ function main(){
 function main_cookies(){
 }
 
+function cron(){
+}
+
 function view(){
     #loadplugin("table");
     #loadplugin("cards");
